@@ -1,0 +1,80 @@
+site_name: Desplegament d'Aplicacions Web
+
+
+theme: 
+  name: material
+  palette:
+  
+      # Palette toggle for light mode
+    - scheme: default
+      primary: purple
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  language: ca
+  logo: assets/logo.png
+
+  include_sidebar: false 
+  features:
+    - toc.integrate
+
+nav:
+  - "Inici": "index.md"
+  - "1. Implantació d'arquitectures web": "01_deploy/01-index.md"      
+  - "2. Administració de servidors web": "02_web_server_admin/01-index.md"      
+  - "3. Administració de servidors d'aplicacions": "03_app_server_admin/01-index.md"
+  - "4. Instal·lació i administració de servidors de transferència d'arxius": "04_ftp/01-index.md"
+  - "5. Serveis de xarxa implicats en el desplegament d'una aplicació web": "05_network/01-index.md"
+  - "6. Documentació, sistemes de control de versions i d'integració contínua": "06_docs_cvs/01-index.md"
+
+    
+   
+markdown_extensions:
+  - toc:
+      toc_depth: 3
+  - pymdownx.tabbed
+  - admonition
+  - abbr
+  - pymdownx.inlinehilite:
+  - pymdownx.superfences:  
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+
+  - pymdownx.highlight:
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+        - name: php
+          lang: php
+          options:
+            startinline: true
+      linenums_style: pymdownx-inline
+      linenums: true
+  - sane_lists
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  
+plugins:
+  - search
+  - mermaid2  
+
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+
+extra_css:
+  - stylesheets/extra.css  
+  
+copyright: 2025-2026 Vicent Jordà - Licencia CC BY-NC-SA
