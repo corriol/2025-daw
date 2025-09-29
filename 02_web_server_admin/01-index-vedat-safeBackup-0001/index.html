@@ -5,11 +5,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../01_deploy/01-index/" rel="prev"/>
-<link href="../../03_app_server_admin/01-index/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>2. Administració de servidors web - Desplegament d'Aplicacions Web</title>
+<title>Administració de servidors web - Desplegament d'Aplicacions Web</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -47,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              2. Administració de servidors web
+              Administració de servidors web
             
           </span>
 </div>
@@ -126,82 +124,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    2. Administració de servidors web
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-index/">
 <span class="md-ellipsis">
     2. Administració de servidors web
     
   </span>
 </a>
-<nav aria-label="Taula de continguts" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-fonaments-dels-servidors-web">
-<span class="md-ellipsis">
-      1. Fonaments dels servidors web
-    </span>
-</a>
-<nav aria-label="1. Fonaments dels servidors web" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#el-protocol-http">
-<span class="md-ellipsis">
-      El protocol HTTP
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#format-de-les-url">
-<span class="md-ellipsis">
-      Format de les URL
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-configuracio-basica-i-avancada">
-<span class="md-ellipsis">
-      2. Configuració bàsica i avançada
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-seguretat-en-servidors-web">
-<span class="md-ellipsis">
-      3. Seguretat en servidors web
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-desplegament-daplicacions">
-<span class="md-ellipsis">
-      4. Desplegament d’aplicacions
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-gestio-i-manteniment">
-<span class="md-ellipsis">
-      5. Gestió i manteniment
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../03_app_server_admin/01-index/">
@@ -380,10 +309,10 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/etc/apache2/mods-available/mime.conf
 </code></pre></div>
 <p>O bé dins d’un VirtualHost amb la directiva <code>AddType</code>.  </p>
-<p>Exemple:</p>
+<p>Exemple:
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">AddType</span><span class="w"> </span>application/pdf<span class="w"> </span>.pdf
 <span class="linenos" data-linenos="2 "></span><span class="nb">AddType</span><span class="w"> </span>application/x-httpd-php<span class="w"> </span>.php
-</code></pre></div>
+</code></pre></div></p>
 <p>Així, Apache sap quin <strong>MIME type</strong> associar a cada extensió de fitxer.  </p>
 <h2 id="2-configuracio-basica-i-avancada">2. Configuració bàsica i avançada</h2>
 <ul>

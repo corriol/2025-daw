@@ -5,11 +5,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../.." rel="prev"/>
-<link href="../../02_web_server_admin/01-index/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>1. Implantació d'arquitectures web - Desplegament d'Aplicacions Web</title>
+<title>Implantació d'Arquitectures Web - Desplegament d'Aplicacions Web</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -47,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              1. Implantació d'arquitectures web
+              Implantació d'Arquitectures Web
             
           </span>
 </div>
@@ -118,175 +116,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    1. Implantació d'arquitectures web
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-index/">
 <span class="md-ellipsis">
     1. Implantació d'arquitectures web
     
   </span>
 </a>
-<nav aria-label="Taula de continguts" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-aspectes-generals-darquitectures-web">
-<span class="md-ellipsis">
-      1. Aspectes generals d'arquitectures web
-    </span>
-</a>
-<nav aria-label="1. Aspectes generals d'arquitectures web" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#el-model-tcpip">
-<span class="md-ellipsis">
-      El model TCP/IP
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-escalabilitat-portabilitat-i-componentitzacio">
-<span class="md-ellipsis">
-      2. Escalabilitat, portabilitat i componentització
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-arquitectures-web-models">
-<span class="md-ellipsis">
-      3. Arquitectures web: models
-    </span>
-</a>
-<nav aria-label="3. Arquitectures web: models" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitectura-de-2-capes">
-<span class="md-ellipsis">
-      Arquitectura de 2 capes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitectura-de-3-capes">
-<span class="md-ellipsis">
-      Arquitectura de 3 capes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitectures-orientades-a-serveis-soa-i-microserveis">
-<span class="md-ellipsis">
-      Arquitectures orientades a serveis (SOA) i microserveis
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-plataformes-web-lliures-i-propietaries">
-<span class="md-ellipsis">
-      4. Plataformes web lliures i propietàries
-    </span>
-</a>
-<nav aria-label="4. Plataformes web lliures i propietàries" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#plataformes-lliures">
-<span class="md-ellipsis">
-      Plataformes lliures
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#plataformes-propietaries">
-<span class="md-ellipsis">
-      Plataformes propietàries
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-servidors-web-i-daplicacions">
-<span class="md-ellipsis">
-      5. Servidors web i d'aplicacions
-    </span>
-</a>
-<nav aria-label="5. Servidors web i d'aplicacions" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installacio-basica-dapache-24">
-<span class="md-ellipsis">
-      Instal·lació bàsica d'Apache 2.4
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6-tecnologies-de-virtualitzacio-i-contenidors">
-<span class="md-ellipsis">
-      6. Tecnologies de virtualització i contenidors
-    </span>
-</a>
-<nav aria-label="6. Tecnologies de virtualització i contenidors" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#virtualitzacio">
-<span class="md-ellipsis">
-      Virtualització
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contenidors">
-<span class="md-ellipsis">
-      Contenidors
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7-estructura-i-recursos-duna-aplicacio-web">
-<span class="md-ellipsis">
-      7. Estructura i recursos d'una aplicació web
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#8-programari-lliure-vs-programari-propietari">
-<span class="md-ellipsis">
-      8. Programari lliure vs. programari propietari
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#9-documentacio-dels-processos-realitzats">
-<span class="md-ellipsis">
-      9. Documentació dels processos realitzats
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../02_web_server_admin/01-index/">
@@ -338,66 +174,16 @@
 <h1 id="implantacio-darquitectures-web">Implantació d'Arquitectures Web</h1>
 <h2 id="1-aspectes-generals-darquitectures-web">1. Aspectes generals d'arquitectures web</h2>
 <p>Una arquitectura web és l'estructura que defineix com s'organitzen i interactuen els components d'una aplicació web. Estableix com el client (navegador) i el servidor intercanvien informació, i com es gestionen les dades i serveis.</p>
-<p>Els components bàsics de l'arquitectura són:</p>
+<p>Els components bàsics de l'arquitectura són: </p>
 <ul>
 <li>client web</li>
 <li>servidor web</li>
 <li>servidor d'aplicacions</li>
-<li>sistema gestor de base de dades</li>
+<li>sistema gestor de base de dades </li>
 <li>xarxa de comunicacions.</li>
 </ul>
 <p>Els objectius d'aquesta arquitectura són millorar el rendiment, la seguretat, la mantenibilitat i l'escalabilitat de les aplicacions.</p>
 <p>Els diferents components es poden comunicar mitjançant peticions HTTP/HTTPS, serveis web REST o SOAP, o protocols de xarxa.</p>
-<h3 id="el-model-tcpip">El model TCP/IP</h3>
-<p>El model <strong>TCP/IP</strong> és la base de les comunicacions a Internet i a la majoria de xarxes locals.  </p>
-<p>Esta dividit en capes i cada capa té una funció pròpia i utilitza un <strong>sistema d’adreçament</strong> específic per identificar qui envia i rep la informació.</p>
-<h4 id="capes-del-model-tcpip">Capes del model TCP/IP</h4>
-<h5 id="1-capa-daplicacio">1. Capa d’aplicació</h5>
-<ul>
-<li><strong>Funció:</strong> proporciona serveis directament a l’usuari o a les aplicacions.  </li>
-<li><strong>Protocols típics:</strong> HTTP, FTP, DNS, SMTP.  </li>
-<li><strong>Unitat de dades:</strong> <em>Dades (Data)</em>.  </li>
-<li><strong>Adreçament:</strong> noms simbòlics (per exemple, <code>www.exemple.com</code>, <code>proves.daw</code>) que després es tradueixen a IP mitjançant <strong>DNS</strong>.</li>
-</ul>
-<h5 id="2-capa-de-transport">2. Capa de transport</h5>
-<ul>
-<li><strong>Funció:</strong> garanteix la comunicació d’un extrem a l’altre.  </li>
-<li><strong>Protocols:</strong> TCP (fiable, orientat a connexió), UDP (ràpid, sense connexió).  </li>
-<li><strong>Unitat de dades:</strong> <em>Segments (TCP)</em> o <em>Datagrames (UDP)</em>.  </li>
-<li><strong>Adreçament:</strong> <strong>ports lògics</strong> (0–65535) que identifiquen processos o aplicacions.  </li>
-<li>Exemple: HTTP → port 80, HTTPS → port 443, SSH → port 22.</li>
-</ul>
-<h5 id="3-capa-dinternet">3. Capa d’internet</h5>
-<ul>
-<li><strong>Funció:</strong> identificar i encaminar els paquets entre xarxes diferents.  </li>
-<li><strong>Protocols:</strong> IP, ICMP, ARP.  </li>
-<li><strong>Unitat de dades:</strong> <em>Paquet (Packet)</em>.  </li>
-<li><strong>Adreçament:</strong> <strong>adreces IP</strong> (IPv4 o IPv6).  </li>
-<li>Exemple IPv4: <code>192.168.1.10</code> </li>
-<li>Exemple IPv6: <code>2001:db8::1</code></li>
-</ul>
-<h5 id="4-capa-dacces-a-la-xarxa-enllac">4. Capa d’accés a la xarxa (enllaç)</h5>
-<ul>
-<li><strong>Funció:</strong> defineix com enviar les dades físicament pel medi (cable, fibra, Wi-Fi...).  </li>
-<li><strong>Protocols:</strong> Ethernet, Wi-Fi (802.11), PPP.  </li>
-<li><strong>Unitat de dades:</strong> <em>Trama (Frame)</em>.  </li>
-<li><strong>Adreçament:</strong> <strong>adreces físiques (MAC)</strong>, úniques per a cada targeta de xarxa.  </li>
-<li>Exemple: <code>00:1A:2B:3C:4D:5E</code></li>
-</ul>
-<h4 id="tipus-dadreces-ipv4">Tipus d’adreces IPv4</h4>
-<p><strong>Privades</strong> (no enruten a Internet):  </p>
-<ul>
-<li><code>10.0.0.0 – 10.255.255.255</code> </li>
-<li><code>172.16.0.0 – 172.31.255.255</code> </li>
-<li><code>192.168.0.0 – 192.168.255.255</code> </li>
-</ul>
-<p><strong>Públiques:</strong> qualsevol altra adreça utilitzada a Internet.  </p>
-<p><strong>Especials:</strong> </p>
-<ul>
-<li><code>127.0.0.1/8</code> → loopback (<em>localhost</em>).  </li>
-<li><code>0.0.0.0</code> → adreça per defecte / desconeguda.  </li>
-<li><code>255.255.255.255</code> → broadcast.</li>
-</ul>
 <h2 id="2-escalabilitat-portabilitat-i-componentitzacio">2. Escalabilitat, portabilitat i componentització</h2>
 <p>L'<strong>escalabilitat</strong> és la capacitat del sistema per suportar un augment de la càrrega de treball sense perdre rendiment. Hi ha dos tipus d'escalabilitat:</p>
 <ul>
@@ -447,7 +233,7 @@
   A &lt;-- SQL/ORM --&gt; DB[(Base de dades)]
 </div>
 <p>En el diagrama anterior es pot observar com la <strong>capa de presentació</strong> (web SPA/SSR o app mòbil) parla amb el servidor d'aplicacions. Aquest conté la <strong>capa de negoci</strong> on aplica les regles o estableix els nivells seguretat, entre altres coses. D'aquesta forma la <strong>capa de dades</strong> queda aïllada i protegida.</p>
-<p>Els avantatges de l'arquitectura de 3 capes el podem resumir en:</p>
+<p>Els avantatges de l'arquitectura de 3 capes el podem resumir en: </p>
 <ul>
 <li><strong>Escalabilitat</strong>: es pot escalar horitzontalment la capa d’API.</li>
 <li><strong>Seguretat</strong>: la BD no s’exposa; control d’accés centralitzat.</li>
@@ -506,72 +292,20 @@
 <p>D’altra banda, el <strong>servidor d’aplicacions</strong> va més enllà de la gestió de fitxers estàtics: és el responsable d’executar la lògica de negoci i generar contingut dinàmic. Això vol dir que processa peticions més complexes, com consultes a bases de dades, càlculs interns o crides a serveis externs. Quan un usuari envia un formulari, per exemple, el servidor d’aplicacions és qui interpreta la informació, la valida i retorna una resposta adaptada. Alguns exemples de servidors d’aplicacions són Tomcat (per aplicacions Java), WildFly, WebLogic o .NET Application Server.</p>
 <p>En molts entorns moderns, tots dos tipus de servidor treballen conjuntament. El servidor web rep totes les peticions i serveix directament el contingut estàtic, mentre que redirigeix les sol·licituds dinàmiques cap al servidor d’aplicacions. Aquest model permet optimitzar el rendiment i reforçar la seguretat, ja que la base de dades i la lògica de negoci no s’exposen directament a Inter</p>
 <div class="mermaid">flowchart LR
-  U["Usuari<br/>Navegador"] --&gt;|HTTP/HTTPS| WS["Servidor Web<br/>(Apache/Nginx)"]
+  U["Usuari\nNavegador"] --&gt;|HTTP/HTTPS| WS["Servidor Web\n(Apache/Nginx)"]
   WS --&gt;|Contingut estàtic| U
-  WS --&gt;|"Peticions dinàmiques"| AS["Servidor d'Aplicacions<br/>(Java, .NET, PHP...)"]
+  WS --&gt;|"Peticions dinàmiques"| AS[Servidor d'Aplicacions\n(Java, .NET, PHP...)]
   AS --&gt; DB[(Base de dades)]
 
 </div>
 <h3 id="installacio-basica-dapache-24">Instal·lació bàsica d'Apache 2.4</h3>
-<p><strong>Apache HTTP Server</strong> és un dels servidors web més utilitzats del món. A Ubuntu 24.04 es pot instal·lar fàcilment mitjançant el gestor de paquets <code>apt</code>.  </p>
-<p>A més de la instal·lació, és fonamental conéixer quins són els <strong>fitxers de configuració principals</strong> i com gestionar el servei.</p>
-<h4 id="installacio">Instal·lació</h4>
-<p>Primer actualitzem els paquets del sistema i després instal·lem Apache:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
-</code></pre></div>
-<p>Una vegada instal·lat, comprovem l’estat del servei:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
-</code></pre></div>
-<p>Si tot ha anat bé, podrem veure la pàgina de benvinguda d’Apache obrint el navegador i entrant a:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>http://localhost
-</code></pre></div>
-<h4 id="fitxers-i-directoris-de-configuracio-principals">Fitxers i directoris de configuració principals</h4>
-<p>Quan treballem amb Apache és fonamental conéixer la seua estructura de configuració.</p>
-<p>A Ubuntu es troba dins del directori <code>/etc/apache2/</code>.</p>
 <ul>
-<li>
-<p><strong><code>/etc/apache2/apache2.conf</code></strong><br>
-  Fitxer principal de configuració. Inclou directives globals i carrega la resta de configuracions.</br></p>
-</li>
-<li>
-<p><strong><code>/etc/apache2/ports.conf</code></strong><br>
-  Defineix els <strong>ports d’escolta</strong> d’Apache (per defecte: 80 per HTTP i 443 per HTTPS).</br></p>
-</li>
-<li>
-<p><strong><code>/etc/apache2/sites-available/</code></strong><br>
-  Directori on es troben les configuracions dels llocs web (<strong>VirtualHosts</strong>) que podem habilitar o deshabilitar.</br></p>
-</li>
-<li>
-<p><strong><code>/etc/apache2/sites-enabled/</code></strong><br>
-  Conté enllaços simbòlics als fitxers activats des de <code>sites-available/</code>. Només els fitxers que hi ha ací són carregats per Apache.</br></p>
-</li>
-<li>
-<p><strong><code>/etc/apache2/mods-available/</code></strong><br/>
-  Llista de mòduls disponibles (per exemple, PHP, SSL, rewrite…).</p>
-</li>
-<li>
-<p><strong><code>/etc/apache2/mods-enabled/</code></strong><br/>
-  Mòduls activats actualment. Igual que amb els llocs, es gestionen amb enllaços simbòlics.</p>
-</li>
-<li>
-<p><strong><code>/etc/apache2/conf-available/</code> i <code>/etc/apache2/conf-enabled/</code></strong><br/>
-  Fitxers de configuració addicional que no són pròpiament _VirtualHosts ni mòduls, però que poden contenir ajustos específics.</p>
-</li>
+<li>Escollir el servidor adequat (Apache, Nginx, IIS…).</li>
+<li>Instal·lar paquets i dependències.</li>
+<li>Configurar ports, arxius de configuració i permisos.</li>
+<li>Comprovar el funcionament amb una pàgina de prova.</li>
 </ul>
-<h4 id="gestio-basica-del-servei-apache">Gestió bàsica del servei Apache</h4>
-<p>Iniciar Apache:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
-</code></pre></div>
-<p>Aturar Apache:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>apache2
-</code></pre></div>
-<p>Reiniciar Apache:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
-</code></pre></div>
-<p>Recarregar la configuració (sense reiniciar el procés):</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
-</code></pre></div>
+<hr/>
 <h2 id="6-tecnologies-de-virtualitzacio-i-contenidors">6. Tecnologies de virtualització i contenidors</h2>
 <h3 id="virtualitzacio">Virtualització</h3>
 <ul>
@@ -588,6 +322,7 @@
 <li>Avantatges: portabilitat i eficiència.</li>
 <li>Inconvenients: menys aïllament que les màquines virtuals.</li>
 </ul>
+<hr/>
 <h2 id="7-estructura-i-recursos-duna-aplicacio-web">7. Estructura i recursos d'una aplicació web</h2>
 <ul>
 <li>Client (frontend): HTML, CSS, JavaScript, imatges, fitxers multimèdia.</li>
@@ -635,7 +370,23 @@
 </tbody>
 </table>
 <p><strong>Criteris de selecció:</strong> pressupost, necessitat de suport, grau de personalització i seguretat requerida.</p>
-<h2 id="9-documentacio-dels-processos-realitzats">9. Documentació dels processos realitzats</h2>
+<hr/>
+<h2 id="9-installacio-de-servidors-web-lliures-i-propietaris">9. Instal·lació de servidors web lliures i propietaris</h2>
+<h3 id="fases-comunes">Fases comunes</h3>
+<ol>
+<li>Preparar el sistema operatiu i actualitzar els paquets.</li>
+<li>Instal·lar el programari (via repositoris o instal·ladors oficials).</li>
+<li>Configurar fitxers principals (<code>httpd.conf</code>, <code>nginx.conf</code>, <code>web.config</code>…).</li>
+<li>Obrir i comprovar els ports necessaris al tallafoc.</li>
+<li>Crear un lloc web de prova i comprovar que respon.</li>
+</ol>
+<h3 id="exemples">Exemples</h3>
+<ul>
+<li>Apache/Nginx en Ubuntu.</li>
+<li>IIS en Windows Server.</li>
+</ul>
+<hr/>
+<h2 id="10-documentacio-dels-processos-realitzats">10. Documentació dels processos realitzats</h2>
 <ul>
 <li>Redactar un manual amb:</li>
 <li>Objectiu i entorn utilitzat.</li>
