@@ -173,11 +173,54 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-configuracio-basica-i-avancada">
+<a class="md-nav__link" href="#2-installacio-dapache-24">
 <span class="md-ellipsis">
-      2. Configuració bàsica i avançada
+      2. Instal·lació d'Apache 2.4
     </span>
 </a>
+<nav aria-label="2. Instal·lació d'Apache 2.4" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installacio">
+<span class="md-ellipsis">
+      Instal·lació
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestio-basica-del-servei-apache">
+<span class="md-ellipsis">
+      Gestió bàsica del servei Apache
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-configuracio">
+<span class="md-ellipsis">
+      3. Configuració
+    </span>
+</a>
+<nav aria-label="3. Configuració" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fitxers-i-directoris-de-configuracio-principals">
+<span class="md-ellipsis">
+      Fitxers i directoris de configuració principals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestio-de-tipus-mime">
+<span class="md-ellipsis">
+      Gestió de tipus MIME
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3-seguretat-en-servidors-web">
@@ -375,7 +418,68 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <li>Eviten confusions i problemes de seguretat (per exemple, impedir que un arxiu <code>.js</code> siga interpretat com text pla).  </li>
 <li>Són fonamentals per a aplicacions web modernes que treballen amb formats com <strong>JSON</strong> o <strong>XML</strong> en les seues API.  </li>
 </ol>
-<h4 id="gestio-en-apache">Gestió en Apache</h4>
+<h2 id="2-installacio-dapache-24">2. Instal·lació d'Apache 2.4</h2>
+<p><strong>Apache HTTP Server</strong> és un dels servidors web més utilitzats del món. A Ubuntu 24.04 es pot instal·lar fàcilment mitjançant el gestor de paquets <code>apt</code>.  </p>
+<p>A més de la instal·lació, és fonamental conéixer quins són els <strong>fitxers de configuració principals</strong> i com gestionar el servei.</p>
+<h3 id="installacio">Instal·lació</h3>
+<p>Primer actualitzem els paquets del sistema i després instal·lem Apache:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
+</code></pre></div>
+<p>Una vegada instal·lat, comprovem l’estat del servei:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
+</code></pre></div>
+<p>Si tot ha anat bé, podrem veure la pàgina de benvinguda d’Apache obrint el navegador i entrant a:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>http://localhost
+</code></pre></div>
+<h3 id="gestio-basica-del-servei-apache">Gestió bàsica del servei Apache</h3>
+<p>Iniciar Apache:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
+</code></pre></div>
+<p>Aturar Apache:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>apache2
+</code></pre></div>
+<p>Reiniciar Apache:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+<p>Recarregar la configuració (sense reiniciar el procés):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</code></pre></div>
+<h2 id="3-configuracio">3. Configuració</h2>
+<h3 id="fitxers-i-directoris-de-configuracio-principals">Fitxers i directoris de configuració principals</h3>
+<p>Quan treballem amb Apache és fonamental conéixer la seua estructura de configuració.</p>
+<p>A Ubuntu es troba dins del directori <code>/etc/apache2/</code>.</p>
+<ul>
+<li>
+<p><strong><code>/etc/apache2/apache2.conf</code></strong><br/>
+  Fitxer principal de configuració. Inclou directives globals i carrega la resta de configuracions.</p>
+</li>
+<li>
+<p><strong><code>/etc/apache2/ports.conf</code></strong><br/>
+  Defineix els <strong>ports d’escolta</strong> d’Apache (per defecte: 80 per HTTP i 443 per HTTPS).</p>
+</li>
+<li>
+<p><strong><code>/etc/apache2/sites-available/</code></strong><br/>
+  Directori on es troben les configuracions dels llocs web (<strong>VirtualHosts</strong>) que podem habilitar o deshabilitar.</p>
+</li>
+<li>
+<p><strong><code>/etc/apache2/sites-enabled/</code></strong><br/>
+  Conté enllaços simbòlics als fitxers activats des de <code>sites-available/</code>. Només els fitxers que hi ha ací són carregats per Apache.</p>
+</li>
+<li>
+<p><strong><code>/etc/apache2/mods-available/</code></strong><br/>
+  Llista de mòduls disponibles (per exemple, PHP, SSL, rewrite…).</p>
+</li>
+<li>
+<p><strong><code>/etc/apache2/mods-enabled/</code></strong><br/>
+  Mòduls activats actualment. Igual que amb els llocs, es gestionen amb enllaços simbòlics.</p>
+</li>
+<li>
+<p><strong><code>/etc/apache2/conf-available/</code> i <code>/etc/apache2/conf-enabled/</code></strong><br/>
+  Fitxers de configuració addicional que no són pròpiament _VirtualHosts ni mòduls, però que poden contenir ajustos específics.</p>
+</li>
+</ul>
+<h3 id="gestio-de-tipus-mime">Gestió de tipus MIME</h3>
 <p>En Apache, els tipus MIME es configuren normalment al fitxer:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/etc/apache2/mods-available/mime.conf
 </code></pre></div>
@@ -385,7 +489,6 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <span class="linenos" data-linenos="2 "></span><span class="nb">AddType</span><span class="w"> </span>application/x-httpd-php<span class="w"> </span>.php
 </code></pre></div>
 <p>Així, Apache sap quin <strong>MIME type</strong> associar a cada extensió de fitxer.  </p>
-<h2 id="2-configuracio-basica-i-avancada">2. Configuració bàsica i avançada</h2>
 <ul>
 <li>Fitxers de configuració i/o ferramentes de configuració  </li>
 <li>Configuració avançada del servidor web  </li>
