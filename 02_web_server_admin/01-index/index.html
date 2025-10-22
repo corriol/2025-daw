@@ -228,6 +228,45 @@
       3. Seguretat en servidors web
     </span>
 </a>
+<nav aria-label="3. Seguretat en servidors web" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-autenticacio-i-control-dacces">
+<span class="md-ellipsis">
+      3.1 Autenticació i control d’accés
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-el-protocol-https">
+<span class="md-ellipsis">
+      3.2 El protocol HTTPS
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-certificats-i-servidors-de-certificats">
+<span class="md-ellipsis">
+      3.3 Certificats i servidors de certificats
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-la-pki-public-key-infrastructure">
+<span class="md-ellipsis">
+      Diagrama de la PKI (Public Key Infrastructure)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34-configuracio-segura-de-servidors-http">
+<span class="md-ellipsis">
+      3.4 Configuració segura de servidors HTTP
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4-desplegament-daplicacions">
@@ -496,21 +535,117 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <li>Amfitrions virtuals: creació, configuració i utilització  </li>
 </ul>
 <h2 id="3-seguretat-en-servidors-web">3. Seguretat en servidors web</h2>
+<h3 id="31-autenticacio-i-control-dacces">3.1 Autenticació i control d’accés</h3>
+<p>La autenticació és el procés mitjançant el qual un servidor verifica la identitat d’un usuari o d’un sistema que intenta accedir a un recurs. El control d’accés estableix què pot fer cadascun d’aquests usuaris una vegada identificats.</p>
+<h4 id="tipus-dautenticacio">Tipus d’autenticació</h4>
+<h5 id="autenticacio-basica-basic-auth">Autenticació bàsica (<em>Basic Auth</em>)</h5>
+<p>Envia les credencials (usuari i contrasenya) codificades en Base64 a través de les capçaleres HTTP. No és segura si no s’utilitza amb HTTPS, ja que les credencials poden ser interceptades. Aquest mètode es configura en el servidor HTTP.</p>
+<h5 id="autenticacio-digest-digest-auth">Autenticació digest (<em>Digest Auth</em>)</h5>
+<p>Utilitza un <em>hash</em> (MD5 o SHA) per evitar que la contrasenya viatge en text pla.  Millora la seguretat respecte a la bàsica, però ha quedat en desús davant mètodes més moderns. Aquest mètode es configura en el servidor HTTP.</p>
+<h5 id="autenticacio-basada-en-formularis-form-based">Autenticació basada en formularis (<em>Form-based</em>)**</h5>
+<p>L’usuari introdueix les credencials en un formulari HTML. El servidor valida i genera una sessió o <em>token</em>. És el mètode més utilitzat en aplicacions web modernes.</p>
+<h5 id="autenticacio-mitjancant-token">Autenticació mitjançant token**</h5>
+<p>Després de validar les credencials, el servidor genera un token (per exemple JWT — JSON Web Token). Aquest token s’envia amb cada petició posterior (normalment en la capçalera <code>Authorization: Bearer &lt;token&gt;</code>).</p>
+<h3 id="32-el-protocol-https">3.2 El protocol HTTPS</h3>
+<p>El <strong>protocol HTTPS (HyperText Transfer Protocol Secure)</strong> és l’evolució segura d’HTTP, el sistema que fa possible la navegació web.  </p>
+<p>La diferència principal és que HTTPS incorpora una capa addicional de seguretat basada en el protocol <strong>TLS (Transport Layer Security)</strong>, encarregat de xifrar tota la comunicació entre el navegador de l’usuari (client) i el servidor web.  </p>
+<div class="admonition note">
+<p class="admonition-title">Criptografia</p>
+<p>La <strong>criptografia</strong> és la tècnica que permet protegir la informació transformant-la en un format inintel·ligible per a qualsevol que no tinga la clau adequada per desxifrar-la.  </p>
+<p>Segons el tipus de claus utilitzades, podem distingir dos grans sistemes: la <strong>criptografia de clau simètrica</strong> i la <strong>criptografia de clau pública (asimètrica)</strong>.</p>
+<p>En la <strong>criptografia simètrica</strong>, tant el <strong>xifrat</strong> com el <strong>desxifrat</strong> s’efectuen amb <strong>la mateixa clau</strong>. Això significa que tant l’emissor com el receptor han de compartir una clau secreta comuna abans de poder comunicar-se de manera segura.</p>
+<p>La <strong>criptografia asimètrica</strong> utilitza <strong>dues claus diferents però matemàticament relacionades</strong>:</p>
 <ul>
-<li>Autenticació i control d’accés  </li>
-<li>El protocol HTTPS  </li>
-<li>Certificats. Servidors de certificats  </li>
-<li>Configuració segura de servidors HTTP  </li>
+<li>Una <strong>clau pública</strong>, que pot ser compartida lliurement.</li>
+<li>Una <strong>clau privada</strong>, que només coneix el propietari.</li>
 </ul>
+<p>El que s’encripta amb una d’aquestes claus només pot ser desencriptat amb l’altra. </p>
+<p>Això permet, per exemple, que qualsevol puga enviar un missatge xifrat al propietari utilitzant la seua <strong>clau pública</strong>, però només ell el puga llegir gràcies a la seua <strong>clau privada</strong>. Això garanteix que les dades que viatgen per la xarxa —com contrasenyes, informació personal o dades bancàries— no puguen ser interceptades ni modificades per tercers.</p>
+</div>
+<p>L’ús d’HTTPS té tres objectius fonamentals. En primer lloc, la <strong>confidencialitat</strong>, que assegura que només el client i el servidor puguen llegir el contingut de la comunicació. En segon lloc, la <strong>integritat</strong>, que garanteix que la informació no s’ha alterat durant el trajecte. I finalment, l’<strong>autenticitat</strong>, que permet al client verificar que el servidor amb què es comunica és realment qui diu ser i no una còpia fraudulenta.</p>
+<p>Per aconseguir-ho, HTTPS es basa en un procés intern conegut com a <strong>protocol TLS</strong>, que s’executa de manera automàtica cada vegada que ens connectem a una pàgina segura. </p>
+<p>El seu funcionament pot resumir-se en tres fases principals: </p>
+<ul>
+<li>
+<p>En la primera, anomenada <strong>negociació o handshake</strong>, el client envia al servidor la informació sobre les versions de TLS i els algoritmes de xifrat que suporta. El servidor, per la seua banda, respon amb el seu <strong>certificat digital</strong> i escull l’algoritme més adequat per a la comunicació.  </p>
+</li>
+<li>
+<p>A continuació té lloc l’<strong>intercanvi de claus</strong>, on s’estableix una clau de sessió comuna utilitzant tècniques de <strong>criptografia asimètrica</strong>. Aquesta clau serà única per a aquella connexió i servirà per xifrar totes les dades que es transmeten.  </p>
+</li>
+<li>
+<p>Un cop establerta la clau, comença la fase de <strong>comunicació segura</strong>, en què tota la informació viatja de manera xifrada. Si algú intentara interceptar el trànsit, només veuria dades inintel·ligibles.</p>
+</li>
+</ul>
+<p>Els avantatges d’utilitzar HTTPS són evidents. A més de protegir informació sensible com contrasenyes o dades de targetes de crèdit, evita atacs del tipus <em>Man-in-the-Middle (MITM)</em>, en què un atacant podria interceptar la comunicació entre el client i el servidor. També aporta <strong>credibilitat i confiança</strong> als usuaris, ja que els navegadors mostren un cadenat o indicadors visuals quan una pàgina és segura.  </p>
+<p>Finalment, és important destacar que molts serveis i tecnologies modernes, com <strong>HTTP/2</strong>, <strong>OAuth2</strong> o les <strong>API REST</strong> d’aplicacions web, requereixen l’ús d’HTTPS per funcionar correctament.</p>
+<p>En resum, <strong>HTTPS no sols fa més segura la web: és la base sobre la qual es construeix la confiança digital a Internet.</strong></p>
+<h3 id="33-certificats-i-servidors-de-certificats">3.3 Certificats i servidors de certificats</h3>
+<p>Quan un usuari accedeix a una pàgina web mitjançant HTTPS, el seu navegador necessita assegurar-se que realment està connectant-se amb el servidor legítim i no amb un impostor.</p>
+<p>Per aconseguir-ho, entra en joc el <strong>certificat digital</strong>, un document electrònic que actua com a “carnet d’identitat” del servidor.<br/>
+Aquest certificat acredita la seua identitat i permet establir una connexió segura mitjançant mecanismes de xifrat.</p>
+<p>Un certificat digital conté informació essencial sobre el servidor o la persona que el posseeix.<br/>
+Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per exemple, <code>www.exemple.com</code>), la <strong>clau pública</strong> associada —que s’utilitza per establir el xifrat de la comunicació—, la <strong>entitat emissora</strong> o <em>Certification Authority (CA)</em> que l’ha validat, el <strong>període de validesa</strong> i la <strong>signatura digital</strong> de l’autoritat que el certifica.</p>
+<p>Gràcies a aquesta signatura, els navegadors poden verificar que el certificat no ha sigut manipulat i que prové d’una font de confiança.</p>
+<h4 id="tipus-de-certificats-digitals">Tipus de certificats digitals</h4>
+<p>No tots els certificats tenen el mateix origen ni el mateix nivell de confiança. Podem distingir diversos tipus segons la seua procedència i el grau de verificació que ofereixen:</p>
+<ul>
+<li>
+<p><strong>Certificat autosignat</strong>: és generat pel propi servidor, sense la intervenció d’una autoritat de certificació.<br/>
+  Tot i que permet xifrar la connexió, els navegadors no el reconeixen com a fiable i mostren avisos de seguretat.<br/>
+  És útil per a entorns de proves o desenvolupament intern.</p>
+</li>
+<li>
+<p><strong>Certificat emès per una CA reconeguda</strong>: és el tipus més comú en entorns de producció.<br/>
+  Una autoritat de certificació de confiança, com <strong>Let's Encrypt</strong> o <strong>DigiCert</strong>, comprova la identitat del titular abans d’emetre’l.<br/>
+  Això garanteix que el lloc web és legítim i que la connexió és segura.</p>
+</li>
+<li>
+<p><strong>Certificat wildcard</strong>: permet protegir un domini i tots els seus subdominis, per exemple <code>*.exemple.com</code>.<br/>
+  És especialment pràctic per a empreses o organitzacions amb múltiples serveis sota un mateix domini.</p>
+</li>
+<li>
+<p><strong>Certificat d’alta validació (EV – Extended Validation)</strong>: ofereix el nivell més alt de seguretat i autenticitat.<br/>
+  Requereix una verificació exhaustiva de la identitat de l’empresa, i alguns navegadors mostren el nom de l’organització al costat de la barra d’adreces per donar confiança a l’usuari.</p>
+</li>
+</ul>
+<h4 id="la-infraestructura-de-clau-publicales-autoritats-de-certificacio-i-els-servidors-de-certificats">La infraestructura de clau públicaLes autoritats de certificació i els servidors de certificats</h4>
+<h3 id="diagrama-de-la-pki-public-key-infrastructure">Diagrama de la PKI (<em>Public Key Infrastructure</em>)</h3>
+<p><img alt="alt text" src="../assets/diagrama_pki.png"/></p>
+<p>Font: <a href="https://www.youtube.com/watch?v=awCgkKaO70w">https://www.youtube.com/watch?v=awCgkKaO70w</a></p>
+<p>Els components de la PKI són:</p>
+<ul>
+<li>
+<p>Les <strong>autoritats de certificació (CA)</strong> són entitats de confiança que s’encarreguen d’emetre, validar i revocar certificats digitals.<br/>
+Són un element fonamental dins de l’anomenada <strong>infraestructura de clau pública (PKI – Public Key Infrastructure)</strong>, que permet gestionar de manera segura les claus criptogràfiques i els certificats a Internet.</p>
+</li>
+<li>
+<p>L'<strong>autoritats de registre (RA)</strong> es la responsable de verificar l'enllaç entre els certificats (concretament, entre la clave pública del certificat i la identidat dels seus titulars.</p>
+</li>
+<li>
+<p>Els repositoris son les estructures encarregades d'emmagatzemar la informació relativa a la PKI. Els dos repositoris més importants són el repositori de certificats i el repositorio de llistes de revocació de certificats (CRL).</p>
+</li>
+<li>
+<p>L'<strong>autoritat de validació (VA)</strong> és l'encarregadade comprovar la validesa dels certificats digitals.</p>
+</li>
+</ul>
+<p>Els <strong>servidors de certificats</strong> són sistemes que faciliten la petició i renovació automàtica d’aquests certificats, de manera que les organitzacions poden mantenir les seues connexions segures sense intervenció manual constant.  </p>
+<p>Entre les eines més utilitzades en aquest àmbit trobem:</p>
+<ul>
+<li><strong>Let's Encrypt</strong>, una autoritat de certificació gratuïta i automatitzada que ha democratitzat l’ús de HTTPS.  </li>
+<li><strong>Certbot</strong>, un client que permet obtenir i renovar certificats de manera senzilla.  </li>
+<li><strong>OpenSSL</strong>, una utilitat molt completa per crear i gestionar certificats manualment, ideal per a entorns de proves o configuracions avançades.</li>
+</ul>
+<p>En conjunt, els certificats digitals i les autoritats de certificació constitueixen la base de la confiança a Internet, garantint que la informació que enviem o rebem no puga ser interceptada ni manipulada per tercers.</p>
+<h3 id="34-configuracio-segura-de-servidors-http">3.4 Configuració segura de servidors HTTP</h3>
 <h2 id="4-desplegament-daplicacions">4. Desplegament d’aplicacions</h2>
 <ul>
-<li>Desplegament d’aplicacions sobre servidors web  </li>
-<li>Desplegament de servidors web mitjançant tecnologies de virtualització, en el núvol i en contenidors  </li>
+<li>Desplegament d’aplicacions sobre servidors web.</li>
+<li>Desplegament de servidors web mitjançant tecnologies de virtualització, en el núvol i en contenidors.  </li>
 </ul>
 <h2 id="5-gestio-i-manteniment">5. Gestió i manteniment</h2>
 <ul>
-<li>Conjunts d’eines de gestió de logs: instal·lació, configuració i utilització, per a l’ajuda en la presa de decisions (Big Data)  </li>
-<li>Documentació  </li>
+<li>Conjunts d’eines de gestió de logs: instal·lació, configuració i utilització, per a l’ajuda en la presa de decisions (Big Data).  </li>
+<li>Documentació.</li>
 </ul>
 </article>
 </div>
