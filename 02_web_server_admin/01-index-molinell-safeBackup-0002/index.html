@@ -5,11 +5,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../01_deploy/01-index/" rel="prev"/>
-<link href="../../03_app_server_admin/01-index/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>2. Administració de servidors web - Desplegament d'Aplicacions Web</title>
+<title>Administració de servidors web - Desplegament d'Aplicacions Web</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -47,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              2. Administració de servidors web
+              Administració de servidors web
             
           </span>
 </div>
@@ -126,164 +124,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    2. Administració de servidors web
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-index/">
 <span class="md-ellipsis">
     2. Administració de servidors web
     
   </span>
 </a>
-<nav aria-label="Taula de continguts" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-fonaments-dels-servidors-web">
-<span class="md-ellipsis">
-      1. Fonaments dels servidors web
-    </span>
-</a>
-<nav aria-label="1. Fonaments dels servidors web" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#el-protocol-http">
-<span class="md-ellipsis">
-      El protocol HTTP
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#format-de-les-url">
-<span class="md-ellipsis">
-      Format de les URL
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-installacio-dapache-24">
-<span class="md-ellipsis">
-      2. Instal·lació d'Apache 2.4
-    </span>
-</a>
-<nav aria-label="2. Instal·lació d'Apache 2.4" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installacio">
-<span class="md-ellipsis">
-      Instal·lació
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gestio-basica-del-servei-apache">
-<span class="md-ellipsis">
-      Gestió bàsica del servei Apache
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-configuracio">
-<span class="md-ellipsis">
-      3. Configuració
-    </span>
-</a>
-<nav aria-label="3. Configuració" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fitxers-i-directoris-de-configuracio-principals">
-<span class="md-ellipsis">
-      Fitxers i directoris de configuració principals
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gestio-de-tipus-mime">
-<span class="md-ellipsis">
-      Gestió de tipus MIME
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-seguretat-en-servidors-web">
-<span class="md-ellipsis">
-      4. Seguretat en servidors web
-    </span>
-</a>
-<nav aria-label="4. Seguretat en servidors web" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#41-autenticacio-i-control-dacces">
-<span class="md-ellipsis">
-      4.1 Autenticació i control d’accés
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#42-el-protocol-https">
-<span class="md-ellipsis">
-      4.2 El protocol HTTPS
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#43-certificats-i-servidors-de-certificats">
-<span class="md-ellipsis">
-      4.3 Certificats i servidors de certificats
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#diagrama-de-la-pki-public-key-infrastructure">
-<span class="md-ellipsis">
-      Diagrama de la PKI (Public Key Infrastructure)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#34-configuracio-segura-de-servidors-http">
-<span class="md-ellipsis">
-      3.4 Configuració segura de servidors HTTP
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-desplegament-daplicacions">
-<span class="md-ellipsis">
-      4. Desplegament d’aplicacions
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-gestio-i-manteniment">
-<span class="md-ellipsis">
-      5. Gestió i manteniment
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../03_app_server_admin/01-index/">
@@ -534,19 +381,19 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <li>Mòduls: instal·lació, configuració i ús  </li>
 <li>Amfitrions virtuals: creació, configuració i utilització  </li>
 </ul>
-<h2 id="4-seguretat-en-servidors-web">4. Seguretat en servidors web</h2>
-<h3 id="41-autenticacio-i-control-dacces">4.1 Autenticació i control d’accés</h3>
+<h2 id="3-seguretat-en-servidors-web">3. Seguretat en servidors web</h2>
+<h3 id="31-autenticacio-i-control-dacces">3.1 Autenticació i control d’accés</h3>
 <p>La autenticació és el procés mitjançant el qual un servidor verifica la identitat d’un usuari o d’un sistema que intenta accedir a un recurs. El control d’accés estableix què pot fer cadascun d’aquests usuaris una vegada identificats.</p>
 <h4 id="tipus-dautenticacio">Tipus d’autenticació</h4>
 <h5 id="autenticacio-basica-basic-auth">Autenticació bàsica (<em>Basic Auth</em>)</h5>
 <p>Envia les credencials (usuari i contrasenya) codificades en Base64 a través de les capçaleres HTTP. No és segura si no s’utilitza amb HTTPS, ja que les credencials poden ser interceptades. Aquest mètode es configura en el servidor HTTP.</p>
 <h5 id="autenticacio-digest-digest-auth">Autenticació digest (<em>Digest Auth</em>)</h5>
 <p>Utilitza un <em>hash</em> (MD5 o SHA) per evitar que la contrasenya viatge en text pla.  Millora la seguretat respecte a la bàsica, però ha quedat en desús davant mètodes més moderns. Aquest mètode es configura en el servidor HTTP.</p>
-<h5 id="autenticacio-basada-en-formularis-form-based">Autenticació basada en formularis (<em>Form-based</em>)**</h5>
+<h5 id="autenticacio-basada-en-formularis-form-based">Autenticació basada en formularis (<em>Form-based</em>)</h5>
 <p>L’usuari introdueix les credencials en un formulari HTML. El servidor valida i genera una sessió o <em>token</em>. És el mètode més utilitzat en aplicacions web modernes.</p>
-<h5 id="autenticacio-mitjancant-token">Autenticació mitjançant token**</h5>
+<h5 id="autenticacio-mitjancant-token">Autenticació mitjançant token</h5>
 <p>Després de validar les credencials, el servidor genera un token (per exemple JWT — JSON Web Token). Aquest token s’envia amb cada petició posterior (normalment en la capçalera <code>Authorization: Bearer &lt;token&gt;</code>).</p>
-<h3 id="42-el-protocol-https">4.2 El protocol HTTPS</h3>
+<h3 id="32-el-protocol-https">3.2 El protocol HTTPS</h3>
 <p>El <strong>protocol HTTPS (HyperText Transfer Protocol Secure)</strong> és l’evolució segura d’HTTP, el sistema que fa possible la navegació web.  </p>
 <p>La diferència principal és que HTTPS incorpora una capa addicional de seguretat basada en el protocol <strong>TLS (Transport Layer Security)</strong>, encarregat de xifrar tota la comunicació entre el navegador de l’usuari (client) i el servidor web.  </p>
 <div class="admonition note">
@@ -579,12 +426,10 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <p>Els avantatges d’utilitzar HTTPS són evidents. A més de protegir informació sensible com contrasenyes o dades de targetes de crèdit, evita atacs del tipus <em>Man-in-the-Middle (MITM)</em>, en què un atacant podria interceptar la comunicació entre el client i el servidor. També aporta <strong>credibilitat i confiança</strong> als usuaris, ja que els navegadors mostren un cadenat o indicadors visuals quan una pàgina és segura.  </p>
 <p>Finalment, és important destacar que molts serveis i tecnologies modernes, com <strong>HTTP/2</strong>, <strong>OAuth2</strong> o les <strong>API REST</strong> d’aplicacions web, requereixen l’ús d’HTTPS per funcionar correctament.</p>
 <p>En resum, <strong>HTTPS no sols fa més segura la web: és la base sobre la qual es construeix la confiança digital a Internet.</strong></p>
-<h3 id="43-certificats-i-servidors-de-certificats">4.3 Certificats i servidors de certificats</h3>
+<h3 id="33-certificats-i-servidors-de-certificats">3.3 Certificats i servidors de certificats</h3>
 <p>Quan un usuari accedeix a una pàgina web mitjançant HTTPS, el seu navegador necessita assegurar-se que realment està connectant-se amb el servidor legítim i no amb un impostor.</p>
-<p>Per aconseguir-ho, entra en joc el <strong>certificat digital</strong>, un document electrònic que actua com a “carnet d’identitat” del servidor.<br/>
-Aquest certificat acredita la seua identitat i permet establir una connexió segura mitjançant mecanismes de xifrat.</p>
-<p>Un certificat digital conté informació essencial sobre el servidor o la persona que el posseeix.<br/>
-Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per exemple, <code>www.exemple.com</code>), la <strong>clau pública</strong> associada —que s’utilitza per establir el xifrat de la comunicació—, la <strong>entitat emissora</strong> o <em>Certification Authority (CA)</em> que l’ha validat, el <strong>període de validesa</strong> i la <strong>signatura digital</strong> de l’autoritat que el certifica.</p>
+<p>Per aconseguir-ho, entra en joc el <strong>certificat digital</strong>, un document electrònic que actua com a “carnet d’identitat” del servidor. Aquest certificat acredita la seua identitat i permet establir una connexió segura mitjançant mecanismes de xifrat.</p>
+<p>Un certificat digital conté informació essencial sobre el servidor o la persona que el posseeix. Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per exemple, <code>www.exemple.com</code>), la <strong>clau pública</strong> associada —que s’utilitza per establir el xifrat de la comunicació—, la <strong>entitat emissora</strong> o <em>Certification Authority (CA)</em> que l’ha validat, el <strong>període de validesa</strong> i la <strong>signatura digital</strong> de l’autoritat que el certifica.</p>
 <p>Gràcies a aquesta signatura, els navegadors poden verificar que el certificat no ha sigut manipulat i que prové d’una font de confiança.</p>
 <h4 id="tipus-de-certificats-digitals">Tipus de certificats digitals</h4>
 <p>No tots els certificats tenen el mateix origen ni el mateix nivell de confiança. Podem distingir diversos tipus segons la seua procedència i el grau de verificació que ofereixen:</p>
@@ -619,7 +464,7 @@ Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per 
 Són un element fonamental dins de l’anomenada <strong>infraestructura de clau pública (PKI – Public Key Infrastructure)</strong>, que permet gestionar de manera segura les claus criptogràfiques i els certificats a Internet.</p>
 </li>
 <li>
-<p>L'<strong>autoritats de registre (RA)</strong> es la responsable de verificar l'enllaç entre els certificats (concretament, entre la clave pública del certificat i la identidat dels seus titulars.</p>
+<p>L'<strong>autoritats de registre (RA)</strong> es la responsable de verificar l'enllaç entre els certificats (concretament, entre la clave pública del certificat i la identidat dels seus titulars).</p>
 </li>
 <li>
 <p>Els repositoris son les estructures encarregades d'emmagatzemar la informació relativa a la PKI. Els dos repositoris més importants són el repositori de certificats i el repositorio de llistes de revocació de certificats (CRL).</p>
@@ -636,13 +481,13 @@ Són un element fonamental dins de l’anomenada <strong>infraestructura de clau
 <li><strong>OpenSSL</strong>, una utilitat molt completa per crear i gestionar certificats manualment, ideal per a entorns de proves o configuracions avançades.</li>
 </ul>
 <p>En conjunt, els certificats digitals i les autoritats de certificació constitueixen la base de la confiança a Internet, garantint que la informació que enviem o rebem no puga ser interceptada ni manipulada per tercers.</p>
-<h3 id="34-configuracio-segura-de-servidors-http">3.4 Configuració segura de servidors HTTP</h3>
-<h2 id="4-desplegament-daplicacions">4. Desplegament d’aplicacions</h2>
+<h3 id="44-configuracio-segura-de-servidors-http">4.4 Configuració segura de servidors HTTP</h3>
+<h2 id="5-desplegament-daplicacions">5. Desplegament d’aplicacions</h2>
 <ul>
 <li>Desplegament d’aplicacions sobre servidors web.</li>
 <li>Desplegament de servidors web mitjançant tecnologies de virtualització, en el núvol i en contenidors.  </li>
 </ul>
-<h2 id="5-gestio-i-manteniment">5. Gestió i manteniment</h2>
+<h2 id="6-gestio-i-manteniment">6. Gestió i manteniment</h2>
 <ul>
 <li>Conjunts d’eines de gestió de logs: instal·lació, configuració i utilització, per a l’ajuda en la presa de decisions (Big Data).  </li>
 <li>Documentació.</li>
