@@ -229,24 +229,56 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#6-tecnologies-de-virtualitzacio-i-contenidors">
+<a class="md-nav__link" href="#6-tecnologies-de-virtualitzacio">
 <span class="md-ellipsis">
-      6. Tecnologies de virtualització i contenidors
+      6. Tecnologies de virtualització
     </span>
 </a>
-<nav aria-label="6. Tecnologies de virtualització i contenidors" class="md-nav">
+<nav aria-label="6. Tecnologies de virtualització" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#virtualitzacio">
+<a class="md-nav__link" href="#virtualitzacio-completa">
 <span class="md-ellipsis">
-      Virtualització
+      Virtualització completa
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#contenidors">
+<a class="md-nav__link" href="#virtualitzacio-de-sistemes-operatius-els-contenidors">
 <span class="md-ellipsis">
-      Contenidors
+      Virtualització de sistemes operatius: els contenidors
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-i-el-mon-dels-contenidors">
+<span class="md-ellipsis">
+      Docker i el món dels contenidors
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-proces-del-dockerfile-al-contenidor">
+<span class="md-ellipsis">
+      El procés: del Dockerfile al contenidor
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orquestracio-amb-docker-compose">
+<span class="md-ellipsis">
+      Orquestració amb Docker Compose
+    </span>
+</a>
+<nav aria-label="Orquestració amb Docker Compose" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contenidors-vs-maquines-virtuals">
+<span class="md-ellipsis">
+      Contenidors vs màquines virtuals
     </span>
 </a>
 </li>
@@ -501,22 +533,140 @@
   AS --&gt; DB[(Base de dades)]
 
 </div>
-<h2 id="6-tecnologies-de-virtualitzacio-i-contenidors">6. Tecnologies de virtualització i contenidors</h2>
-<h3 id="virtualitzacio">Virtualització</h3>
+<h2 id="6-tecnologies-de-virtualitzacio">6. Tecnologies de virtualització</h2>
+<p>La virtualització és una de les bases fonamentals de la informàtica moderna i del desplegament d’aplicacions web. Aquesta tecnologia permet aprofitar al màxim els recursos d’un únic equip físic per executar-hi diverses màquines virtuals o entorns aïllats, cadascun amb les seues pròpies funcions i característiques.  </p>
+<p>En lloc de dedicar un ordinador complet a cada servei, la virtualització reparteix la potència del maquinari disponible —processador, memòria, disc i xarxa— entre diversos sistemes independents. Això permet optimitzar el rendiment, reduir costos i augmentar la flexibilitat i la seguretat en el desplegament d’aplicacions. En essència, un únic servidor físic pot convertir-se en molts “ordinadors virtuals” capaços de treballar com si cadascun fora un dispositiu real.</p>
+<h3 id="virtualitzacio-completa">Virtualització completa</h3>
+<p>En el model de <strong>virtualització completa</strong>, un servidor físic es divideix en diverses <strong>màquines virtuals (VM)</strong>, cadascuna amb el seu propi sistema operatiu. Aquest tipus de virtualització permet crear entorns totalment independents entre si: si una màquina falla, les altres continuen funcionant sense interrupcions.  </p>
+<p>Per aconseguir-ho s’utilitza un programa especial anomenat <strong>hipervisor</strong>, que gestiona els recursos físics i els reparteix entre les màquines virtuals. L’hipervisor controla la CPU, la memòria, el disc i la xarxa, i ofereix a cada VM una “visió pròpia” del maquinari, com si tinguera un ordinador exclusiu.</p>
+<h4 id="tipus-dhipervisors">Tipus d’hipervisors</h4>
+<p>Els hipervisors es classifiquen en dos grans tipus segons com s’executen:</p>
 <ul>
-<li>Utilitza un hipervisor per executar diverses màquines virtuals sobre un mateix host.</li>
-<li>Exemples: VMware, VirtualBox, Proxmox.</li>
-<li>Avantatges: aïllament complet, flexibilitat i seguretat.</li>
-<li>Inconvenients: més consum de recursos.</li>
+<li><strong>Tipus 1 (<em>bare-metal</em>)</strong>: funcionen directament sobre el maquinari físic, sense cap sistema operatiu intermedi. Són més eficients i s’utilitzen sobretot en entorns professionals o centres de dades. Exemples: <em>VMware ESXi</em>, <em>Microsoft Hyper-V</em>, <em>KVM</em>.</li>
+<li><strong>Tipus 2 (hosted_)</strong>: s’instal·len sobre un sistema operatiu existent i permeten crear màquines virtuals dins d’aquest entorn. Són ideals per a proves o per a ús docent. Exemples: <em>VMware Workstation</em>, <em>Oracle VirtualBox</em>.</li>
 </ul>
-<h3 id="contenidors">Contenidors</h3>
+<h4 id="avantatges-de-la-virtualitzacio-completa">Avantatges de la virtualització completa</h4>
+<p>Aquest model aporta nombrosos beneficis:</p>
 <ul>
-<li>Comparteixen el mateix nucli del sistema operatiu.</li>
-<li>Lleugers i ràpids d'iniciar.</li>
-<li>Exemples: Docker, Podman, LXC.</li>
-<li>Avantatges: portabilitat i eficiència.</li>
-<li>Inconvenients: menys aïllament que les màquines virtuals.</li>
+<li><strong>Reducció de costos</strong>, ja que es necessita menys maquinari físic.</li>
+<li><strong>Consolidació de servidors</strong>, permetent executar diversos serveis en un sol equip.</li>
+<li><strong>Aïllament complet</strong>: una fallada en una màquina virtual no afecta la resta.</li>
+<li><strong>Flexibilitat i alta disponibilitat</strong>, perquè les màquines virtuals es poden crear, eliminar o migrar amb facilitat.</li>
 </ul>
+<p>Les eines més habituals per gestionar aquest tipus de virtualització són <strong>VMware vSphere</strong>, <strong>Microsoft Hyper-V</strong> i <strong>KVM</strong>, totes àmpliament utilitzades en entorns professionals.</p>
+<h3 id="virtualitzacio-de-sistemes-operatius-els-contenidors">Virtualització de sistemes operatius: els contenidors</h3>
+<p>Una altra forma de virtualitzar és la <strong>virtualització a nivell de sistema operatiu</strong>, més coneguda com a <strong>contenidors</strong>. En aquest cas no es creen màquines virtuals completes, sinó que s’executen diverses aplicacions aïllades dins d’un mateix sistema operatiu. Els contenidors comparteixen el nucli (<em>kernel</em>) del sistema host, la qual cosa els fa molt més lleugers i ràpids que les màquines virtuals tradicionals.  </p>
+<p>Cada contenidor encapsula una aplicació i totes les seues dependències (biblioteques, configuracions, etc.), garantint que s’executarà de la mateixa manera en qualsevol entorn.</p>
+<figure>
+<p><img alt="" src="../assets/Comparison-of-a-traditional-virtual-machine-VM-and-a-Docker.jpg"/></p>
+<figcaption>
+<p><strong>Figura 1.</strong> Esquema comparatiu entre màquines virtuals i contenidors: les VM tenen un sistema operatiu propi, mentre que els contenidors comparteixen el nucli del host.</p>
+</figcaption>
+</figure>
+<p>Els contenidors destaquen per:</p>
+<ul>
+<li><strong>Lleugeresa</strong>, ja que requereixen menys recursos.</li>
+<li><strong>Escalabilitat</strong>, poden crear-se o eliminar-se en segons.</li>
+<li><strong>Portabilitat</strong>, funcionen igual en qualsevol entorn amb Docker instal·lat.</li>
+<li><strong>Aïllament adequat</strong>, suficient per garantir estabilitat i seguretat sense sobrecàrrega.</li>
+</ul>
+<p>Les eines més populars en aquest àmbit són <strong>Docker</strong>, <strong>Kubernetes</strong>, <strong>Docker Compose</strong> i <strong>LXC</strong>.</p>
+<h3 id="docker-i-el-mon-dels-contenidors">Docker i el món dels contenidors</h3>
+<p><strong>Docker</strong> és la plataforma de referència per treballar amb contenidors. Es tracta d’una eina de codi obert que automatitza el desplegament d’aplicacions empaquetant-les amb tot el necessari per funcionar: codi, llibreries i configuracions.  </p>
+<p>L’element central és el <strong>Docker Engine</strong>, el motor que permet crear i executar contenidors. Al seu voltant hi trobem altres components com <strong>Docker Hub</strong>, un repositori públic d’imatges, i les pròpies <strong>imatges Docker</strong>, que són plantilles a partir de les quals es creen els contenidors.</p>
+<figure>
+<p><img alt="" src="../assets/docker-architecture.png"/></p>
+<figcaption>
+<p><strong>Figura 2.</strong> Arquitectura de Docker: motor, imatges, contenidors i repositori Docker Hub.</p>
+</figcaption>
+</figure>
+<h3 id="el-proces-del-dockerfile-al-contenidor">El procés: del <code>Dockerfile</code> al contenidor</h3>
+<p>Per construir una imatge Docker, s’utilitza un fitxer anomenat <strong><code>Dockerfile</code></strong>.<br>
+Aquest fitxer conté una sèrie d’instruccions que indiquen a Docker com ha de crear la imatge pas a pas, de manera semblant a una recepta.</br></p>
+<p>Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:latest</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3
+<span class="linenos" data-linenos="3 "></span><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+<span class="linenos" data-linenos="4 "></span><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"python3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/app/main.py"</span><span class="p">]</span>
+</code></pre></div>
+<p>Quan s’executa l'ordre següent, Docker llegeix el <code>Dockerfile</code> i <strong>construeix una imatge</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>app-python<span class="w"> </span>.
+</code></pre></div>
+<p>Aquesta <strong>imatge</strong> és de només lectura i conté tot el necessari per executar l’aplicació.<br>
+Després, podem crear un <strong>contenidor</strong>, que és una instància en execució d’aquesta imatge:</br></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span>app-python
+</code></pre></div>
+<p>En aquest cas, es llança un contenidor basat en la imatge <code>app-python</code>, que exposa el port 80 per servir l’aplicació.</p>
+<h4 id="gestio-de-recursos-en-docker">Gestió de recursos en Docker</h4>
+<p>Docker permet crear <strong>volums</strong> per emmagatzemar dades de manera persistent, encara que el contenidor s’elimine o reinicie, i <strong>xarxes</strong> per comunicar diversos contenidors entre si.  </p>
+<p>Algunes de les ordres més habituals són:</p>
+<ul>
+<li><code>docker ps</code> – llista els contenidors actius  </li>
+<li><code>docker stop</code> – atura un contenidor  </li>
+<li><code>docker build</code> – construeix una imatge a partir d’un <code>Dockerfile</code> </li>
+<li><code>docker pull</code> – descarrega imatges des de Docker Hub  </li>
+</ul>
+<h2 id="orquestracio-amb-docker-compose">Orquestració amb Docker Compose</h2>
+<p>Quan una aplicació necessita diversos serveis (com un servidor web i una base de dades), entra en joc <strong>Docker Compose</strong>. Aquesta eina permet definir i executar aplicacions multi-contenidor mitjançant un fitxer <code>docker-compose.yml</code>, que descriu tots els serveis, xarxes i volums implicats.</p>
+<figure>
+<p><img alt="alt text" src="../assets/ChatGPT%20Image%2030%20d%E2%80%99oct.%20del%202025%2C%2019_05_37.png" width="60%"/></p>
+<figcaption>
+<p>Figura 3. Exemple d’aplicació multi-contenidor amb Docker Compose: un servei web i una base de dades connectats en una mateixa xarxa virtual.</p>
+</figcaption>
+</figure>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3'</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">services</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">  </span><span class="nt">web</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"80:80"</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="nt">db</span><span class="p">:</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">      </span><span class="nt">MYSQL_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exemple</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db_data:/var/lib/mysql</span>
+<span class="linenos" data-linenos="15 "></span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">  </span><span class="nt">db_data</span><span class="p">:</span>
+</code></pre></div>
+<p>Amb la simple ordre <code>docker-compose up</code>, es creen i s’executen tots els serveis definits al fitxer, comunicant-se entre ells de forma automàtica.</p>
+<h3 id="contenidors-vs-maquines-virtuals">Contenidors vs màquines virtuals</h3>
+<p>Tot i que tant la virtualització completa com els contenidors permeten aprofitar millor els recursos i crear entorns aïllats, hi ha diferències clau entre ambdues tecnologies:</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Contenidors</th>
+<th>Màquines virtuals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pes</strong></td>
+<td>Lleugers (comparteixen el nucli)</td>
+<td>Pesats (tenen un SO complet)</td>
+</tr>
+<tr>
+<td><strong>Aïllament</strong></td>
+<td>Mitjà</td>
+<td>Complet</td>
+</tr>
+<tr>
+<td><strong>Velocitat d’inici</strong></td>
+<td>Molt ràpida</td>
+<td>Més lenta</td>
+</tr>
+<tr>
+<td><strong>Ús de recursos</strong></td>
+<td>Més eficient</td>
+<td>Més demandant</td>
+</tr>
+</tbody>
+</table>
+<p>En resum, la <strong>virtualització completa</strong> és ideal per a entorns on la seguretat i l’aïllament són prioritaris, mentre que els <strong>contenidors</strong> destaquen en escenaris on la rapidesa, la portabilitat i l’escalabilitat són essencials, com ara el desplegament de microserveis o aplicacions al núvol.</p>
 <h2 id="7-estructura-i-recursos-duna-aplicacio-web">7. Estructura i recursos d'una aplicació web</h2>
 <ul>
 <li>Client (frontend): HTML, CSS, JavaScript, imatges, fitxers multimèdia.</li>
