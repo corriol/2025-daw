@@ -581,8 +581,8 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <p>Això permet, per exemple, que qualsevol puga enviar un missatge xifrat al propietari utilitzant la seua <strong>clau pública</strong>, però només ell el puga llegir gràcies a la seua <strong>clau privada</strong>. Això garanteix que les dades que viatgen per la xarxa —com contrasenyes, informació personal o dades bancàries— no puguen ser interceptades ni modificades per tercers.</p>
 </div>
 <p>L'ús d'HTTPS té tres objectius fonamentals. En primer lloc, la <strong>confidencialitat</strong>, que assegura que només el client i el servidor puguen llegir el contingut de la comunicació. En segon lloc, la <strong>integritat</strong>, que garanteix que la informació no s'ha alterat durant el trajecte. I finalment, l'<strong>autenticitat</strong>, que permet al client verificar que el servidor amb què es comunica és realment qui diu ser i no una còpia fraudulenta.</p>
-<p>Per aconseguir-ho, HTTPS es basa en un procés intern conegut com a <strong>protocol TLS</strong>, que s'executa de manera automàtica cada vegada que ens connectem a una pàgina segura. </p>
-<p>El seu funcionament pot resumir-se en tres fases principals: </p>
+<p>Per aconseguir-ho, HTTPS es basa en un procés intern conegut com a <strong>protocol TLS</strong>, que s'executa de manera automàtica cada vegada que ens connectem a una pàgina segura.</p>
+<p>El seu funcionament pot resumir-se en tres fases principals:</p>
 <ul>
 <li>
 <p>En la primera, anomenada <strong>negociació o handshake</strong>, el client envia al servidor la informació sobre les versions de TLS i els algoritmes de xifrat que suporta. El servidor, per la seua banda, respon amb el seu <strong>certificat digital</strong> i escull l'algoritme més adequat per a la comunicació.  </p>
@@ -666,36 +666,42 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 <ul>
 <li>
 <p><strong>Diagnòstic i resolució d'incidències</strong></p>
-<ul>
-<li>Detecció ràpida d'errors (4xx, 5xx).</li>
-<li>Anàlisi de causes arrel mitjançant correlació temporal.</li>
-</ul>
+</li>
+<li>
+<p>Detecció ràpida d'errors (4xx, 5xx).</p>
+</li>
+<li>
+<p>Anàlisi de causes arrel mitjançant correlació temporal.</p>
 </li>
 <li>
 <p><strong>Avaluació del rendiment</strong></p>
-<ul>
-<li>Mesura de latències i temps de resposta.</li>
-<li>Identificació de colls de botella.</li>
-</ul>
+</li>
+<li>
+<p>Mesura de latències i temps de resposta.</p>
+</li>
+<li>
+<p>Identificació de colls de botella.</p>
 </li>
 <li>
 <p><strong>Presa de decisions tècniques</strong></p>
-<ul>
-<li>Priorització d'optimitzacions.</li>
-<li>Comparació entre versions de l'aplicació.</li>
-</ul>
+</li>
+<li>
+<p>Priorització d'optimitzacions.</p>
+</li>
+<li>
+<p>Comparació entre versions de l'aplicació.</p>
 </li>
 <li>
 <p><strong>Seguretat</strong></p>
-<ul>
-<li>Detecció d'accessos anòmals o intents d'atac.</li>
-</ul>
+</li>
+<li>
+<p>Detecció d'accessos anòmals o intents d'atac.</p>
 </li>
 <li>
 <p><strong>Escalabilitat i manteniment</strong></p>
-<ul>
-<li>Visió global del sistema des d'un punt central.</li>
-</ul>
+</li>
+<li>
+<p>Visió global del sistema des d'un punt central.</p>
 </li>
 </ul>
 <p>En aquest context, la <strong>centralització de logs</strong> és un requisit clau en qualsevol entorn professional.</p>
@@ -760,7 +766,7 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/loki<span class="w"> </span>/etc/loki<span class="w"> </span>/var/lib/loki
 </code></pre></div>
-<ol start="2">
+<ol>
 <li>Descarregar Loki:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>/opt/loki
@@ -768,7 +774,7 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 <span class="linenos" data-linenos="3 "></span>sudo<span class="w"> </span>unzip<span class="w"> </span>loki-linux-amd64.zip
 <span class="linenos" data-linenos="4 "></span>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>loki-linux-amd64
 </code></pre></div>
-<ol start="3">
+<ol>
 <li>Definir la configuració bàsica (<code>/etc/loki/loki.yml</code>):</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">auth_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -799,7 +805,7 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 <span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index_</span>
 <span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="nt">period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24h</span>
 </code></pre></div>
-<ol start="4">
+<ol>
 <li>Executar Loki:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>/opt/loki/loki-linux-amd64<span class="w"> </span>-config.file<span class="o">=</span>/etc/loki/loki.yml
@@ -814,17 +820,17 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 <span class="linenos" data-linenos="4 "></span>sudo<span class="w"> </span>mv<span class="w"> </span>alloy-linux-amd64<span class="w"> </span>/usr/local/bin/alloy
 <span class="linenos" data-linenos="5 "></span>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/alloy
 </code></pre></div>
-<ol start="2">
+<ol>
 <li>Verificar la versió:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>alloy<span class="w"> </span>--version
 </code></pre></div>
-<ol start="3">
+<ol>
 <li>Crear directori de configuració:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/alloy
 </code></pre></div>
-<ol start="4">
+<ol>
 <li>Crear el fitxer de configuració <code>/etc/alloy/config.alloy</code> perquè lliga els registres d'Apache:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nv">local.file_match</span><span class="w"> </span><span class="s2">"apache_logs"</span><span class="w"> </span><span class="p">{</span>
@@ -851,17 +857,17 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 </div>
 <p>Aquesta configuració:</p>
 <ul>
-<li>Llig <strong>access.log</strong> i <strong>error.log</strong> </li>
+<li>Llig <strong>access.log</strong> i <strong>error.log</strong></li>
 <li>Envia els logs a Loki per HTTP</li>
 <li>No necessita autenticació (coherent amb <code>auth_enabled: false</code>)</li>
 </ul>
-<ol start="5">
+<ol>
 <li>Executar Alloy de forma manual</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>alloy<span class="w"> </span>run<span class="w"> </span>/etc/alloy/config.alloy
 </code></pre></div>
 <p>Si tot és correcte, <strong>no apareixeran errors</strong> i Alloy quedarà escoltant.</p>
-<ol start="6">
+<ol>
 <li>Generar trànsit:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>http://localhost
@@ -874,19 +880,19 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 <span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span><span class="s2">"deb https://packages.grafana.com/oss/deb stable main"</span>
 <span class="linenos" data-linenos="3 "></span>wget<span class="w"> </span>-q<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://packages.grafana.com/gpg.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
 </code></pre></div>
-<ol start="2">
+<ol>
 <li>Instal·lar Grafana:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
 <span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>grafana
 </code></pre></div>
-<ol start="3">
+<ol>
 <li>Iniciar i habilitar el servei:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>grafana-server
 <span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>grafana-server
 </code></pre></div>
-<ol start="4">
+<ol>
 <li>Accedir via web:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>http://IP_DEL_SERVIDOR:3000
@@ -901,7 +907,7 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>http://localhost:3100
 </code></pre></div>
-<ol start="5">
+<ol>
 <li>Guardar i provar la connexió.</li>
 </ol>
 <h4 id="visualitzacio-basica-de-logs">Visualització bàsica de logs</h4>
@@ -918,6 +924,23 @@ Són un element fonamental dins de l'anomenada <strong>infraestructura de clau p
 <li>Gràfiques de volum de logs.</li>
 <li>Alertes basades en patrons.</li>
 </ul>
+<h4 id="creacio-dun-panell-personalitzat">Creació d'un panell personalitzat</h4>
+<p>Per a crear un panell personalitzat que mostre les 10 rutes que més errors 404 han produït en les darreres 24 hores has de:</p>
+<ol>
+<li>Crear el panell.</li>
+<li>Inidicar-li que vol nodrir-se de Loki.</li>
+<li>Afegir la consulta següent:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>topk(10,
+<span class="linenos" data-linenos="2 "></span>  sum by (path) (
+<span class="linenos" data-linenos="3 "></span>    count_over_time(
+<span class="linenos" data-linenos="4 "></span>      {job="apache", log_type="access"}
+<span class="linenos" data-linenos="5 "></span>      | pattern `&lt;ip&gt; - - &lt;_&gt; "&lt;method&gt; &lt;path&gt; &lt;_&gt;" &lt;status&gt; &lt;bytes&gt; &lt;_&gt;`
+<span class="linenos" data-linenos="6 "></span>      | status = 404
+<span class="linenos" data-linenos="7 "></span>    [24h])
+<span class="linenos" data-linenos="8 "></span>  )
+<span class="linenos" data-linenos="9 "></span>)
+</code></pre></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
