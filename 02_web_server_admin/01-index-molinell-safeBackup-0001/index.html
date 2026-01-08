@@ -177,7 +177,7 @@
 <em>les aplicacions web són distribuïdes</em>, intervenen com a mínin dos equipos diferents: el client i el servidor.</p>
 <p>La comunicació és du a terme mitjançant el protocol HTTP, base
 de la <em>World Wide Web</em>.</p>
-<p>L’<strong>arquitectura client-servidor</strong> és un model de comunicació on <strong>dos tipus d’ordinadors o processos tenen rols diferenciats</strong>:</p>
+<p>L'<strong>arquitectura client-servidor</strong> és un model de comunicació on <strong>dos tipus d'ordinadors o processos tenen rols diferenciats</strong>:</p>
 <ul>
 <li><strong>Client:</strong> fa peticions de serveis o recursos (com un navegador web que demana una pàgina).</li>
 <li><strong>Servidor:</strong> rep les peticions dels clients, les processa i retorna les respostes (com un servidor web que envia les pàgines sol·licitades).</li>
@@ -279,14 +279,14 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <figcaption>Sintaxi de les URL</figcaption>
 </figure>
 <h4 id="tipus-mime">Tipus MIME</h4>
-<p>Els <strong>tipus MIME</strong> (<em>Multipurpose Internet Mail Extensions</em>) són identificadors normalitzats que indiquen quin <strong>tipus de contingut</strong> està enviant un servidor i com s’ha d’interpretar al navegador o aplicació client.  </p>
+<p>Els <strong>tipus MIME</strong> (<em>Multipurpose Internet Mail Extensions</em>) són identificadors normalitzats que indiquen quin <strong>tipus de contingut</strong> està enviant un servidor i com s'ha d'interpretar al navegador o aplicació client.  </p>
 <p>Cada tipus MIME té dos parts separades per <code>/</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tipus/subtipus
 </code></pre></div>
 <p>Per exemple:</p>
 <ul>
 <li><code>text/html</code> → document HTML.  </li>
-<li><code>text/css</code> → full d’estils CSS.  </li>
+<li><code>text/css</code> → full d'estils CSS.  </li>
 <li><code>image/png</code> → imatge en format PNG.  </li>
 <li><code>application/json</code> → dades en format JSON.  </li>
 <li><code>application/pdf</code> → arxiu PDF.  </li>
@@ -312,10 +312,10 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
 <span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
 </code></pre></div>
-<p>Una vegada instal·lat, comprovem l’estat del servei:</p>
+<p>Una vegada instal·lat, comprovem l'estat del servei:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
 </code></pre></div>
-<p>Si tot ha anat bé, podrem veure la pàgina de benvinguda d’Apache obrint el navegador i entrant a:</p>
+<p>Si tot ha anat bé, podrem veure la pàgina de benvinguda d'Apache obrint el navegador i entrant a:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>http://localhost
 </code></pre></div>
 <h3 id="gestio-basica-del-servei-apache">Gestió bàsica del servei Apache</h3>
@@ -342,7 +342,7 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 </li>
 <li>
 <p><strong><code>/etc/apache2/ports.conf</code></strong><br/>
-  Defineix els <strong>ports d’escolta</strong> d’Apache (per defecte: 80 per HTTP i 443 per HTTPS).</p>
+  Defineix els <strong>ports d'escolta</strong> d'Apache (per defecte: 80 per HTTP i 443 per HTTPS).</p>
 </li>
 <li>
 <p><strong><code>/etc/apache2/sites-available/</code></strong><br/>
@@ -369,7 +369,7 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <p>En Apache, els tipus MIME es configuren normalment al fitxer:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/etc/apache2/mods-available/mime.conf
 </code></pre></div>
-<p>O bé dins d’un VirtualHost amb la directiva <code>AddType</code>.  </p>
+<p>O bé dins d'un VirtualHost amb la directiva <code>AddType</code>.  </p>
 <p>Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">AddType</span><span class="w"> </span>application/pdf<span class="w"> </span>.pdf
 <span class="linenos" data-linenos="2 "></span><span class="nb">AddType</span><span class="w"> </span>application/x-httpd-php<span class="w"> </span>.php
@@ -381,69 +381,69 @@ Syntax" src="../assets/1068px-URI_syntax_diagram.svg.png" title="Sintaxi de les 
 <li>Mòduls: instal·lació, configuració i ús  </li>
 <li>Amfitrions virtuals: creació, configuració i utilització  </li>
 </ul>
-<h2 id="3-seguretat-en-servidors-web">3. Seguretat en servidors web</h2>
-<h3 id="31-autenticacio-i-control-dacces">3.1 Autenticació i control d’accés</h3>
-<p>La autenticació és el procés mitjançant el qual un servidor verifica la identitat d’un usuari o d’un sistema que intenta accedir a un recurs. El control d’accés estableix què pot fer cadascun d’aquests usuaris una vegada identificats.</p>
-<h4 id="tipus-dautenticacio">Tipus d’autenticació</h4>
+<h2 id="4-seguretat-en-servidors-web">4. Seguretat en servidors web</h2>
+<h3 id="41-autenticacio-i-control-dacces">4.1 Autenticació i control d'accés</h3>
+<p>La autenticació és el procés mitjançant el qual un servidor verifica la identitat d'un usuari o d'un sistema que intenta accedir a un recurs. El control d'accés estableix què pot fer cadascun d'aquests usuaris una vegada identificats.</p>
+<h4 id="tipus-dautenticacio">Tipus d'autenticació</h4>
 <h5 id="autenticacio-basica-basic-auth">Autenticació bàsica (<em>Basic Auth</em>)</h5>
-<p>Envia les credencials (usuari i contrasenya) codificades en Base64 a través de les capçaleres HTTP. No és segura si no s’utilitza amb HTTPS, ja que les credencials poden ser interceptades. Aquest mètode es configura en el servidor HTTP.</p>
+<p>Envia les credencials (usuari i contrasenya) codificades en Base64 a través de les capçaleres HTTP. No és segura si no s'utilitza amb HTTPS, ja que les credencials poden ser interceptades. Aquest mètode es configura en el servidor HTTP.</p>
 <h5 id="autenticacio-digest-digest-auth">Autenticació digest (<em>Digest Auth</em>)</h5>
 <p>Utilitza un <em>hash</em> (MD5 o SHA) per evitar que la contrasenya viatge en text pla.  Millora la seguretat respecte a la bàsica, però ha quedat en desús davant mètodes més moderns. Aquest mètode es configura en el servidor HTTP.</p>
-<h5 id="autenticacio-basada-en-formularis-form-based">Autenticació basada en formularis (<em>Form-based</em>)</h5>
-<p>L’usuari introdueix les credencials en un formulari HTML. El servidor valida i genera una sessió o <em>token</em>. És el mètode més utilitzat en aplicacions web modernes.</p>
-<h5 id="autenticacio-mitjancant-token">Autenticació mitjançant token</h5>
-<p>Després de validar les credencials, el servidor genera un token (per exemple JWT — JSON Web Token). Aquest token s’envia amb cada petició posterior (normalment en la capçalera <code>Authorization: Bearer &lt;token&gt;</code>).</p>
-<h3 id="32-el-protocol-https">3.2 El protocol HTTPS</h3>
-<p>El <strong>protocol HTTPS (HyperText Transfer Protocol Secure)</strong> és l’evolució segura d’HTTP, el sistema que fa possible la navegació web.  </p>
-<p>La diferència principal és que HTTPS incorpora una capa addicional de seguretat basada en el protocol <strong>TLS (Transport Layer Security)</strong>, encarregat de xifrar tota la comunicació entre el navegador de l’usuari (client) i el servidor web.  </p>
+<h5 id="autenticacio-basada-en-formularis-form-based">Autenticació basada en formularis (<em>Form-based</em>)**</h5>
+<p>L'usuari introdueix les credencials en un formulari HTML. El servidor valida i genera una sessió o <em>token</em>. És el mètode més utilitzat en aplicacions web modernes.</p>
+<h5 id="autenticacio-mitjancant-token">Autenticació mitjançant token**</h5>
+<p>Després de validar les credencials, el servidor genera un token (per exemple JWT — JSON Web Token). Aquest token s'envia amb cada petició posterior (normalment en la capçalera <code>Authorization: Bearer &lt;token&gt;</code>).</p>
+<h3 id="42-el-protocol-https">4.2 El protocol HTTPS</h3>
+<p>El <strong>protocol HTTPS (HyperText Transfer Protocol Secure)</strong> és l'evolució segura d'HTTP, el sistema que fa possible la navegació web.  </p>
+<p>La diferència principal és que HTTPS incorpora una capa addicional de seguretat basada en el protocol <strong>TLS (Transport Layer Security)</strong>, encarregat de xifrar tota la comunicació entre el navegador de l'usuari (client) i el servidor web.  </p>
 <div class="admonition note">
 <p class="admonition-title">Criptografia</p>
 <p>La <strong>criptografia</strong> és la tècnica que permet protegir la informació transformant-la en un format inintel·ligible per a qualsevol que no tinga la clau adequada per desxifrar-la.  </p>
 <p>Segons el tipus de claus utilitzades, podem distingir dos grans sistemes: la <strong>criptografia de clau simètrica</strong> i la <strong>criptografia de clau pública (asimètrica)</strong>.</p>
-<p>En la <strong>criptografia simètrica</strong>, tant el <strong>xifrat</strong> com el <strong>desxifrat</strong> s’efectuen amb <strong>la mateixa clau</strong>. Això significa que tant l’emissor com el receptor han de compartir una clau secreta comuna abans de poder comunicar-se de manera segura.</p>
+<p>En la <strong>criptografia simètrica</strong>, tant el <strong>xifrat</strong> com el <strong>desxifrat</strong> s'efectuen amb <strong>la mateixa clau</strong>. Això significa que tant l'emissor com el receptor han de compartir una clau secreta comuna abans de poder comunicar-se de manera segura.</p>
 <p>La <strong>criptografia asimètrica</strong> utilitza <strong>dues claus diferents però matemàticament relacionades</strong>:</p>
 <ul>
 <li>Una <strong>clau pública</strong>, que pot ser compartida lliurement.</li>
 <li>Una <strong>clau privada</strong>, que només coneix el propietari.</li>
 </ul>
-<p>El que s’encripta amb una d’aquestes claus només pot ser desencriptat amb l’altra. </p>
+<p>El que s'encripta amb una d'aquestes claus només pot ser desencriptat amb l'altra. </p>
 <p>Això permet, per exemple, que qualsevol puga enviar un missatge xifrat al propietari utilitzant la seua <strong>clau pública</strong>, però només ell el puga llegir gràcies a la seua <strong>clau privada</strong>. Això garanteix que les dades que viatgen per la xarxa —com contrasenyes, informació personal o dades bancàries— no puguen ser interceptades ni modificades per tercers.</p>
 </div>
-<p>L’ús d’HTTPS té tres objectius fonamentals. En primer lloc, la <strong>confidencialitat</strong>, que assegura que només el client i el servidor puguen llegir el contingut de la comunicació. En segon lloc, la <strong>integritat</strong>, que garanteix que la informació no s’ha alterat durant el trajecte. I finalment, l’<strong>autenticitat</strong>, que permet al client verificar que el servidor amb què es comunica és realment qui diu ser i no una còpia fraudulenta.</p>
-<p>Per aconseguir-ho, HTTPS es basa en un procés intern conegut com a <strong>protocol TLS</strong>, que s’executa de manera automàtica cada vegada que ens connectem a una pàgina segura. </p>
+<p>L'ús d'HTTPS té tres objectius fonamentals. En primer lloc, la <strong>confidencialitat</strong>, que assegura que només el client i el servidor puguen llegir el contingut de la comunicació. En segon lloc, la <strong>integritat</strong>, que garanteix que la informació no s'ha alterat durant el trajecte. I finalment, l'<strong>autenticitat</strong>, que permet al client verificar que el servidor amb què es comunica és realment qui diu ser i no una còpia fraudulenta.</p>
+<p>Per aconseguir-ho, HTTPS es basa en un procés intern conegut com a <strong>protocol TLS</strong>, que s'executa de manera automàtica cada vegada que ens connectem a una pàgina segura. </p>
 <p>El seu funcionament pot resumir-se en tres fases principals: </p>
 <ul>
 <li>
-<p>En la primera, anomenada <strong>negociació o handshake</strong>, el client envia al servidor la informació sobre les versions de TLS i els algoritmes de xifrat que suporta. El servidor, per la seua banda, respon amb el seu <strong>certificat digital</strong> i escull l’algoritme més adequat per a la comunicació.  </p>
+<p>En la primera, anomenada <strong>negociació o handshake</strong>, el client envia al servidor la informació sobre les versions de TLS i els algoritmes de xifrat que suporta. El servidor, per la seua banda, respon amb el seu <strong>certificat digital</strong> i escull l'algoritme més adequat per a la comunicació.  </p>
 </li>
 <li>
-<p>A continuació té lloc l’<strong>intercanvi de claus</strong>, on s’estableix una clau de sessió comuna utilitzant tècniques de <strong>criptografia asimètrica</strong>. Aquesta clau serà única per a aquella connexió i servirà per xifrar totes les dades que es transmeten.  </p>
+<p>A continuació té lloc l'<strong>intercanvi de claus</strong>, on s'estableix una clau de sessió comuna utilitzant tècniques de <strong>criptografia asimètrica</strong>. Aquesta clau serà única per a aquella connexió i servirà per xifrar totes les dades que es transmeten.  </p>
 </li>
 <li>
 <p>Un cop establerta la clau, comença la fase de <strong>comunicació segura</strong>, en què tota la informació viatja de manera xifrada. Si algú intentara interceptar el trànsit, només veuria dades inintel·ligibles.</p>
 </li>
 </ul>
-<p>Els avantatges d’utilitzar HTTPS són evidents. A més de protegir informació sensible com contrasenyes o dades de targetes de crèdit, evita atacs del tipus <em>Man-in-the-Middle (MITM)</em>, en què un atacant podria interceptar la comunicació entre el client i el servidor. També aporta <strong>credibilitat i confiança</strong> als usuaris, ja que els navegadors mostren un cadenat o indicadors visuals quan una pàgina és segura.  </p>
-<p>Finalment, és important destacar que molts serveis i tecnologies modernes, com <strong>HTTP/2</strong>, <strong>OAuth2</strong> o les <strong>API REST</strong> d’aplicacions web, requereixen l’ús d’HTTPS per funcionar correctament.</p>
+<p>Els avantatges d'utilitzar HTTPS són evidents. A més de protegir informació sensible com contrasenyes o dades de targetes de crèdit, evita atacs del tipus <em>Man-in-the-Middle (MITM)</em>, en què un atacant podria interceptar la comunicació entre el client i el servidor. També aporta <strong>credibilitat i confiança</strong> als usuaris, ja que els navegadors mostren un cadenat o indicadors visuals quan una pàgina és segura.  </p>
+<p>Finalment, és important destacar que molts serveis i tecnologies modernes, com <strong>HTTP/2</strong>, <strong>OAuth2</strong> o les <strong>API REST</strong> d'aplicacions web, requereixen l'ús d'HTTPS per funcionar correctament.</p>
 <p>En resum, <strong>HTTPS no sols fa més segura la web: és la base sobre la qual es construeix la confiança digital a Internet.</strong></p>
-<h3 id="33-certificats-i-servidors-de-certificats">3.3 Certificats i servidors de certificats</h3>
+<h3 id="43-certificats-i-servidors-de-certificats">4.3 Certificats i servidors de certificats</h3>
 <p>Quan un usuari accedeix a una pàgina web mitjançant HTTPS, el seu navegador necessita assegurar-se que realment està connectant-se amb el servidor legítim i no amb un impostor.</p>
-<p>Per aconseguir-ho, entra en joc el <strong>certificat digital</strong>, un document electrònic que actua com a “carnet d’identitat” del servidor.<br/>
+<p>Per aconseguir-ho, entra en joc el <strong>certificat digital</strong>, un document electrònic que actua com a “carnet d'identitat” del servidor.<br/>
 Aquest certificat acredita la seua identitat i permet establir una connexió segura mitjançant mecanismes de xifrat.</p>
 <p>Un certificat digital conté informació essencial sobre el servidor o la persona que el posseeix.<br/>
-Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per exemple, <code>www.exemple.com</code>), la <strong>clau pública</strong> associada —que s’utilitza per establir el xifrat de la comunicació—, la <strong>entitat emissora</strong> o <em>Certification Authority (CA)</em> que l’ha validat, el <strong>període de validesa</strong> i la <strong>signatura digital</strong> de l’autoritat que el certifica.</p>
-<p>Gràcies a aquesta signatura, els navegadors poden verificar que el certificat no ha sigut manipulat i que prové d’una font de confiança.</p>
+Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per exemple, <code>www.exemple.com</code>), la <strong>clau pública</strong> associada —que s'utilitza per establir el xifrat de la comunicació—, la <strong>entitat emissora</strong> o <em>Certification Authority (CA)</em> que l'ha validat, el <strong>període de validesa</strong> i la <strong>signatura digital</strong> de l'autoritat que el certifica.</p>
+<p>Gràcies a aquesta signatura, els navegadors poden verificar que el certificat no ha sigut manipulat i que prové d'una font de confiança.</p>
 <h4 id="tipus-de-certificats-digitals">Tipus de certificats digitals</h4>
 <p>No tots els certificats tenen el mateix origen ni el mateix nivell de confiança. Podem distingir diversos tipus segons la seua procedència i el grau de verificació que ofereixen:</p>
 <ul>
 <li>
-<p><strong>Certificat autosignat</strong>: és generat pel propi servidor, sense la intervenció d’una autoritat de certificació.<br/>
+<p><strong>Certificat autosignat</strong>: és generat pel propi servidor, sense la intervenció d'una autoritat de certificació.<br/>
   Tot i que permet xifrar la connexió, els navegadors no el reconeixen com a fiable i mostren avisos de seguretat.<br/>
   És útil per a entorns de proves o desenvolupament intern.</p>
 </li>
 <li>
 <p><strong>Certificat emès per una CA reconeguda</strong>: és el tipus més comú en entorns de producció.<br/>
-  Una autoritat de certificació de confiança, com <strong>Let's Encrypt</strong> o <strong>DigiCert</strong>, comprova la identitat del titular abans d’emetre’l.<br/>
+  Una autoritat de certificació de confiança, com <strong>Let's Encrypt</strong> o <strong>DigiCert</strong>, comprova la identitat del titular abans d'emetre'l.<br/>
   Això garanteix que el lloc web és legítim i que la connexió és segura.</p>
 </li>
 <li>
@@ -451,8 +451,8 @@ Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per 
   És especialment pràctic per a empreses o organitzacions amb múltiples serveis sota un mateix domini.</p>
 </li>
 <li>
-<p><strong>Certificat d’alta validació (EV – Extended Validation)</strong>: ofereix el nivell més alt de seguretat i autenticitat.<br/>
-  Requereix una verificació exhaustiva de la identitat de l’empresa, i alguns navegadors mostren el nom de l’organització al costat de la barra d’adreces per donar confiança a l’usuari.</p>
+<p><strong>Certificat d'alta validació (EV – Extended Validation)</strong>: ofereix el nivell més alt de seguretat i autenticitat.<br/>
+  Requereix una verificació exhaustiva de la identitat de l'empresa, i alguns navegadors mostren el nom de l'organització al costat de la barra d'adreces per donar confiança a l'usuari.</p>
 </li>
 </ul>
 <h4 id="la-infraestructura-de-clau-publica">La infraestructura de clau pública</h4>
@@ -462,8 +462,8 @@ Entre altres dades, hi trobem el <strong>nom del titular o domini</strong> (per 
 <p>Els components de la PKI són:</p>
 <ul>
 <li>
-<p>Les <strong>autoritats de certificació (CA)</strong> són entitats de confiança que s’encarreguen d’emetre, validar i revocar certificats digitals.<br/>
-Són un element fonamental dins de l’anomenada <strong>infraestructura de clau pública (PKI – Public Key Infrastructure)</strong>, que permet gestionar de manera segura les claus criptogràfiques i els certificats a Internet.</p>
+<p>Les <strong>autoritats de certificació (CA)</strong> són entitats de confiança que s'encarreguen d'emetre, validar i revocar certificats digitals.<br/>
+Són un element fonamental dins de l'anomenada <strong>infraestructura de clau pública (PKI – Public Key Infrastructure)</strong>, que permet gestionar de manera segura les claus criptogràfiques i els certificats a Internet.</p>
 </li>
 <li>
 <p>L'<strong>autoritats de registre (RA)</strong> es la responsable de verificar l'enllaç entre els certificats (concretament, entre la clave pública del certificat i la identidat dels seus titulars.</p>
@@ -475,24 +475,349 @@ Són un element fonamental dins de l’anomenada <strong>infraestructura de clau
 <p>L'<strong>autoritat de validació (VA)</strong> és l'encarregadade comprovar la validesa dels certificats digitals.</p>
 </li>
 </ul>
-<p>Els <strong>servidors de certificats</strong> són sistemes que faciliten la petició i renovació automàtica d’aquests certificats, de manera que les organitzacions poden mantenir les seues connexions segures sense intervenció manual constant.  </p>
+<p>Els <strong>servidors de certificats</strong> són sistemes que faciliten la petició i renovació automàtica d'aquests certificats, de manera que les organitzacions poden mantenir les seues connexions segures sense intervenció manual constant.  </p>
 <p>Entre les eines més utilitzades en aquest àmbit trobem:</p>
 <ul>
-<li><strong>Let's Encrypt</strong>, una autoritat de certificació gratuïta i automatitzada que ha democratitzat l’ús de HTTPS.  </li>
+<li><strong>Let's Encrypt</strong>, una autoritat de certificació gratuïta i automatitzada que ha democratitzat l'ús de HTTPS.  </li>
 <li><strong>Certbot</strong>, un client que permet obtenir i renovar certificats de manera senzilla.  </li>
 <li><strong>OpenSSL</strong>, una utilitat molt completa per crear i gestionar certificats manualment, ideal per a entorns de proves o configuracions avançades.</li>
 </ul>
 <p>En conjunt, els certificats digitals i les autoritats de certificació constitueixen la base de la confiança a Internet, garantint que la informació que enviem o rebem no puga ser interceptada ni manipulada per tercers.</p>
 <h3 id="34-configuracio-segura-de-servidors-http">3.4 Configuració segura de servidors HTTP</h3>
-<h2 id="4-desplegament-daplicacions">4. Desplegament d’aplicacions</h2>
+<h2 id="4-desplegament-daplicacions">4. Desplegament d'aplicacions</h2>
 <ul>
-<li>Desplegament d’aplicacions sobre servidors web.</li>
+<li>Desplegament d'aplicacions sobre servidors web.</li>
 <li>Desplegament de servidors web mitjançant tecnologies de virtualització, en el núvol i en contenidors.  </li>
 </ul>
-<h2 id="5-gestio-i-manteniment">5. Gestió i manteniment</h2>
+<h2 id="5-gestio-i-manteniment-daplicacions-web">5. Gestió i manteniment d'aplicacions web</h2>
+<p><img alt="Image" src="https://devopscube.com/content/images/2025/06/loki-component.png"/></p>
+<p><img alt="Image" src="https://assets.digitalocean.com/articles/architecture/production/centralized_logging.png"/></p>
+<p><img alt="Image" src="https://s3.amazonaws.com/a-us.storyblok.com/f/1022730/1141f47f8e/screenshot-improve-log-dashboards-dashboard.png"/></p>
+<p>En la implantació d'aplicacions web modernes, els <strong>logs</strong> deixen de ser simples fitxers de diagnòstic per convertir-se en una <strong>font estratègica d'informació</strong>. La gestió manual o descentralitzada dels logs (fitxers locals, consultes amb <code>grep</code>, etc.) resulta insuficient quan augmenten la càrrega, la complexitat i les exigències de qualitat del servei.</p>
+<p>L'ús d'eines de gestió de logs és necessari per a:</p>
 <ul>
-<li>Conjunts d’eines de gestió de logs: instal·lació, configuració i utilització, per a l’ajuda en la presa de decisions (Big Data).  </li>
-<li>Documentació.</li>
+<li>
+<p><strong>Diagnòstic i resolució d'incidències</strong></p>
+<ul>
+<li>Detecció ràpida d'errors (4xx, 5xx).</li>
+<li>Anàlisi de causes arrel mitjançant correlació temporal.</li>
+</ul>
+</li>
+<li>
+<p><strong>Avaluació del rendiment</strong></p>
+<ul>
+<li>Mesura de latències i temps de resposta.</li>
+<li>Identificació de colls de botella.</li>
+</ul>
+</li>
+<li>
+<p><strong>Presa de decisions tècniques</strong></p>
+<ul>
+<li>Priorització d'optimitzacions.</li>
+<li>Comparació entre versions de l'aplicació.</li>
+</ul>
+</li>
+<li>
+<p><strong>Seguretat</strong></p>
+<ul>
+<li>Detecció d'accessos anòmals o intents d'atac.</li>
+</ul>
+</li>
+<li>
+<p><strong>Escalabilitat i manteniment</strong></p>
+<ul>
+<li>Visió global del sistema des d'un punt central.</li>
+</ul>
+</li>
+</ul>
+<p>En aquest context, la <strong>centralització de logs</strong> és un requisit clau en qualsevol entorn professional.</p>
+<h3 id="estructura-basica-dun-sistema-de-gestio-de-logs">Estructura bàsica d'un sistema de gestió de logs</h3>
+<p>Un sistema modern de gestió de logs es compon, com a mínim, dels següents elements:</p>
+<ol>
+<li>
+<p><strong>Fonts de logs</strong></p>
+<ul>
+<li>Servidors web (Apache, Nginx).</li>
+<li>Aplicacions web (<em>backend</em>).</li>
+<li>Sistema operatiu.</li>
+</ul>
+</li>
+<li>
+<p><strong>Agent de recollida</strong></p>
+<ul>
+<li>S'encarrega de llegir els logs locals i enviar-los.</li>
+<li>En l'ecosistema Grafana, aquest paper el pot assumir <strong>Alloy</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sistema d'emmagatzematge i consulta</strong></p>
+<ul>
+<li>Optimitzat per a grans volums de logs.</li>
+<li>Permet cerques eficients per temps i etiquetes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Eina de visualització i anàlisi</strong></p>
+<ul>
+<li>Dashboards, gràfiques i alertes.</li>
+<li>Facilita la interpretació de la informació.</li>
+</ul>
+</li>
+</ol>
+<h4 id="arquitectura-proposada">Arquitectura proposada</h4>
+<p>Servidor web → Agent (Alloy) → Loki → Grafana</p>
+<ul>
+<li><strong>Loki</strong>: emmagatzema i indexa logs de manera eficient.</li>
+<li><strong>Grafana</strong>: permet consultar, visualitzar i analitzar els logs.</li>
+</ul>
+<p>Aquest model separa clarament <strong>recollida</strong>, <strong>emmagatzematge</strong> i <strong>visualització</strong>, facilitant l'escalabilitat i el manteniment.</p>
+<h3 id="guia-practica-implementacio-de-grafana-loki-en-ubuntu-2404">Guia pràctica: implementació de Grafana + Loki en Ubuntu 24.04</h3>
+<p>A continuació es presenta una implementació funcional i adequada per a entorns formatius i de producció bàsica.</p>
+<h4 id="preparacio-del-sistema">Preparació del sistema</h4>
+<p>Actualitzar el sistema:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
+<p>Instal·lar paquets bàsics:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>curl<span class="w"> </span>wget<span class="w"> </span>unzip
+</code></pre></div>
+<h4 id="installacio-de-loki">Instal·lació de Loki</h4>
+<ol>
+<li>Crear directoris:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/loki<span class="w"> </span>/etc/loki<span class="w"> </span>/var/lib/loki
+</code></pre></div>
+<ol start="2">
+<li>Descarregar Loki:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>/opt/loki
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>wget<span class="w"> </span>https://github.com/grafana/loki/releases/latest/download/loki-linux-amd64.zip
+<span class="linenos" data-linenos="3 "></span>sudo<span class="w"> </span>unzip<span class="w"> </span>loki-linux-amd64.zip
+<span class="linenos" data-linenos="4 "></span>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>loki-linux-amd64
+</code></pre></div>
+<ol start="3">
+<li>Configuració bàsica (<code>/etc/loki/loki.yml</code>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">auth_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nt">server</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="nt">http_listen_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3100</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nt">common</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="nt">path_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/loki</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nt">ring</span><span class="p">:</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">   </span><span class="nt">kvstore</span><span class="p">:</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="nt">store</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inmemory</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w w-Error">  </span><span class="nt">storage</span><span class="p">:</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nt">filesystem</span><span class="p">:</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">      </span><span class="nt">chunks_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/loki/chunks</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">      </span><span class="nt">rules_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/loki/rules</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">  </span><span class="nt">replication_factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="nt">schema_config</span><span class="p">:</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">  </span><span class="nt">configs</span><span class="p">:</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-01-01</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">      </span><span class="nt">store</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tsdb</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">      </span><span class="nt">object_store</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">filesystem</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">      </span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v13</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">      </span><span class="nt">index</span><span class="p">:</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index_</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="nt">period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24h</span>
+</code></pre></div>
+<ol start="4">
+<li>Executar Loki:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>/opt/loki/loki-linux-amd64<span class="w"> </span>-config.file<span class="o">=</span>/etc/loki/loki.yml
+</code></pre></div>
+<h3 id="installacio-de-grafana-alloy">Instal·lació de Grafana Alloy</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>/tmp
+<span class="linenos" data-linenos="2 "></span>wget<span class="w"> </span>https://github.com/grafana/alloy/releases/latest/download/alloy-linux-amd64.zip
+<span class="linenos" data-linenos="3 "></span>unzip<span class="w"> </span>alloy-linux-amd64.zip
+<span class="linenos" data-linenos="4 "></span>sudo<span class="w"> </span>mv<span class="w"> </span>alloy-linux-amd64<span class="w"> </span>/usr/local/bin/alloy
+<span class="linenos" data-linenos="5 "></span>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/alloy
+</code></pre></div>
+<p>Verifica:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>alloy<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="configurar-alloy-per-a-llegir-logs-dapache">Configurar Alloy per a llegir logs d'Apache</h3>
+<p>Crear directori de configuració:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/alloy
+</code></pre></div>
+<p>Fitxer <code>/etc/alloy/config.alloy</code></p>
+<p>Configuració <strong>mínima i funcional</strong> per Apache → Loki:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nv">local.file_match</span><span class="w"> </span><span class="s2">"apache_logs"</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="na">path_targets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="na">__path__</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/var/log/apache2/access.log"</span><span class="w"> </span><span class="p">},</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="na">__path__</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/var/log/apache2/error.log"</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">  </span><span class="p">]</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nv">loki.source.file</span><span class="w"> </span><span class="s2">"apache"</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="na">targets</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">local.file_match.apache_logs.targets</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="na">forward_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">loki.write.default.receiver</span><span class="p">]</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="nv">loki.write</span><span class="w"> </span><span class="s2">"default"</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">  </span><span class="nb">endpoint</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://localhost:3100/loki/api/v1/push"</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">  </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Aquesta configuració:</p>
+<ul>
+<li>Llig <strong>access.log</strong> i <strong>error.log</strong></li>
+<li>Envia els logs a Loki per HTTP</li>
+<li>No necessita autenticació (coherent amb <code>auth_enabled: false</code>)</li>
+</ul>
+<hr/>
+<h2 id="4-executar-alloy">4. Executar Alloy</h2>
+<h3 id="41-prova-manual-recomanat-la-primera-vegada">4.1. Prova manual (recomanat la primera vegada)</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>alloy<span class="w"> </span>run<span class="w"> </span>/etc/alloy/config.alloy
+</code></pre></div>
+<p>Si tot és correcte, <strong>no apareixeran errors</strong> i Alloy quedarà escoltant.</p>
+<p>Genera trànsit:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>http://localhost
+</code></pre></div>
+<hr/>
+<h2 id="5-verificar-que-els-logs-arriben-a-loki">5. Verificar que els logs arriben a Loki</h2>
+<h3 id="51-des-de-grafana">5.1. Des de Grafana</h3>
+<ol>
+<li>Entra a Grafana (<code>http://localhost:3000</code>)</li>
+<li>Ves a <strong>Explore</strong></li>
+<li>Selecciona la font de dades <strong>Loki</strong></li>
+<li>Executa aquesta consulta:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{job="apache"}
+</code></pre></div>
+<p>Si no apareix res, prova sense filtre:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{}
+</code></pre></div>
+<p>I ajusta l’interval de temps (últims 5 o 15 minuts).</p>
+<hr/>
+<h2 id="6-etiquetar-millor-els-logs-recomanat">6. Etiquetar millor els logs (recomanat)</h2>
+<p>Per defecte, Loki només indexa <strong>labels</strong>. Afegim etiquetes útils:</p>
+<h3 id="millora-de-la-configuracio-alloy">Millora de la configuració Alloy</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nv">loki.source.file</span><span class="w"> </span><span class="s2">"apache"</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="na">targets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.file_match.apache_logs.targets</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="nb">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="na">job</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"apache"</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="na">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"web01"</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="na">forward_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">loki.write.default.receiver</span><span class="p">]</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Ara podràs consultar:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{job="apache"}
+</code></pre></div>
+<hr/>
+<h2 id="7-convertir-alloy-en-servei-systemd-opcional-pero-recomanat">7. Convertir Alloy en servei systemd (opcional però recomanat)</h2>
+<h3 id="71-crear-servei">7.1. Crear servei</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/systemd/system/alloy.service
+</code></pre></div>
+<p>Contingut:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">[Unit]</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="na">Description</span><span class="o">=</span><span class="s">Grafana Alloy</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">[Service]</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/alloy run /etc/alloy/config.alloy</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="na">User</span><span class="o">=</span><span class="s">root</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="k">[Install]</span>
+<span class="linenos" data-linenos="11 "></span><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+<h3 id="72-activar-servei">7.2. Activar servei</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reexec
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+<span class="linenos" data-linenos="3 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>alloy
+<span class="linenos" data-linenos="4 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>alloy
+</code></pre></div>
+<p>Comprova:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>alloy<span class="w"> </span>--no-pager
+</code></pre></div>
+<hr/>
+<h2 id="8-resum-conceptual-per-al-llibre-de-text">8. Resum conceptual (per al llibre de text)</h2>
+<ul>
+<li><strong>Loki no recull logs</strong>, només els emmagatzema i consulta.</li>
+<li>És obligatori un <strong>agent de recollida</strong> (Alloy).</li>
+<li>Apache escriu logs locals → Alloy els llig → Loki els guarda → Grafana els visualitza.</li>
+<li>Sense Alloy (o agent equivalent), <strong>Loki sempre estarà buit</strong>.</li>
+</ul>
+<hr/>
+<h2 id="9-diagnostic-rapid-si-no-apareixen-logs">9. Diagnòstic ràpid si no apareixen logs</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1"># Alloy està en marxa?</span>
+<span class="linenos" data-linenos=" 2 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>alloy
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1"># Alloy llig els fitxers?</span>
+<span class="linenos" data-linenos=" 5 "></span>sudo<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/var/log/apache2/*.log
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="c1"># Loki rep dades?</span>
+<span class="linenos" data-linenos=" 8 "></span>curl<span class="w"> </span>http://localhost:3100/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>loki_ingester
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="c1"># Logs d’Alloy</span>
+<span class="linenos" data-linenos="11 "></span>journalctl<span class="w"> </span>-u<span class="w"> </span>alloy<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
+</code></pre></div>
+<hr/>
+<p>Si vols, el següent pas natural és:</p>
+<ul>
+<li><strong>parsejar el format Apache</strong> (status code, path, IP),</li>
+<li>crear <strong>dashboards d’errors 4xx/5xx</strong>,</li>
+<li>o preparar aquest contingut com a <strong>pràctica avaluable DAW</strong>.</li>
+</ul>
+<p>Digues-me com ho vols enfocar.</p>
+<h4 id="installacio-de-grafana">Instal·lació de Grafana</h4>
+<ol>
+<li>Afegir el repositori oficial:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>software-properties-common
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span><span class="s2">"deb https://packages.grafana.com/oss/deb stable main"</span>
+<span class="linenos" data-linenos="3 "></span>wget<span class="w"> </span>-q<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://packages.grafana.com/gpg.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+</code></pre></div>
+<ol start="2">
+<li>Instal·lar Grafana:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>grafana
+</code></pre></div>
+<ol start="3">
+<li>Iniciar i habilitar el servei:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>grafana-server
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>grafana-server
+</code></pre></div>
+<p>Accés web:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>http://IP_DEL_SERVIDOR:3000
+</code></pre></div>
+<p>Usuari i contrasenya per defecte: <code>admin / admin</code>.</p>
+<h4 id="connexio-de-grafana-amb-loki">Connexió de Grafana amb Loki</h4>
+<ol>
+<li>Accedir a Grafana.</li>
+<li><em>Settings → Data sources → Add data source</em>.</li>
+<li>Seleccionar <strong>Loki</strong>.</li>
+<li>URL:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>http://localhost:3100
+</code></pre></div>
+<ol start="5">
+<li>Guardar i provar la connexió.</li>
+</ol>
+<h4 id="visualitzacio-basica-de-logs">Visualització bàsica de logs</h4>
+<ul>
+<li>Accedir a <strong>Explore</strong>.</li>
+<li>Seleccionar la font de dades Loki.</li>
+<li>Executar una consulta simple:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{job="varlogs"}
+</code></pre></div>
+<p>A partir d'ací es poden crear:</p>
+<ul>
+<li>Dashboards d'errors.</li>
+<li>Gràfiques de volum de logs.</li>
+<li>Alertes basades en patrons.</li>
 </ul>
 </article>
 </div>
@@ -520,7 +845,7 @@ Són un element fonamental dins de l’anomenada <strong>infraestructura de clau
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </body>
