@@ -423,6 +423,42 @@
 </ul>
 <h2 id="3-servei-de-directoris-caracteristiques-i-funcionalitat">3. Servei de directoris: característiques i funcionalitat</h2>
 <p>Un <strong>servei de directoris</strong> és una base de dades jeràrquica i centralitzada que emmagatzema informació sobre usuaris, equips, aplicacions i altres recursos d’una xarxa.</p>
+<figure>
+<div class="mermaid">flowchart TB
+    Client1["Usuari / Aplicació"]
+    Client2["Ordinador Client"]
+
+    subgraph DS["Servei de Directori"]
+        Root["Domini<br/>(ex: empresa.local)"]
+
+        subgraph OU1["OU: Administració"]
+            U1["Usuari: Anna"]
+            G1["Grup: Admins"]
+        end
+
+        subgraph OU2["OU: Producció"]
+            U2["Usuari: Joan"]
+            PC1["Ordinador: PC-01"]
+        end
+
+        subgraph OU3["OU: Professorat"]
+            U3["Usuari: Maria"]
+            G2["Grup: Professors"]
+            R1["Impressora: HP Laserjet"]
+        end
+
+        Root --&gt; OU1
+        Root --&gt; OU2
+        Root --&gt; OU3
+    end
+
+    Client1 --&gt;|"Autenticació / Consulta"| Root
+    Client2 --&gt;|"Autenticació / Consulta"| Root
+</div>
+<figcaption>
+<p><strong>Figura 1</strong>: Esquema dels elements bàsics d'un servei de directori</p>
+</figcaption>
+</figure>
 <p><strong>Característiques principals:</strong></p>
 <ul>
 <li>Organització jeràrquica en forma d’arbre (unitats organitzatives, dominis…).</li>
@@ -436,7 +472,20 @@
 <li>Microsoft Active Directory (propietari)</li>
 <li>389 Directory Server</li>
 </ul>
-<hr/>
+<figure>
+<div class="mermaid">flowchart LR
+    Client["Client<br/>(usuari / aplicació)"]
+    Directory["Servei de Directori<br/>(LDAP / Active Directory)"]
+    Database["Directori<br/>(usuaris, grups,<br/>recursos)"]
+
+    Client -- "Consulta / Autenticació" --&gt; Directory
+    Directory -- "Resposta / Permisos" --&gt; Client
+    Directory -- "Consulta dades" --&gt; Database
+</div>
+<figcaption>
+<p><strong>Figura 2</strong>: Diagrama de consulta a un servei de directori dels elements bàsics d'un servei de directori</p>
+</figcaption>
+</figure>
 <h3 id="fitxers-basics-de-configuracio">Fitxers bàsics de configuració</h3>
 <p>Els serveis de directoris utilitzen fitxers de configuració per establir el seu funcionament:</p>
 <ul>
@@ -451,7 +500,6 @@
 <li>Mètodes d’autenticació acceptats.</li>
 <li>Logs i ubicació de la base de dades.</li>
 </ul>
-<hr/>
 <h3 id="autenticacio-dusuaris-en-el-servei-de-directoris">Autenticació d'usuaris en el servei de directoris</h3>
 <p>El servei de directoris s’utilitza sovint com a font central d’autenticació d’usuaris en aplicacions web:</p>
 <ul>
