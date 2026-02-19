@@ -5,11 +5,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../02_web_server_admin/01-index/" rel="prev"/>
-<link href="../../04_ftp/01-index/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>3. Administració de servidors d'aplicacions - Desplegament d'Aplicacions Web</title>
+<title>Administració de servidors d'aplicacions - Desplegament d'Aplicacions Web</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -47,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              3. Administració de servidors d'aplicacions
+              Administració de servidors d'aplicacions
             
           </span>
 </div>
@@ -134,124 +132,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    3. Administració de servidors d'aplicacions
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-index/">
 <span class="md-ellipsis">
     3. Administració de servidors d'aplicacions
     
   </span>
 </a>
-<nav aria-label="Taula de continguts" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitectura-i-configuracio-basica">
-<span class="md-ellipsis">
-      Arquitectura i configuració bàsica
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#administracio-daplicacions-web">
-<span class="md-ellipsis">
-      Administració d'aplicacions web
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#autenticacio-i-seguretat">
-<span class="md-ellipsis">
-      Autenticació i seguretat
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gestio-de-sessions">
-<span class="md-ellipsis">
-      Gestió de sessions
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cooperacio-amb-un-servidor-web">
-<span class="md-ellipsis">
-      Cooperació amb un servidor web
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#proces-de-desplegament">
-<span class="md-ellipsis">
-      Procés de desplegament
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#seguretat-del-servidor">
-<span class="md-ellipsis">
-      Seguretat del servidor
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#guia-dinstallacio-i-desplegament-daplicacions-en-tomcat">
-<span class="md-ellipsis">
-      Guia d'instal·lació i desplegament d'aplicacions en Tomcat
-    </span>
-</a>
-<nav aria-label="Guia d'instal·lació i desplegament d'aplicacions en Tomcat" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-installar-java-jdk">
-<span class="md-ellipsis">
-      1. Instal·lar Java (JDK)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-installar-tomcat">
-<span class="md-ellipsis">
-      2. Instal·lar Tomcat
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-crear-i-compilar-laplicacio">
-<span class="md-ellipsis">
-      3. Crear i compilar l'aplicació
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-desplegar-en-tomcat">
-<span class="md-ellipsis">
-      4. Desplegar en Tomcat
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-realitzar-proves-rest">
-<span class="md-ellipsis">
-      5. Realitzar proves REST
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../04_ftp/01-index/">
@@ -515,8 +402,8 @@ Això significa que:</p>
 <p>En entorns de producció és recomanable configurar Tomcat com a servei <code>systemd</code>, de manera que el sistema operatiu el gestione automàticament.</p>
 </div>
 <p>En este pas hem instal·lat Apache Tomcat en el directori <code>/opt</code>, hem configurat correctament els permisos dels scripts i del directori d’instal·lació, i hem creat un usuari de servei específic per millorar la seguretat. Finalment, hem iniciat el servidor, hem verificat que respon en <code>http://localhost:8080</code> i hem comprovat la versió i els logs per assegurar-nos que el funcionament és correcte.</p>
-<h3 id="3-crear-i-compilar-laplicacio">3. Crear i compilar l'aplicació</h3>
-<p>En este punt pots descarregar l'aplicació <strong>API Rest</strong> des de <a href="../assets/api-rest.war">assets/api-rest.war</a> o seguir els passos per a crear-la i compilar-la.</p>
+<h3 id="3-desplegar-laplicacio">3. Desplegar l'aplicació</h3>
+<p>Descarrega l'aplicació <strong>API Rest</strong> des de <a href="../assets/api-rest.war">assets/api-rest.war</a></p>
 <h4 id="crear-lestructura-de-directoris">Crear l'estructura de directoris</h4>
 <p>Crea l'estructura bàsica del projecte:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/projectes/api-rest/src/main/java/com/exemple/api
@@ -530,7 +417,7 @@ Això significa que:</p>
 <li><code>WEB-INF/lib</code> → dependències</li>
 <li><code>WEB-INF/web.xml</code> → descriptor de desplegament</li>
 </ul>
-<h4 id="crear-un-webxml-minim-jakarta-servlet-60">Crear un <code>web.xml</code> mínim (Jakarta / Servlet 6.0)</h4>
+<h4 id="rear-un-webxml-minim-jakarta-servlet-60">rear un <code>web.xml</code> mínim (Jakarta / Servlet 6.0)</h4>
 <p>Crea el fitxer:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>nano<span class="w"> </span>~/projectes/api-rest/web/WEB-INF/web.xml
 </code></pre></div>
@@ -555,22 +442,22 @@ Això significa que:</p>
 <li><code>PUT</code> → actualitzar usuari</li>
 <li><code>DELETE</code> → eliminar usuari</li>
 </ul>
-<p>La persistència és en memòria mitjançant un <code>ConcurrentHashMap</code>, per tant, les dades es perdran en reiniciar el servidor.</p>
-<h4 id="compilar-i-empaquetar-el-war-sense-maven">Compilar i empaquetar el WAR (sense Maven)</h4>
-<h5 id="compilar-contra-la-servlet-api-de-tomcat">Compilar contra la Servlet API de Tomcat</h5>
+<p>La persistència és en memòria mitjançant un <code>ConcurrentHashMap</code>, per
+tant, les dades es perdran en reiniciar el servidor.</p>
+<hr/>
+<h1 id="4-compilar-i-empaquetar-el-war-sense-maven">4. Compilar i empaquetar el WAR (sense Maven)</h1>
+<h2 id="41-compilar-contra-la-servlet-api-de-tomcat">4.1 Compilar contra la Servlet API de Tomcat</h2>
 <p>Situa't en el directori del projecte:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>~/projectes/api-rest
 </code></pre></div>
 <p>Compila utilitzant el <code>servlet-api.jar</code> inclòs en Tomcat:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>javac<span class="w"> </span><span class="se">\</span>
-<span class="linenos" data-linenos="2 "></span><span class="w">  </span>-cp<span class="w"> </span>/opt/tomcat/lib/servlet-api.jar<span class="w"> </span><span class="se">\</span>
-<span class="linenos" data-linenos="3 "></span><span class="w">  </span>-d<span class="w"> </span>web/WEB-INF/classes<span class="w"> </span><span class="se">\</span>
-<span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="k">$(</span>find<span class="w"> </span>src/main/java<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.java"</span><span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>javac<span class="w">   </span>-cp<span class="w"> </span>/opt/tomcat/lib/servlet-api.jar<span class="w">   </span>-d<span class="w"> </span>web/WEB-INF/classes<span class="w">   </span><span class="k">$(</span>find<span class="w"> </span>src/main/java<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.java"</span><span class="k">)</span>
 </code></pre></div>
 <p>Comprova que s'han generat els fitxers <code>.class</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>find<span class="w"> </span>web/WEB-INF/classes<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
 </code></pre></div>
-<h5 id="crear-el-fitxer-war">Crear el fitxer WAR</h5>
+<hr/>
+<h2 id="42-crear-el-fitxer-war">4.2 Crear el fitxer WAR</h2>
 <p>Accedix al directori <code>web</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>~/projectes/api-rest/web
 </code></pre></div>
@@ -580,15 +467,21 @@ Això significa que:</p>
 </code></pre></div>
 <p>El fitxer <code>api-rest.war</code> és l'arxiu desplegable que conté l'aplicació
 web completa.</p>
-<h3 id="4-desplegar-en-tomcat">4. Desplegar en Tomcat</h3>
+<hr/>
+<h1 id="5-desplegar-en-tomcat">5. Desplegar en Tomcat</h1>
+<h2 id="51-copiar-el-war">5.1 Copiar el WAR</h2>
 <p>Copia el fitxer al directori <code>webapps</code> de Tomcat:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>cp<span class="w"> </span>~/projectes/api-rest/api-rest.war<span class="w"> </span>/opt/tomcat/webapps/
 <span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>chown<span class="w"> </span>tomcat:tomcat<span class="w"> </span>/opt/tomcat/webapps/api-rest.war
 </code></pre></div>
+<hr/>
+<h2 id="52-reiniciar-tomcat">5.2 Reiniciar Tomcat</h2>
 <p>Reinicia el servidor com a usuari <code>tomcat</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>-u<span class="w"> </span>tomcat<span class="w"> </span>/opt/tomcat/bin/shutdown.sh
 <span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>-u<span class="w"> </span>tomcat<span class="w"> </span>/opt/tomcat/bin/startup.sh
 </code></pre></div>
+<hr/>
+<h2 id="53-verificar-el-desplegament">5.3 Verificar el desplegament</h2>
 <p>Comprova que Tomcat ha descomprimit el WAR:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ls<span class="w"> </span>/opt/tomcat/webapps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>api-rest
 </code></pre></div>
@@ -597,87 +490,86 @@ web completa.</p>
 <li><code>api-rest.war</code></li>
 <li><code>api-rest/</code></li>
 </ul>
-<p>Consulta els registres (<em>logs</em>) en cas d'error:</p>
+<p>Consulta els logs en cas d'error:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">120</span><span class="w"> </span>/opt/tomcat/logs/catalina.out
 </code></pre></div>
+<hr/>
 <p>En este apartat hem creat manualment l'estructura d'una aplicació web
 Jakarta, hem compilat el codi contra la Servlet API de Tomcat, hem
 generat un fitxer WAR i l'hem desplegat en el servidor. Finalment, hem
 verificat que el desplegament s'ha realitzat correctament consultant el
 directori <code>webapps</code> i els logs del servidor.</p>
-<h3 id="5-realitzar-proves-rest">5. Realitzar proves REST</h3>
+<h1 id="6-proves-rest-totes">6) Proves REST (totes)</h1>
 <blockquote>
 <p>Base URL: <code>http://localhost:8080/api-rest</code></p>
 </blockquote>
-<h4 id="list-inicialment-buit">LIST (inicialment buit)</h4>
+<h2 id="61-list-al-principi-buit">6.1 LIST (al principi buit)</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users
 </code></pre></div>
-<p>Resultat esperat:** <code>200 OK</code> i resposta:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span><span class="nt">"ok"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">"data"</span><span class="p">:[]}</span>
-</code></pre></div>
-<h4 id="create">CREATE</h4>
+<p><strong>Esperat:</strong> <code>200 OK</code> i <code>{"ok":true,"data":[]}</code></p>
+<h2 id="62-create">6.2 CREATE</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api-rest/api/users<span class="w"> </span><span class="se">\</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 <span class="linenos" data-linenos="3 "></span><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"name":"Anna","email":"anna@exemple.com"}'</span>
 </code></pre></div>
-<p>Resultat esperat:</p>
-<ul>
-<li><code>201 Created</code></li>
-<li>Capçalera <code>Location: .../api/users/1</code></li>
-</ul>
-<hr/>
-<h4 id="list-amb-un-usuari-creat">LIST (amb un usuari creat)</h4>
+<p><strong>Esperat:</strong> <code>201 Created</code> + capçalera <code>Location: .../api/users/1</code></p>
+<h2 id="63-list-ja-amb-1-usuari">6.3 LIST (ja amb 1 usuari)</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users
 </code></pre></div>
-<p>Resultat esperat: <code>200 OK</code> i un array amb l'usuari amb id <code>1</code>.</p>
-<h4 id="get-one">GET ONE</h4>
+<p><strong>Esperat:</strong> <code>200</code> i array amb l'usuari id 1.</p>
+<h2 id="64-get-one">6.4 GET ONE</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users/1
 </code></pre></div>
-<p>Resultat esperat: <code>200 OK</code> i objecte JSON de l'usuari.</p>
-<h4 id="update-parcial-nomes-name">UPDATE parcial (només <code>name</code>)</h4>
+<p><strong>Esperat:</strong> <code>200</code> i objecte.</p>
+<h2 id="65-update-parcial-nomes-name">6.5 UPDATE parcial (només name)</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>http://localhost:8080/api-rest/api/users/1<span class="w"> </span><span class="se">\</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 <span class="linenos" data-linenos="3 "></span><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"name":"Anna Vidal"}'</span>
 </code></pre></div>
-<p>Resultat esperat: <code>200 OK</code> amb el camp <code>name</code> actualitzat.</p>
-<h4 id="delete">DELETE</h4>
+<p><strong>Esperat:</strong> <code>200</code> amb name actualitzat.</p>
+<h2 id="66-delete">6.6 DELETE</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:8080/api-rest/api/users/1
 </code></pre></div>
-<p>Resultat esperat: <code>204 No Content</code>.</p>
-<h4 id="get-one-usuari-inexistent">GET ONE (usuari inexistent)</h4>
+<p><strong>Esperat:</strong> <code>204 No Content</code></p>
+<h2 id="67-get-one-ja-no-existeix">6.7 GET ONE (ja no existeix)</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users/1
 </code></pre></div>
-<p>Resultat esperat:</p>
-<ul>
-<li><code>404 Not Found</code></li>
-<li>JSON d'error.</li>
-</ul>
-<h4 id="validacio-derror-post-mal-format">Validació d'error (POST mal format)</h4>
+<p><strong>Esperat:</strong> <code>404</code> amb JSON d'error.</p>
+<h2 id="68-validacio-derror-post-mal-format">6.8 Validació d'error (POST mal format)</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api-rest/api/users<span class="w"> </span><span class="se">\</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 <span class="linenos" data-linenos="3 "></span><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"name":"SenseEmail"}'</span>
 </code></pre></div>
-<p>Resultat esperat: <code>400 Bad Request</code> amb missatge d'error en format
-JSON.</p>
-<h4 id="solucio-derrors-rapid">Solució d'errors ràpid</h4>
-<h5 id="error-404-en-totes-les-rutes">Error 404 en totes les rutes</h5>
-<p>Comprova si Tomcat està arrancat:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'[o]rg.apache.catalina.startup.Bootstrap'</span>
+<p><strong>Esperat:</strong> <code>400</code> amb missatge.</p>
+<hr/>
+<h1 id="7-troubleshooting-rapid-quan-alguna-cosa-falla">7) Troubleshooting ràpid (quan alguna cosa falla)</h1>
+<h2 id="71-404-a-tot">7.1 404 a tot</h2>
+<ul>
+<li>Tomcat no està arrancat:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'[o]rg.apache.catalina.startup.Bootstrap'</span>
 </code></pre></div>
-<p>Verifica que l'aplicació s'ha desplegat correctament:</p>
+* L'app no s'ha desplegat:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ls<span class="w"> </span>/opt/tomcat/webapps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>api-rest
 </code></pre></div>
-<h5 id="error-500-error-intern-del-servidor">Error 500 (error intern del servidor)</h5>
-<p>Consulta els registres:</p>
+<h2 id="72-500-error-intern">7.2 500 (error intern)</h2>
+<p>Mira logs:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">200</span><span class="w"> </span>/opt/tomcat/logs/catalina.out
 </code></pre></div>
-<h5 id="errors-de-permisos">Errors de permisos</h5>
-<p>Comprova els permisos dels directoris clau:</p>
+<h2 id="73-errors-de-permisos">7.3 Errors de permisos</h2>
+<p>Comprova permisos de carpetes clau:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ls<span class="w"> </span>-ld<span class="w"> </span>/opt/tomcat<span class="w"> </span>/opt/tomcat/webapps<span class="w"> </span>/opt/tomcat/logs<span class="w"> </span>/opt/tomcat/temp<span class="w"> </span>/opt/tomcat/work
 </code></pre></div>
-<p>Assegura't que el propietari és <code>tomcat:tomcat</code> i que té permisos
-adequats d'escriptura en els directoris necessaris.</p>
-<p>En este pas hem validat el funcionament complet de l’API REST utilitzant l’eina <code>curl</code>, comprovant totes les operacions CRUD (GET, POST, PUT i DELETE) i les respostes HTTP corresponents. També hem verificat la gestió d’errors i codis d’estat com 400, 404 i 204. Finalment, hem revisat procediments bàsics de diagnòstic per a detectar problemes habituals de desplegament, com errors 404, errors interns 500 o incidències de permisos en Tomcat.</p>
+<p>I que els directors són de <code>tomcat:tomcat</code>.</p>
+<hr/>
+<h2 id="si-vols-deixar-ho-nivell-aula-bloc-3">Si vols deixar-ho “nivell aula / bloc 3”</h2>
+<p>Et puc afegir:</p>
+<ul>
+<li>CORS (OPTIONS + headers) per consumir des d'un frontend</li>
+<li>autenticació bàsica per rols (web.xml + tomcat-users.xml)</li>
+<li>DataSource + pool (JNDI) i passar de “memòria” a MySQL/MariaDB</li>
+</ul>
+<p>Digues-me si la vols <strong>en memòria (com ara)</strong> o <strong>connectada a BD</strong>, i t'ho deixe com pràctica completa d'avaluació.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

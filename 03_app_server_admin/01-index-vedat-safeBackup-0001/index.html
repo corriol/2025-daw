@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="ca">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
+<title>Administració de servidors d'aplicacions - Desplegament d'Aplicacions Web</title>
+<link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="purple" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#administracio-de-servidors-daplicacions">
+          Salta el contingut
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Capçalera" class="md-header__inner md-grid">
+<a aria-label="Desplegament d'Aplicacions Web" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Desplegament d'Aplicacions Web">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Desplegament d'Aplicacions Web
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Administració de servidors d'aplicacions
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="purple" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="purple" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Cerca" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Cerca" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Cerca" class="md-search__options">
+<button aria-label="Neteja" class="md-search__icon md-icon" tabindex="-1" title="Neteja" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegació" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Desplegament d'Aplicacions Web" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Desplegament d'Aplicacions Web">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+    Desplegament d'Aplicacions Web
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Inici
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_deploy/01-index/">
+<span class="md-ellipsis">
+    1. Implantació d'arquitectures web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02_web_server_admin/01-index/">
+<span class="md-ellipsis">
+    2. Administració de servidors web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-index/">
+<span class="md-ellipsis">
+    3. Administració de servidors d'aplicacions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04_ftp/01-index/">
+<span class="md-ellipsis">
+    4. Instal·lació i administració de servidors de transferència d'arxius
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../05_network/01-index/">
+<span class="md-ellipsis">
+    5. Serveis de xarxa implicats en el desplegament d'una aplicació web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../06_docs_cvs/01-index/">
+<span class="md-ellipsis">
+    6. Documentació, sistemes de control de versions i d'integració contínua
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="administracio-de-servidors-daplicacions">Administració de servidors d'aplicacions</h1>
+<p>Quan desenvolupem una aplicació web no n'hi ha prou amb programar-la. Necessitem un entorn capaç d'executar-la, gestionar les peticions dels clients, controlar la seguretat i administrar els recursos del sistema. Aquest entorn és el <strong>servidor d'aplicacions</strong>.</p>
+<p>Un servidor d'aplicacions és el programari responsable d'executar la lògica de negoci d'una aplicació web. Actua com a intermediari entre el client (normalment un navegador web) i els recursos interns del sistema, com ara bases de dades, serveis externs o sistemes d'autenticació.</p>
+<p>En l'ecosistema Java, alguns dels servidors més utilitzats són:</p>
+<ul>
+<li>Apache Tomcat</li>
+<li>WildFly</li>
+<li>GlassFish</li>
+<li>Payara Server</li>
+</ul>
+<p>Nosaltres treballarem principalment amb <strong>Tomcat</strong>, ja que és lleuger, senzill d'administrar i adequat per a aplicacions basades en Servlets o Spring.</p>
+<div class="admonition note">
+<p class="admonition-title">Què és un Servlet?</p>
+<p>Un <strong>Servlet</strong> és una classe Java que s'executa dins d'un servidor d'aplicacions (com Apache Tomcat) i que permet gestionar peticions i respostes HTTP.</p>
+<p>El seu funcionament bàsic és el següent:</p>
+<ol>
+<li>El client (navegador) envia una petició HTTP.</li>
+<li>El servidor d'aplicacions la rep i la redirigeix al Servlet corresponent.</li>
+<li>El Servlet processa la lògica de negoci.</li>
+<li>Genera una resposta HTTP (HTML, JSON, etc.).</li>
+<li>El servidor envia la resposta al client.</li>
+</ol>
+<p>Els Servlets formen la base de moltes tecnologies Java web (JSP, Spring MVC, etc.).</p>
+</div>
+<h2 id="arquitectura-i-configuracio-basica">Arquitectura i configuració bàsica</h2>
+<p>Quan instal·lem un servidor com Tomcat, este crea una estructura de directoris amb funcions molt concretes. Per exemple:</p>
+<ul>
+<li><code>/bin</code>: conté els scripts d'arrancada i parada.</li>
+<li><code>/conf</code>: inclou els fitxers de configuració.</li>
+<li><code>/webapps</code>: és el directori on es despleguen les aplicacions.</li>
+<li><code>/logs</code>: guarda els registres d'execució i errors.</li>
+</ul>
+<p>Un dels fitxers més importants és <code>server.xml</code>, on es defineixen aspectes essencials com:</p>
+<ul>
+<li>El port HTTP (habitualment el 8080).</li>
+<li>La configuració de connectors.</li>
+<li>La definició de serveis interns.</li>
+</ul>
+<p>A més, el servidor pot configurar-se per gestionar:</p>
+<ul>
+<li>_Pools de connexions a bases de dades.</li>
+<li>Límits de memòria de la JVM.</li>
+<li>Recursos compartits entre aplicacions.</li>
+</ul>
+<p>Esta configuració és crítica, ja que un mal ajust pot provocar problemes de rendiment o vulnerabilitats de seguretat.</p>
+<h2 id="administracio-daplicacions-web">Administració d'aplicacions web</h2>
+<p>Una vegada el servidor està operatiu, la tasca principal de l'administrador és gestionar les aplicacions que s'hi despleguen.</p>
+<p>En entorns Java tradicionals, les aplicacions es distribueixen en format <code>.war</code>. Aquest arxiu conté tot el necessari per a executar l'aplicació dins del servidor. El desplegament pot fer-se simplement copiant el fitxer al directori <code>/webapps</code> o utilitzant la consola d'administració.</p>
+<p>Les operacions habituals inclouen:</p>
+<ul>
+<li>Desplegar una nova aplicació.</li>
+<li>Actualitzar una versió existent.</li>
+<li>Reiniciar una aplicació concreta.</li>
+<li>Consultar els registres (<em>logs</em> per detectar errors.</li>
+<li>Supervisar el consum de recursos.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Cal saber</p>
+<p>En entorns més moderns, com Spring Boot, és habitual generar un <code>.jar</code> executable que inclou un servidor embegut. En aquest cas, l'aplicació no necessita un servidor extern com Tomcat, ja que el porta incorporat.</p>
+</div>
+<h2 id="autenticacio-i-seguretat">Autenticació i seguretat</h2>
+<p>Un aspecte fonamental de qualsevol servidor d'aplicacions és el control d'accés. No tots els usuaris poden accedir als mateixos recursos.</p>
+<p>Els servidors permeten diferents mecanismes d'autenticació:</p>
+<ul>
+<li>Autenticació bàsica (Basic Auth).</li>
+<li>Autenticació basada en formulari.</li>
+<li>Integració amb LDAP o Active Directory.</li>
+<li>Sistemes moderns basats en tokens (JWT).</li>
+</ul>
+<p>Per organitzar la seguretat, es defineixen <strong>realms</strong> o dominis de seguretat, que agrupen usuaris i rols. Per exemple:</p>
+<ul>
+<li><code>ADMIN</code> → accés complet.</li>
+<li><code>USER</code> → accés restringit.</li>
+</ul>
+<p>Aquest model permet aplicar el principi de mínim privilegi, concedint només els permisos estrictament necessaris.</p>
+<h2 id="gestio-de-sessions">Gestió de sessions</h2>
+<p>El protocol HTTP és sense estat (<em>stateless</em>), però les aplicacions web necessiten mantindre informació entre peticions. Això es resol mitjançant les sessions.</p>
+<p>El servidor pot configurar:</p>
+<ul>
+<li>El temps màxim d'inactivitat abans que la sessió expire.</li>
+<li>El lloc on s'emmagatzema la sessió (memòria o base de dades).</li>
+</ul>
+<h2 id="cooperacio-amb-un-servidor-web">Cooperació amb un servidor web</h2>
+<p>En entorns de producció és habitual separar el servidor web del servidor d'aplicacions.</p>
+<p>El servidor web (com Nginx o Apache):</p>
+<ul>
+<li>Serveix contingut estàtic.</li>
+<li>Actua com a proxy invers.</li>
+<li>Gestiona certificats TLS.</li>
+<li>Redirigeix les peticions dinàmiques al servidor d'aplicacions.</li>
+</ul>
+<p>Aquesta arquitectura millora el rendiment, la seguretat i l'escalabilitat.</p>
+<h2 id="proces-de-desplegament">Procés de desplegament</h2>
+<p>El desplegament d'una aplicació segueix una sèrie de fases clares:</p>
+<ol>
+<li>Compilació del projecte.</li>
+<li>Generació del paquet (<code>.war</code> o <code>.jar</code>).</li>
+<li>Transferència al servidor.</li>
+<li>Configuració de recursos (BD, variables d'entorn).</li>
+<li>Verificació mitjançant logs i proves HTTP.</li>
+</ol>
+<p>En entorns professionals, el desplegament sol estar automatitzat mitjançant sistemes d'integració contínua (CI/CD), reduint errors humans i millorant la traçabilitat.</p>
+<h2 id="seguretat-del-servidor">Seguretat del servidor</h2>
+<p>Finalment, l'administració del servidor implica garantir la seua seguretat. Algunes mesures essencials són:</p>
+<ul>
+<li>Mantindre el servidor actualitzat.</li>
+<li>Deshabilitar serveis i ports innecessaris.</li>
+<li>Forçar connexions HTTPS.</li>
+<li>Revisar logs d'accés i errors.</li>
+<li>No exposar consoles d'administració en producció.</li>
+<li>Externalitzar configuracions sensibles.</li>
+</ul>
+<p>La seguretat no és una acció puntual, sinó un procés continu.</p>
+<h2 id="guia-dinstallacio-i-desplegament-daplicacions-en-tomcat">Guia d'instal·lació i desplegament d'aplicacions en Tomcat</h2>
+<p>En la següent guia instal·larem i desplegarem una aplicació senzilla en Tomcat 11 i OpenJDK 21.</p>
+<p>Els passos bàsics seran: </p>
+<ol>
+<li>Instal·lar <strong>JDK</strong>.</li>
+<li>instal·lar <strong>Tomcat (binari) a <code>/opt/tomcat</code></strong>.</li>
+<li>Crear + compilar + empaquetar + desplegar <strong><code>api-rest.war</code></strong>.</li>
+<li>Fer <strong>totes les proves REST</strong> (curl) i comprovacions (logs, permisos)</li>
+</ol>
+<h3 id="1-installar-java-jdk">1. Instal·lar Java (JDK)</h3>
+<p>Primer que tot instal·larem l'entorn de Java:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>openjdk-21-jdk
+</code></pre></div>
+<p>Comprovem la versió instal·lada</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>java<span class="w"> </span>-version
+<span class="linenos" data-linenos="2 "></span>javac<span class="w"> </span>-version
+</code></pre></div>
+<p>Hauria d'eixir:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>openjdk<span class="w"> </span>version<span class="w"> </span><span class="s2">"21.0.10"</span><span class="w"> </span><span class="m">2026</span>-01-20
+<span class="linenos" data-linenos="2 "></span>OpenJDK<span class="w"> </span>Runtime<span class="w"> </span>Environment<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">21</span>.0.10+7-Ubuntu-124.04<span class="o">)</span>
+<span class="linenos" data-linenos="3 "></span>OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </span>Server<span class="w"> </span>VM<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">21</span>.0.10+7-Ubuntu-124.04,<span class="w"> </span>mixed<span class="w"> </span>mode,<span class="w"> </span>sharing<span class="o">)</span>
+</code></pre></div>
+<p>A continunació configurarem la variable d'entorn <code>JAVA_HOME</code>. És important perquè Tomcat trobe l'entorn d'execució de Java.</p>
+<p>Per trobar la ruta podem executar:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>readlink<span class="w"> </span>-f<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>java<span class="k">)</span>
+</code></pre></div>
+<p>Hauria de mostrar un cosa semblant a:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/usr/lib/jvm/java-21-openjdk-amd64/bin/java
+<span class="linenos" data-linenos="2 "></span>````
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span>Aleshores `JAVA_HOME` és: `/usr/lib/jvm/java-21-openjdk-amd64/bin/java`
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span>Editarem el fitxer de configuració del terminal. S'executa cada vegada que s'obri una nova terminal:
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span>```bash
+<span class="linenos" data-linenos="9 "></span>nano ~/.bashrc
+</code></pre></div>
+<p>Afegirem al final (canvia la ruta si cal):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/java-21-openjdk-amd64/bin/java
+<span class="linenos" data-linenos="2 "></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+</code></pre></div>
+<p>Aplicaren els canvies executant:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+<span class="linenos" data-linenos="2 "></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$JAVA_HOME</span>
+</code></pre></div>
+<p>Hauria de mostrar una cosa semblant a:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/usr/lib/jvm/java-21-openjdk-amd64/bin/java
+</code></pre></div>
+<h1 id="2-installar-tomcat-binari-a-opttomcat">2) Instal·lar Tomcat (binari) a <code>/opt/tomcat</code></h1>
+<p>Primer que tot ens mourem a <code>/opt</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>/opt
+</code></pre></div>
+<p>Descarregarem el <strong>Core tar.gz</strong> de Tomcat 11 (ajusta la versió). Pots obtenir l'enllaç de <a href="https://tomcat.apache.org/download-11.cgi">https://tomcat.apache.org/download-11.cgi</a>. </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>tomcat.tar.gz<span class="w"> </span><span class="s2">"https://dlcdn.apache.org/tomcat/tomcat-11/v11.0.0-MXX/bin/apache-tomcat-11.0.0-MXX.tar.gz"</span>
+</code></pre></div>
+<p>Descomprimirem i ho guardarem com <code>/opt/tomcat</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>tomcat.tar.gz
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>tomcat.tar.gz
+<span class="linenos" data-linenos="3 "></span>sudo<span class="w"> </span>mv<span class="w"> </span>apache-tomcat-11.0.0-MXX<span class="w"> </span>tomcat
+</code></pre></div>
+<blockquote>
+<p>Si el directori té un altre nom (per altra versió), substitueix-lo.</p>
+</blockquote>
+<p>Caldrà que donem permisos als <em>scripts</em> executables:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/opt/tomcat/bin/*.sh
+</code></pre></div>
+<p>Crearem un usuari de servei (recomanat):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>id<span class="w"> </span>tomcat<span class="w"> </span><span class="o">||</span><span class="w"> </span>sudo<span class="w"> </span>useradd<span class="w"> </span>-r<span class="w"> </span>-m<span class="w"> </span>-U<span class="w"> </span>-d<span class="w"> </span>/opt/tomcat<span class="w"> </span>-s<span class="w"> </span>/bin/false<span class="w"> </span>tomcat
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>tomcat:tomcat<span class="w"> </span>/opt/tomcat
+</code></pre></div>
+<p>Permeterem lectura a altres usuaris (per poder compilar contra <code>servlet-api.jar</code>) sense donar escriptura:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>chmod<span class="w"> </span>o+rx<span class="w"> </span>/opt
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span>o+rX<span class="w"> </span>/opt/tomcat
+</code></pre></div>
+<p>Arrenca com a usuari tomcat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>-u<span class="w"> </span>tomcat<span class="w"> </span>/opt/tomcat/bin/startup.sh
+</code></pre></div>
+<p>Provarem al navegador:</p>
+<ul>
+<li><code>http://localhost:8080</code></li>
+</ul>
+<p>Comprovarem versió:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/opt/tomcat/bin/catalina.sh<span class="w"> </span>version
+</code></pre></div>
+<p>Logs:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">80</span><span class="w"> </span>/opt/tomcat/logs/catalina.out
+</code></pre></div>
+<p>Atura (quan calga):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>-u<span class="w"> </span>tomcat<span class="w"> </span>/opt/tomcat/bin/shutdown.sh
+</code></pre></div>
+<h3 id="deplegament-de-laplicacio">Deplegament de l'aplicació</h3>
+<p>Descarregarem l'aplicació <a href="../assets/api-rest.war">API Rest</a>.</p>
+<h2 id="31-carpetes">3.1 Carpetes</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/projectes/api-rest/src/main/java/com/exemple/api
+<span class="linenos" data-linenos="2 "></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/projectes/api-rest/web/WEB-INF/classes
+<span class="linenos" data-linenos="3 "></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/projectes/api-rest/web/WEB-INF/lib
+</code></pre></div>
+<h2 id="32-webxml-minim-jakarta-servlet-60">3.2 <code>web.xml</code> mínim (Jakarta / Servlet 6.0)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>nano<span class="w"> </span>~/projectes/api-rest/web/WEB-INF/web.xml
+</code></pre></div>
+<p>Enganxa:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;web-app</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"https://jakarta.ee/xml/ns/jakartaee"</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">"https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">         </span><span class="na">version=</span><span class="s">"6.0"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="nt">&lt;/web-app&gt;</span>
+</code></pre></div>
+<h2 id="33-servlet-rest-apiusers">3.3 Servlet REST (<code>/api/users/*</code>)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>nano<span class="w"> </span>~/projectes/api-rest/src/main/java/com/exemple/api/UsersApi.java
+</code></pre></div>
+<p>Enganxa:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="  1 "></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.exemple.api</span><span class="p">;</span>
+<span class="linenos" data-linenos="  2 "></span>
+<span class="linenos" data-linenos="  3 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="linenos" data-linenos="  4 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.charset.StandardCharsets</span><span class="p">;</span>
+<span class="linenos" data-linenos="  5 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+<span class="linenos" data-linenos="  6 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ConcurrentHashMap</span><span class="p">;</span>
+<span class="linenos" data-linenos="  7 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.atomic.AtomicInteger</span><span class="p">;</span>
+<span class="linenos" data-linenos="  8 "></span>
+<span class="linenos" data-linenos="  9 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.annotation.WebServlet</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 10 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.http.HttpServlet</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 11 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.http.HttpServletRequest</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 12 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">jakarta.servlet.http.HttpServletResponse</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 13 "></span>
+<span class="linenos" data-linenos=" 14 "></span><span class="nd">@WebServlet</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"UsersApi"</span><span class="p">,</span><span class="w"> </span><span class="n">urlPatterns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"/api/users/*"</span><span class="p">})</span>
+<span class="linenos" data-linenos=" 15 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UsersApi</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 16 "></span>
+<span class="linenos" data-linenos=" 17 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 18 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">AtomicInteger</span><span class="w"> </span><span class="n">SEQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AtomicInteger</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 19 "></span>
+<span class="linenos" data-linenos=" 20 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos=" 21 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 22 "></span><span class="w">        </span><span class="n">setJson</span><span class="p">(</span><span class="n">resp</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 23 "></span>
+<span class="linenos" data-linenos=" 24 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">getPathInfo</span><span class="p">();</span><span class="w"> </span><span class="c1">// null, "/", "/{id}"</span>
+<span class="linenos" data-linenos=" 25 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">path</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="na">isBlank</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 26 "></span><span class="w">            </span><span class="n">resp</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 27 "></span><span class="w">            </span><span class="n">resp</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="n">usersToJson</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 28 "></span><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 29 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 30 "></span>
+<span class="linenos" data-linenos=" 31 "></span><span class="w">        </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parseId</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 32 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="s">"Invalid id. Use /api/users/{id}"</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 33 "></span>
+<span class="linenos" data-linenos=" 34 "></span><span class="w">        </span><span class="n">User</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DB</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 35 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w"> </span><span class="s">"User not found"</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 36 "></span>
+<span class="linenos" data-linenos=" 37 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 38 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="n">userToJson</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 39 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 40 "></span>
+<span class="linenos" data-linenos=" 41 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos=" 42 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doPost</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 43 "></span><span class="w">        </span><span class="n">setJson</span><span class="p">(</span><span class="n">resp</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 44 "></span>
+<span class="linenos" data-linenos=" 45 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">getPathInfo</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 46 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">path</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">path</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">path</span><span class="p">.</span><span class="na">isBlank</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 47 "></span><span class="w">            </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="s">"POST must be to /api/users"</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 48 "></span><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 49 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 50 "></span>
+<span class="linenos" data-linenos=" 51 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readBody</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 52 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extractJsonString</span><span class="p">(</span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="s">"name"</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 53 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extractJsonString</span><span class="p">(</span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="s">"email"</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 54 "></span>
+<span class="linenos" data-linenos=" 55 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="na">isBlank</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">isBlank</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 56 "></span><span class="w">            </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="s">"Expected JSON: {\"name\":\"...\",\"email\":\"...\"}"</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 57 "></span><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 58 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 59 "></span>
+<span class="linenos" data-linenos=" 60 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SEQ</span><span class="p">.</span><span class="na">incrementAndGet</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 61 "></span><span class="w">        </span><span class="n">DB</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="na">trim</span><span class="p">(),</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">trim</span><span class="p">()));</span>
+<span class="linenos" data-linenos=" 62 "></span>
+<span class="linenos" data-linenos=" 63 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 64 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setHeader</span><span class="p">(</span><span class="s">"Location"</span><span class="p">,</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">getContextPath</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"/api/users/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 65 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="n">userToJson</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">DB</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">id</span><span class="p">)));</span>
+<span class="linenos" data-linenos=" 66 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 67 "></span>
+<span class="linenos" data-linenos=" 68 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos=" 69 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doPut</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 70 "></span><span class="w">        </span><span class="n">setJson</span><span class="p">(</span><span class="n">resp</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 71 "></span>
+<span class="linenos" data-linenos=" 72 "></span><span class="w">        </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parseId</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">getPathInfo</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 73 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="s">"PUT requires /api/users/{id}"</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 74 "></span>
+<span class="linenos" data-linenos=" 75 "></span><span class="w">        </span><span class="n">User</span><span class="w"> </span><span class="n">existing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DB</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 76 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">existing</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w"> </span><span class="s">"User not found"</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 77 "></span>
+<span class="linenos" data-linenos=" 78 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readBody</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 79 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extractJsonString</span><span class="p">(</span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="s">"name"</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 80 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extractJsonString</span><span class="p">(</span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="s">"email"</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 81 "></span>
+<span class="linenos" data-linenos=" 82 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">newName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="na">isBlank</span><span class="p">())</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">existing</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="na">trim</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 83 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">newEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">email</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">isBlank</span><span class="p">())</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">existing</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">trim</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 84 "></span>
+<span class="linenos" data-linenos=" 85 "></span><span class="w">        </span><span class="n">DB</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="n">newName</span><span class="p">,</span><span class="w"> </span><span class="n">newEmail</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 86 "></span>
+<span class="linenos" data-linenos=" 87 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 88 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="n">userToJson</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">DB</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">id</span><span class="p">)));</span>
+<span class="linenos" data-linenos=" 89 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 90 "></span>
+<span class="linenos" data-linenos=" 91 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos=" 92 "></span><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doDelete</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 93 "></span><span class="w">        </span><span class="n">setJson</span><span class="p">(</span><span class="n">resp</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 94 "></span>
+<span class="linenos" data-linenos=" 95 "></span><span class="w">        </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parseId</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">getPathInfo</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 96 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="s">"DELETE requires /api/users/{id}"</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 97 "></span>
+<span class="linenos" data-linenos=" 98 "></span><span class="w">        </span><span class="n">User</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DB</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 99 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">removed</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sendError</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w"> </span><span class="s">"User not found"</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="100 "></span>
+<span class="linenos" data-linenos="101 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="mi">204</span><span class="p">);</span>
+<span class="linenos" data-linenos="102 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="103 "></span>
+<span class="linenos" data-linenos="104 "></span><span class="w">    </span><span class="c1">// ---- Helpers ----</span>
+<span class="linenos" data-linenos="105 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setJson</span><span class="p">(</span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">resp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="106 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setCharacterEncoding</span><span class="p">(</span><span class="s">"UTF-8"</span><span class="p">);</span>
+<span class="linenos" data-linenos="107 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">);</span>
+<span class="linenos" data-linenos="108 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="109 "></span>
+<span class="linenos" data-linenos="110 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendError</span><span class="p">(</span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="111 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
+<span class="linenos" data-linenos="112 "></span><span class="w">        </span><span class="n">resp</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">((</span><span class="s">"{\"ok\":false,\"error\":\""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">escapeJson</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\"}"</span><span class="p">));</span>
+<span class="linenos" data-linenos="113 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="114 "></span>
+<span class="linenos" data-linenos="115 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">parseId</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">pathInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="116 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pathInfo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="117 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pathInfo</span><span class="p">.</span><span class="na">trim</span><span class="p">();</span>
+<span class="linenos" data-linenos="118 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">"/"</span><span class="p">))</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="119 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">"/"</span><span class="p">))</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="120 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">isBlank</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="121 "></span><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="122 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="123 "></span>
+<span class="linenos" data-linenos="124 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">readBody</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">req</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="125 "></span><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">().</span><span class="na">readAllBytes</span><span class="p">();</span>
+<span class="linenos" data-linenos="126 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">);</span>
+<span class="linenos" data-linenos="127 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="128 "></span>
+<span class="linenos" data-linenos="129 "></span><span class="w">    </span><span class="c1">// JSON minimalista: {"key":"value"} (sense escapats complexos)</span>
+<span class="linenos" data-linenos="130 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">extractJsonString</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="131 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="132 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">needle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"\""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\""</span><span class="p">;</span>
+<span class="linenos" data-linenos="133 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">needle</span><span class="p">);</span>
+<span class="linenos" data-linenos="134 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="135 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">colon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">":"</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">needle</span><span class="p">.</span><span class="na">length</span><span class="p">());</span>
+<span class="linenos" data-linenos="136 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">colon</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="137 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">"\""</span><span class="p">,</span><span class="w"> </span><span class="n">colon</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="138 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">q1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="139 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">"\""</span><span class="p">,</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="140 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">q2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="141 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">json</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">q1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">q2</span><span class="p">);</span>
+<span class="linenos" data-linenos="142 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="143 "></span>
+<span class="linenos" data-linenos="144 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">usersToJson</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="145 "></span><span class="w">        </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
+<span class="linenos" data-linenos="146 "></span><span class="w">        </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">"{\"ok\":true,\"data\":["</span><span class="p">);</span>
+<span class="linenos" data-linenos="147 "></span><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos="148 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DB</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="149 "></span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">first</span><span class="p">)</span><span class="w"> </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">","</span><span class="p">);</span>
+<span class="linenos" data-linenos="150 "></span><span class="w">            </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos="151 "></span><span class="w">            </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">userToJsonInline</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getKey</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getValue</span><span class="p">()));</span>
+<span class="linenos" data-linenos="152 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="153 "></span><span class="w">        </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">"]}"</span><span class="p">);</span>
+<span class="linenos" data-linenos="154 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<span class="linenos" data-linenos="155 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="156 "></span>
+<span class="linenos" data-linenos="157 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">userToJson</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="158 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"{\"ok\":true,\"data\":"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userToJsonInline</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"}"</span><span class="p">;</span>
+<span class="linenos" data-linenos="159 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="160 "></span>
+<span class="linenos" data-linenos="161 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">userToJsonInline</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="162 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"{\"id\":"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="163 "></span><span class="w">                </span><span class="s">",\"name\":\""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">escapeJson</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="164 "></span><span class="w">                </span><span class="s">"\",\"email\":\""</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">escapeJson</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="na">email</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\"}"</span><span class="p">;</span>
+<span class="linenos" data-linenos="165 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="166 "></span>
+<span class="linenos" data-linenos="167 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">escapeJson</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="168 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">"\\"</span><span class="p">,</span><span class="w"> </span><span class="s">"\\\\"</span><span class="p">).</span><span class="na">replace</span><span class="p">(</span><span class="s">"\""</span><span class="p">,</span><span class="w"> </span><span class="s">"\\\""</span><span class="p">);</span>
+<span class="linenos" data-linenos="169 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="170 "></span>
+<span class="linenos" data-linenos="171 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="172 "></span><span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="linenos" data-linenos="173 "></span><span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="linenos" data-linenos="174 "></span><span class="w">        </span><span class="n">User</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="175 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="176 "></span><span class="p">}</span>
+</code></pre></div>
+<hr/>
+<h1 id="4-compilar-sense-maven-i-empaquetar-war">4) Compilar (sense Maven) i empaquetar WAR</h1>
+<h2 id="41-compila-contra-la-servlet-api-de-tomcat">4.1 Compila contra la Servlet API de Tomcat</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>~/projectes/api-rest
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span>javac<span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">  </span>-cp<span class="w"> </span>/opt/tomcat/lib/servlet-api.jar<span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">  </span>-d<span class="w"> </span>web/WEB-INF/classes<span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">  </span><span class="k">$(</span>find<span class="w"> </span>src/main/java<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.java"</span><span class="k">)</span>
+</code></pre></div>
+<p>Comprova que hi ha <code>.class</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>find<span class="w"> </span>web/WEB-INF/classes<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</code></pre></div>
+<h2 id="42-crea-el-war">4.2 Crea el WAR</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>~/projectes/api-rest/web
+<span class="linenos" data-linenos="2 "></span>jar<span class="w"> </span>-cvf<span class="w"> </span>../api-rest.war<span class="w"> </span>.
+<span class="linenos" data-linenos="3 "></span>ls<span class="w"> </span>-l<span class="w"> </span>../api-rest.war
+</code></pre></div>
+<hr/>
+<h1 id="5-desplegar-en-tomcat">5) Desplegar en Tomcat</h1>
+<h2 id="51-copia-el-war">5.1 Copia el WAR</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>cp<span class="w"> </span>~/projectes/api-rest/api-rest.war<span class="w"> </span>/opt/tomcat/webapps/
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>chown<span class="w"> </span>tomcat:tomcat<span class="w"> </span>/opt/tomcat/webapps/api-rest.war
+</code></pre></div>
+<h2 id="52-reinicia-tomcat-com-a-tomcat">5.2 Reinicia Tomcat (com a tomcat)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>-u<span class="w"> </span>tomcat<span class="w"> </span>/opt/tomcat/bin/shutdown.sh
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>-u<span class="w"> </span>tomcat<span class="w"> </span>/opt/tomcat/bin/startup.sh
+</code></pre></div>
+<h2 id="53-verificacions-de-desplegament">5.3 Verificacions de desplegament</h2>
+<p>Comprova que s'ha descomprimit:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ls<span class="w"> </span>/opt/tomcat/webapps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>api-rest
+</code></pre></div>
+<p>Hauries de veure:</p>
+<ul>
+<li><code>api-rest.war</code></li>
+<li><code>api-rest/</code></li>
+</ul>
+<p>Logs:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">120</span><span class="w"> </span>/opt/tomcat/logs/catalina.out
+</code></pre></div>
+<hr/>
+<h1 id="6-proves-rest-totes">6) Proves REST (totes)</h1>
+<blockquote>
+<p>Base URL: <code>http://localhost:8080/api-rest</code></p>
+</blockquote>
+<h2 id="61-list-al-principi-buit">6.1 LIST (al principi buit)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>200 OK</code> i <code>{"ok":true,"data":[]}</code></p>
+<h2 id="62-create">6.2 CREATE</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api-rest/api/users<span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"name":"Anna","email":"anna@exemple.com"}'</span>
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>201 Created</code> + capçalera <code>Location: .../api/users/1</code></p>
+<h2 id="63-list-ja-amb-1-usuari">6.3 LIST (ja amb 1 usuari)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>200</code> i array amb l'usuari id 1.</p>
+<h2 id="64-get-one">6.4 GET ONE</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users/1
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>200</code> i objecte.</p>
+<h2 id="65-update-parcial-nomes-name">6.5 UPDATE parcial (només name)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>http://localhost:8080/api-rest/api/users/1<span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"name":"Anna Vidal"}'</span>
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>200</code> amb name actualitzat.</p>
+<h2 id="66-delete">6.6 DELETE</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:8080/api-rest/api/users/1
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>204 No Content</code></p>
+<h2 id="67-get-one-ja-no-existeix">6.7 GET ONE (ja no existeix)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>http://localhost:8080/api-rest/api/users/1
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>404</code> amb JSON d'error.</p>
+<h2 id="68-validacio-derror-post-mal-format">6.8 Validació d'error (POST mal format)</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api-rest/api/users<span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"name":"SenseEmail"}'</span>
+</code></pre></div>
+<p><strong>Esperat:</strong> <code>400</code> amb missatge.</p>
+<hr/>
+<h1 id="7-troubleshooting-rapid-quan-alguna-cosa-falla">7) Troubleshooting ràpid (quan alguna cosa falla)</h1>
+<h2 id="71-404-a-tot">7.1 404 a tot</h2>
+<ul>
+<li>Tomcat no està arrancat:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'[o]rg.apache.catalina.startup.Bootstrap'</span>
+</code></pre></div>
+* L'app no s'ha desplegat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ls<span class="w"> </span>/opt/tomcat/webapps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>api-rest
+</code></pre></div>
+<h2 id="72-500-error-intern">7.2 500 (error intern)</h2>
+<p>Mira logs:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">200</span><span class="w"> </span>/opt/tomcat/logs/catalina.out
+</code></pre></div>
+<h2 id="73-errors-de-permisos">7.3 Errors de permisos</h2>
+<p>Comprova permisos de carpetes clau:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ls<span class="w"> </span>-ld<span class="w"> </span>/opt/tomcat<span class="w"> </span>/opt/tomcat/webapps<span class="w"> </span>/opt/tomcat/logs<span class="w"> </span>/opt/tomcat/temp<span class="w"> </span>/opt/tomcat/work
+</code></pre></div>
+<p>I que els directors són de <code>tomcat:tomcat</code>.</p>
+<hr/>
+<h2 id="si-vols-deixar-ho-nivell-aula-bloc-3">Si vols deixar-ho “nivell aula / bloc 3”</h2>
+<p>Et puc afegir:</p>
+<ul>
+<li>CORS (OPTIONS + headers) per consumir des d'un frontend</li>
+<li>autenticació bàsica per rols (web.xml + tomcat-users.xml)</li>
+<li>DataSource + pool (JNDI) i passar de “memòria” a MySQL/MariaDB</li>
+</ul>
+<p>Digues-me si la vols <strong>en memòria (com ara)</strong> o <strong>connectada a BD</strong>, i t'ho deixe com pràctica completa d'avaluació.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      2025-2026 Vicent Jordà - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
