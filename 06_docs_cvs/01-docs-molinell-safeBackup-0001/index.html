@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>Instal·lació i Administració de Servidors de Transferència d'Arxius - Desplegament d'Aplicacions Web</title>
+<title>Documentació d'aplicacions web - Desplegament d'Aplicacions Web</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#installacio-i-administracio-de-servidors-de-transferencia-darxius">
+<a class="md-skip" href="#documentacio-daplicacions-web">
           Salta el contingut
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Instal·lació i Administració de Servidors de Transferència d'Arxius
+              Documentació d'aplicacions web
             
           </span>
 </div>
@@ -141,7 +141,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../01-index/">
+<a class="md-nav__link" href="../../04_ftp/01-index/">
 <span class="md-ellipsis">
     4. Instal·lació i administració de servidors de transferència d'arxius
     
@@ -172,7 +172,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../06_docs_cvs/01-docs/">
+<a class="md-nav__link" href="../01-docs/">
 <span class="md-ellipsis">
     1. Documentació
     
@@ -180,7 +180,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../06_docs_cvs/0101-docascode/">
+<a class="md-nav__link" href="../0101-docascode/">
 <span class="md-ellipsis">
     1.1. Exemple de doc as code
     
@@ -188,7 +188,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../06_docs_cvs/02-cvs/">
+<a class="md-nav__link" href="../02-cvs/">
 <span class="md-ellipsis">
     2. Sistemes de control de versions
     
@@ -196,7 +196,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../06_docs_cvs/03-cdci/">
+<a class="md-nav__link" href="../03-cdci/">
 <span class="md-ellipsis">
     3. Integració contínua
     
@@ -213,59 +213,190 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="installacio-i-administracio-de-servidors-de-transferencia-darxius">Instal·lació i Administració de Servidors de Transferència d'Arxius</h1>
-<h2 id="1-configuracio-del-servei-de-transferencia-darxius">1. Configuració del servei de transferència d'arxius</h2>
-<p>Un servidor de transferència d’arxius és com un pont digital entre ordinadors: permet enviar i rebre fitxers a través d’una xarxa mitjançant protocols dissenyats específicament per a aquesta funció. És una eina fonamental per publicar contingut web, compartir arxius amb altres usuaris o realitzar còpies de seguretat en ubicacions remotes.</p>
-<p>Entre els protocols més habituals trobem:</p>
+<h1 id="documentacio-daplicacions-web">Documentació d'aplicacions web</h1>
+<h2 id="1-introduccio">1. Introducció</h2>
+<p>En entorns professionals de desenvolupament i desplegament web, la documentació és un <strong>actiu tècnic essencial</strong>. No és un annex decoratiu del projecte, sinó un element estructural que:</p>
 <ul>
-<li><strong>FTP (File Transfer Protocol):</strong> el més antic i encara molt present, tot i que no ofereix xifrat de dades per defecte.</li>
-<li><strong>FTPS (FTP Secure):</strong> una evolució del FTP que incorpora una capa de seguretat basada en SSL/TLS.</li>
-<li><strong>SFTP (SSH File Transfer Protocol):</strong> utilitza el canal segur d’SSH, fet que el converteix en una opció més moderna i fiable.</li>
+<li>Permet mantenir i evolucionar l’aplicació.</li>
+<li>Facilita la integració de nous membres a l’equip.</li>
+<li>Garanteix la traçabilitat dels canvis.</li>
+<li>Dona suport als processos d’auditoria i qualitat.</li>
 </ul>
-<p>Per posar en marxa aquest servei, cal seguir alguns passos bàsics: instal·lar el programari del servidor (com <em>vsftpd</em>, <em>ProFTPD</em> o <em>FileZilla Server</em>), definir el port de connexió (21 per FTP o 22 per SFTP), establir el directori arrel per als usuaris, activar el xifrat corresponent (TLS/SSL o SSH) i ajustar els fitxers de configuració principals, com ara <code>vsftpd.conf</code> o <code>proftpd.conf</code>.</p>
-<h2 id="2-permisos-i-quotes">2. Permisos i quotes</h2>
-<p>La gestió de permisos i quotes és essencial per mantenir un servidor segur i estable. Cada usuari o grup ha de disposar únicament dels permisos que realment necessita: lectura (r), escriptura (w) i execució (x). Una configuració acurada d’aquests permisos evita accessos indeguts i problemes de seguretat.</p>
-<p>A més, establir <strong>quotes de disc</strong> permet limitar l’espai disponible per a cada compte, prevenint saturacions o usos abusius del sistema. En entorns multiusuari, és recomanable “tancar” cada usuari dins del seu propi directori, una tècnica coneguda com a <em>chroot jail</em>, que impedeix accedir a altres àrees del sistema. Finalment, monitoritzar els registres (<em>logs</em>) ajuda a detectar intents d’intrusió o un ús anòmal dels recursos.</p>
-<h2 id="3-tipus-dusuaris-i-accessos-al-servei">3. Tipus d'usuaris i accessos al servei</h2>
-<p>Un servidor FTP o SFTP pot treballar amb diversos tipus d’usuaris segons el nivell d’accés que es vulga oferir:</p>
+<p>En el mòdul de <strong>Desplegament d’Aplicacions Web</strong>, la documentació es considera part del procés de producció i s’ha d’integrar dins del cicle de vida del projecte.</p>
+<h2 id="2-eines-de-generacio-de-documentacio">2. Eines de generació de documentació</h2>
+<h3 id="21-generadors-automatics-de-documentacio">2.1. Generadors automàtics de documentació</h3>
+<p>Són eines que generen documentació a partir de comentaris estructurats dins del codi.</p>
+<p>Algunes exemples habituals en entorns web:</p>
 <ul>
-<li><strong>Usuaris locals:</strong> són comptes del sistema operatiu que utilitzen les mateixes credencials per autenticar-se al servidor.</li>
-<li><strong>Usuaris virtuals:</strong> gestionats únicament pel servei FTP, sense correspondència amb usuaris del sistema. S’emmagatzemen en fitxers o bases de dades.</li>
-<li><strong>Accés anònim:</strong> permet la connexió sense credencials, habitualment amb accés de només lectura a un directori públic.</li>
+<li><strong>phpDocumentor</strong> (PHP)</li>
+<li><strong>Sphinx</strong> (Python)</li>
+<li><strong>Doxygen</strong> (multi-llenguatge)</li>
+<li><strong>Javadoc</strong> (Java)</li>
 </ul>
-<p>Com a norma general, és recomanable evitar l’accés anònim, aplicar el principi de mínim privilegi i exigir contrasenyes segures amb polítiques de caducitat periòdica.</p>
-<h2 id="4-modes-de-connexio-del-client">4. Modes de connexió del client</h2>
-<p>El protocol FTP treballa amb dos canals de comunicació: un per a les ordres i un altre per a la transferència de dades. D’aquesta estructura deriven dos modes de connexió:</p>
+<p>El funcionament habitual d'estes ferramentes és el següent:</p>
+<ol>
+<li>El desenvolupador escriu comentaris estructurats.</li>
+<li>L'eina analitza el codi font.</li>
+<li>Es genera documentació en HTML, PDF o altres formats.</li>
+</ol>
+<p>Els seus avantatges són:</p>
 <ul>
-<li><strong>Mode actiu:</strong> el client indica al servidor en quin port està escoltant, i aquest inicia la connexió de dades. Pot causar conflictes amb tallafocs.</li>
-<li><strong>Mode passiu:</strong> el servidor indica un port i el client és qui inicia la connexió. És el mode preferit actualment per la seua compatibilitat amb NAT i tallafocs.</li>
+<li>Automatització.</li>
+<li>Consistència.</li>
+<li>Reducció d’errors humans.</li>
 </ul>
-<figure>
-<p><img alt="" src="../assets/640px-Activo.svg.png"/></p>
-<figcaption>
-<p><strong>Figura 1.</strong> Mode actiu.</p>
-</figcaption>
-</figure>
-<p>Per garantir una connexió estable, convé definir un rang de ports passius i assegurar-se que estiguen oberts al tallafocs del servidor.</p>
-<h2 id="5-protocol-segur-de-transferencia-darxius">5. Protocol segur de transferència d'arxius</h2>
-<p>El FTP tradicional transmet dades en text pla, cosa que exposa credencials i informació sensible a possibles atacs. Per això, és fonamental emprar protocols segurs com:</p>
+<h3 id="22-documentacio-com-a-codi-docs-as-code">2.2. Documentació com a codi (<em>Docs as Code</em>)</h3>
+<p>Es tracta d'un model modern on:</p>
 <ul>
-<li><strong>FTPS:</strong> que afegeix TLS/SSL al protocol FTP. Pot operar en mode explícit o implícit i manté compatibilitat amb molts clients FTP.</li>
-<li><strong>SFTP:</strong> que utilitza el canal SSH per oferir un entorn completament xifrat, més senzill de configurar i de mantenir.</li>
+<li>La documentació es genera amb les mateixes ferramentes en que es genera el codi.</li>
+<li>La documentació es guarda en el mateix repositori Git.</li>
+<li>Es versiona junt amb el codi.</li>
+<li>Es publica automàticament via integració contínua.</li>
 </ul>
-<p>Els protocols segurs aporten beneficis clars: protecció de dades i credencials, prevenció d’atacs de tipus <em>man-in-the-middle</em> i autenticació més robusta, fins i tot amb claus públiques.<br/>
-Per tant, és imprescindible desactivar l’FTP sense xifrat i utilitzar certificats vàlids i actualitzats.</p>
-<h2 id="6-utilitzacio-de-comandes-i-deines-grafiques">6. Utilització de comandes i d'eines gràfiques</h2>
-<h3 id="eines-en-linia-dordres">Eines en línia d'ordres</h3>
-<p>Els administradors sovint prefereixen treballar amb eines en mode text com <code>ftp</code>, <code>sftp</code>, <code>lftp</code> o <code>scp</code>. Aquestes permeten transferir fitxers, canviar de directori (<code>cd</code>), llistar continguts (<code>ls</code>), descarregar (<code>get</code>, <code>mget</code>) o pujar arxius (<code>put</code>, <code>mput</code>), i tancar la sessió amb <code>bye</code>. Són eines potents i ideals per a automatitzar processos.</p>
-<h3 id="eines-grafiques">Eines gràfiques</h3>
-<p>Per als usuaris menys tècnics, els clients amb interfície gràfica —com <em>FileZilla</em>, <em>WinSCP</em> o <em>Cyberduck</em>— ofereixen una experiència més intuïtiva. Permeten arrossegar fitxers, gestionar permisos i guardar credencials, simplificant les tasques de transferència puntuals o de manteniment.</p>
-<h2 id="7-utilitzacio-del-servei-en-el-desplegament-daplicacions-web">7. Utilització del servei en el desplegament d'aplicacions web</h2>
-<p>El servei FTP o SFTP és una de les vies més habituals per desplegar aplicacions web. A través d’aquest sistema, els desenvolupadors poden pujar fitxers HTML, CSS, JavaScript o altres recursos directament al servidor de producció, mantenint el lloc sempre actualitzat.</p>
-<p>És recomanable automatitzar el procés mitjançant scripts o eines de CI/CD, ajustar els permisos i propietaris després de cada pujada i realitzar còpies de seguretat abans de substituir versions anteriors. Aquest enfocament facilita desplegaments ràpids i segurs, sense necessitat de coneixements avançats en DevOps.</p>
-<h2 id="8-documentacio">8. Documentació</h2>
-<p>Un servei de transferència d’arxius ben gestionat ha d’anar sempre acompanyat d’una documentació acurada. Aquesta ha d’incloure el llistat d’usuaris amb els seus permisos, la configuració actual del servidor (ports, directoris, quotes, seguretat), la ubicació dels fitxers de configuració, els procediments de connexió per als usuaris i un registre d’incidències i solucions aplicades.</p>
-<p>Guardar aquesta documentació en un repositori Git és una bona pràctica: permet controlar canvis, mantindre versions i recuperar configuracions anteriors amb facilitat.</p>
+<p>Els formats habituals són:</p>
+<ul>
+<li>Markdown (.md)</li>
+<li>ReStructuredText</li>
+<li>HTML generat</li>
+</ul>
+<p>Este model és el recomanat per a projectes professionals.</p>
+<h2 id="3-documentacio-de-components-software">3. Documentació de components software</h2>
+<p><em>(Relacionat amb RA6.b)</em></p>
+<h2 id="31-que-sha-de-documentar-en-una-aplicacio-web">3.1. Què s’ha de documentar en una aplicació web?</h2>
+<h4 id="arquitectura">Arquitectura</h4>
+<ul>
+<li>Model utilitzat (MVC, microserveis, etc.)</li>
+<li>Diagrama de components</li>
+<li>Dependències externes</li>
+</ul>
+<h4 id="backend">Backend</h4>
+<ul>
+<li>Endpoints de l’API</li>
+<li>Paràmetres d’entrada</li>
+<li>Respostes</li>
+<li>Codis d’error</li>
+<li>Sistemes d’autenticació</li>
+</ul>
+<h4 id="base-de-dades">Base de dades</h4>
+<ul>
+<li>Model entitat-relació</li>
+<li>Scripts de creació</li>
+<li>Migracions</li>
+<li>Restriccions i claus</li>
+</ul>
+<h4 id="configuracio-de-desplegament">Configuració de desplegament</h4>
+<ul>
+<li>Variables d’entorn</li>
+<li>Ports utilitzats</li>
+<li>Fitxers de configuració</li>
+<li>Dependències</li>
+</ul>
+<h3 id="32-exemple-destructura-minima-de-documentacio-tecnica">3.2. Exemple d’estructura mínima de documentació tècnica</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/docs
+<span class="linenos" data-linenos="2 "></span> ├── README.md
+<span class="linenos" data-linenos="3 "></span> ├── arquitectura.md
+<span class="linenos" data-linenos="4 "></span> ├── instal·lacio.md
+<span class="linenos" data-linenos="5 "></span> ├── configuracio.md
+<span class="linenos" data-linenos="6 "></span> ├── api.md
+<span class="linenos" data-linenos="7 "></span> ├── base_dades.md
+<span class="linenos" data-linenos="8 "></span> └── desplegament.md
+</code></pre></div>
+<p>Cada document ha de ser:</p>
+<ul>
+<li>Clar</li>
+<li>Estructurat</li>
+<li>Navegable</li>
+<li>Actualitzat</li>
+</ul>
+<h2 id="4-formats-de-documentacio">4. Formats de documentació</h2>
+<p><em>(Relacionat amb RA6.c)</em></p>
+<h3 id="41-formats-habituals-en-entorns-daw">4.1. Formats habituals en entorns DAW</h3>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Ús recomanat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown</td>
+<td>Documentació tècnica interna</td>
+</tr>
+<tr>
+<td>HTML</td>
+<td>Publicació automàtica</td>
+</tr>
+<tr>
+<td>PDF</td>
+<td>Lliurament formal</td>
+</tr>
+<tr>
+<td>Wiki</td>
+<td>Documentació viva</td>
+</tr>
+<tr>
+<td>OpenAPI</td>
+<td>Documentació d’APIs REST</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-criteris-de-seleccio-del-format">4.2. Criteris de selecció del format</h2>
+<ul>
+<li>Públic destinatari (equip tècnic vs client)</li>
+<li>Necessitat d’actualització freqüent</li>
+<li>Integració amb control de versions</li>
+<li>Automatització</li>
+</ul>
+<p>En projectes DAW, el format <strong>Markdown versionat en Git</strong> és el més adequat.</p>
+<h1 id="5-eines-collaboratives">5. Eines col·laboratives</h1>
+<p><em>(Relacionat amb RA6.d)</em></p>
+<p>La documentació ha de permetre treball en equip.</p>
+<h2 id="51-requisits-duna-eina-collaborativa">5.1. Requisits d’una eina col·laborativa</h2>
+<ul>
+<li>Control de versions</li>
+<li>Historial de canvis</li>
+<li>Gestió de permisos</li>
+<li>Revisió de canvis (pull requests)</li>
+<li>Integració amb repositori</li>
+</ul>
+<h2 id="52-flux-de-treball-recomanat-en-entorn-daw">5.2. Flux de treball recomanat en entorn DAW</h2>
+<ol>
+<li>Crear carpeta <code>/docs</code> al repositori.</li>
+<li>Assignar responsabilitats per secció.</li>
+<li>Treballar amb branques (branching).</li>
+<li>Revisió mitjançant Pull Request.</li>
+<li>Validació final abans de fusionar a <code>main</code>.</li>
+</ol>
+<h1 id="6-plantilles-de-documentacio-tecnica">6. Plantilles de documentació tècnica</h1>
+<h2 id="61-plantilla-de-document-readmemd">6.1. Plantilla de document README.md</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="gh"># Nom del projecte</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="gu">## Descripció</span>
+<span class="linenos" data-linenos=" 4 "></span>Breve descripció funcional.
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="gu">## Requisits</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">-</span><span class="w"> </span>Node.js 18
+<span class="linenos" data-linenos=" 8 "></span><span class="k">-</span><span class="w"> </span>PHP 8.2
+<span class="linenos" data-linenos=" 9 "></span><span class="k">-</span><span class="w"> </span>MySQL 8
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="gu">## Instal·lació</span>
+<span class="linenos" data-linenos="12 "></span>Passos detallats.
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="gu">## Execució</span>
+<span class="linenos" data-linenos="15 "></span>Com iniciar l’aplicació.
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="gu">## Autors</span>
+<span class="linenos" data-linenos="18 "></span>Equip de desenvolupament.
+</code></pre></div>
+<h2 id="7-bones-practiques-professionals">7. Bones pràctiques professionals</h2>
+<ul>
+<li>No documentar al final → documentar durant el desenvolupament.</li>
+<li>Evitar duplicació d’informació.</li>
+<li>Escriure pensant en tercers.</li>
+<li>Utilitzar llenguatge tècnic precís.</li>
+<li>Revisió periòdica de coherència.</li>
+</ul>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

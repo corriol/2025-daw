@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="ca">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../01-docs/" rel="prev"/>
+<link href="../02-cvs/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
+<title>1.1. Exemple de doc as code - Desplegament d'Aplicacions Web</title>
+<link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="purple" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#exemple-practic-de-docs-as-code">
+          Salta el contingut
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Capçalera" class="md-header__inner md-grid">
+<a aria-label="Desplegament d'Aplicacions Web" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Desplegament d'Aplicacions Web">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Desplegament d'Aplicacions Web
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              1.1. Exemple de doc as code
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="purple" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="purple" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Cerca" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Cerca" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Cerca" class="md-search__options">
+<button aria-label="Neteja" class="md-search__icon md-icon" tabindex="-1" title="Neteja" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegació" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Desplegament d'Aplicacions Web" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Desplegament d'Aplicacions Web">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+    Desplegament d'Aplicacions Web
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Inici
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_deploy/01-index/">
+<span class="md-ellipsis">
+    1. Implantació d'arquitectures web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02_web_server_admin/01-index/">
+<span class="md-ellipsis">
+    2. Administració de servidors web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_app_server_admin/01-index/">
+<span class="md-ellipsis">
+    3. Administració de servidors d'aplicacions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04_ftp/01-index/">
+<span class="md-ellipsis">
+    4. Instal·lació i administració de servidors de transferència d'arxius
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../05_network/01-index/">
+<span class="md-ellipsis">
+    5. Serveis de xarxa implicats en el desplegament d'una aplicació web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    6. Documentació, sistemes de control de versions i d'integració contínua
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            6. Documentació, sistemes de control de versions i d'integració contínua
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-docs/">
+<span class="md-ellipsis">
+    1. Documentació
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    1.1. Exemple de doc as code
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    1.1. Exemple de doc as code
+    
+  </span>
+</a>
+<nav aria-label="Taula de continguts" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context-del-projecte">
+<span class="md-ellipsis">
+      Context del projecte
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-estructura-del-repositori">
+<span class="md-ellipsis">
+      1. Estructura del repositori
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-exemple-real-de-documentacio-markdown">
+<span class="md-ellipsis">
+      2. Exemple real de documentació (Markdown)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-fitxer-de-configuracio-mkdocs">
+<span class="md-ellipsis">
+      3. Fitxer de configuració MkDocs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-publicacio-automatica-integracio-continua">
+<span class="md-ellipsis">
+      4. Publicació automàtica (Integració contínua)
+    </span>
+</a>
+<nav aria-label="4. Publicació automàtica (Integració contínua)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exemple-github-actions">
+<span class="md-ellipsis">
+      Exemple GitHub Actions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-flux-de-treball-real-en-equip">
+<span class="md-ellipsis">
+      5. Flux de treball real en equip
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-cvs/">
+<span class="md-ellipsis">
+    2. Sistemes de control de versions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03-cdci/">
+<span class="md-ellipsis">
+    3. Integració contínua
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="exemple-practic-de-docs-as-code">Exemple pràctic de <em>Docs as Code</em></h1>
+<h2 id="context-del-projecte">Context del projecte</h2>
+<p>Aplicació web REST amb:</p>
+<ul>
+<li>Backend en PHP (Laravel)</li>
+<li>Base de dades MySQL</li>
+<li>Desplegament amb Docker</li>
+<li>Repositori Git</li>
+</ul>
+<p>La documentació:</p>
+<ul>
+<li>Es guarda dins del repositori</li>
+<li>Està escrita en Markdown</li>
+<li>Es versiona amb Git</li>
+<li>Es publica automàticament amb GitHub Pages</li>
+</ul>
+<h2 id="1-estructura-del-repositori">1. Estructura del repositori</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>projecte-daw/
+<span class="linenos" data-linenos=" 2 "></span>│
+<span class="linenos" data-linenos=" 3 "></span>├── app/
+<span class="linenos" data-linenos=" 4 "></span>├── database/
+<span class="linenos" data-linenos=" 5 "></span>├── docker/
+<span class="linenos" data-linenos=" 6 "></span>├── routes/
+<span class="linenos" data-linenos=" 7 "></span>├── tests/
+<span class="linenos" data-linenos=" 8 "></span>│
+<span class="linenos" data-linenos=" 9 "></span>├── docs/
+<span class="linenos" data-linenos="10 "></span>│   ├── index.md
+<span class="linenos" data-linenos="11 "></span>│   ├── arquitectura.md
+<span class="linenos" data-linenos="12 "></span>│   ├── instal·lacio.md
+<span class="linenos" data-linenos="13 "></span>│   ├── api.md
+<span class="linenos" data-linenos="14 "></span>│   ├── base_dades.md
+<span class="linenos" data-linenos="15 "></span>│   └── desplegament.md
+<span class="linenos" data-linenos="16 "></span>│
+<span class="linenos" data-linenos="17 "></span>├── mkdocs.yml
+<span class="linenos" data-linenos="18 "></span>├── README.md
+<span class="linenos" data-linenos="19 "></span>└── docker-compose.yml
+</code></pre></div>
+<p>Observa que la carpeta <code>docs/</code> forma part del mateix repositori que el codi.</p>
+<h2 id="2-exemple-real-de-documentacio-markdown">2. Exemple real de documentació (Markdown)</h2>
+<p>📄 docs/arquitectura.md</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="gh"># Arquitectura del sistema</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="gu">## Patró utilitzat</span>
+<span class="linenos" data-linenos=" 4 "></span>Arquitectura MVC.
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="gu">## Components principals</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">-</span><span class="w"> </span>Backend Laravel
+<span class="linenos" data-linenos=" 9 "></span><span class="k">-</span><span class="w"> </span>Base de dades MySQL
+<span class="linenos" data-linenos="10 "></span><span class="k">-</span><span class="w"> </span>Servidor Nginx
+<span class="linenos" data-linenos="11 "></span><span class="k">-</span><span class="w"> </span>Contenidors Docker
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="gu">## Diagrama simplificat</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>Client → Nginx → Laravel → MySQL
+</code></pre></div>
+<p>📄 docs/instal·lacio.md</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="gh"># Instal·lació del projecte</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="gu">## Requisits previs</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">-</span><span class="w"> </span>Docker
+<span class="linenos" data-linenos=" 5 "></span><span class="k">-</span><span class="w"> </span>Docker Compose
+<span class="linenos" data-linenos=" 6 "></span><span class="k">-</span><span class="w"> </span>Git
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="gu">## Clonar repositori</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>git clone https://github.com/usuari/projecte-daw.git
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="gu">## Iniciar contenidors</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>docker-compose up -d
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="gu">## Accedir a l'aplicació</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>http://localhost:8080
+</code></pre></div>
+<h2 id="3-fitxer-de-configuracio-mkdocs">3. Fitxer de configuració MkDocs</h2>
+<p>📄 mkdocs.yml</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Projecte DAW</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">nav</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Inici</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Arquitectura</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arquitectura.md</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Instal·lació</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">instal·lacio.md</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">API</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.md</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Base de dades</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_dades.md</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Desplegament</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">desplegament.md</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nt">theme</span><span class="p">:</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+</code></pre></div>
+<p>Aquest fitxer permet generar una web navegable de documentació.</p>
+<h2 id="4-publicacio-automatica-integracio-continua">4. Publicació automàtica (Integració contínua)</h2>
+<h3 id="exemple-github-actions">Exemple GitHub Actions</h3>
+<p>📄 <code>.github/workflows/docs.yml</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Docs</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nt">on</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nt">permissions</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="nt">jobs</span><span class="p">:</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install MkDocs</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install mkdocs mkdocs-material</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs gh-deploy --force</span>
+</code></pre></div>
+<p>Cada vegada que es fa un <code>push</code> a <code>main</code>, la documentació es publica automàticament.</p>
+<p>Això és <strong>Docs as Code + CI/CD</strong>.</p>
+<h2 id="5-flux-de-treball-real-en-equip">5. Flux de treball real en equip</h2>
+<ol>
+<li>Desenvolupador crea una nova funcionalitat.</li>
+<li>Actualitza <code>docs/api.md</code>.</li>
+<li>Ho afig al repositori local.</li>
+<li>
+<p>Fa <code>commit</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>git commit -m "Afegit endpoint de registre d'usuari"
+</code></pre></div>
+</li>
+<li>
+<p>Fa <code>push</code> per actualitzar el repositori remot.</p>
+</li>
+<li>La documentació es regenera automàticament.</li>
+<li>L’equip pot consultar-la actualitzada en línia.</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      2025-2026 Vicent Jordà - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

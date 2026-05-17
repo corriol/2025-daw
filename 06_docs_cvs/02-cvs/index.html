@@ -5,24 +5,25 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="01_deploy/01-index/" rel="next"/>
-<link href="assets/images/favicon.png" rel="icon"/>
+<link href="../0101-docascode/" rel="prev"/>
+<link href="../03-cdci/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>Desplegament d'Aplicacions Web</title>
-<link href="assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>2. Sistemes de control de versions - Desplegament d'Aplicacions Web</title>
+<link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="purple" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#desplegament-daplicacions-web">
+<a class="md-skip" href="#2-installacio-configuracio-i-us-de-sistemes-de-control-de-versions">
           Salta el contingut
         </a>
 </div>
@@ -30,8 +31,8 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Capçalera" class="md-header__inner md-grid">
-<a aria-label="Desplegament d'Aplicacions Web" class="md-header__button md-logo" data-md-component="logo" href="." title="Desplegament d'Aplicacions Web">
-<img alt="logo" src="assets/logo.png"/>
+<a aria-label="Desplegament d'Aplicacions Web" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Desplegament d'Aplicacions Web">
+<img alt="logo" src="../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -46,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Inici
+              2. Sistemes de control de versions
             
           </span>
 </div>
@@ -103,24 +104,103 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegació" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Desplegament d'Aplicacions Web" class="md-nav__button md-logo" data-md-component="logo" href="." title="Desplegament d'Aplicacions Web">
-<img alt="logo" src="assets/logo.png"/>
+<a aria-label="Desplegament d'Aplicacions Web" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Desplegament d'Aplicacions Web">
+<img alt="logo" src="../../assets/logo.png"/>
 </a>
     Desplegament d'Aplicacions Web
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     Inici
     
   </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01_deploy/01-index/">
+<span class="md-ellipsis">
+    1. Implantació d'arquitectures web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02_web_server_admin/01-index/">
+<span class="md-ellipsis">
+    2. Administració de servidors web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03_app_server_admin/01-index/">
+<span class="md-ellipsis">
+    3. Administració de servidors d'aplicacions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04_ftp/01-index/">
+<span class="md-ellipsis">
+    4. Instal·lació i administració de servidors de transferència d'arxius
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../05_network/01-index/">
+<span class="md-ellipsis">
+    5. Serveis de xarxa implicats en el desplegament d'una aplicació web
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    6. Documentació, sistemes de control de versions i d'integració contínua
+    
+  </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<a class="md-nav__link md-nav__link--active" href=".">
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            6. Documentació, sistemes de control de versions i d'integració contínua
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-docs/">
 <span class="md-ellipsis">
-    Inici
+    1. Documentació
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0101-docascode/">
+<span class="md-ellipsis">
+    1.1. Exemple de doc as code
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    2. Sistemes de control de versions
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    2. Sistemes de control de versions
     
   </span>
 </a>
@@ -131,16 +211,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#objectius">
+<a class="md-nav__link" href="#21-git">
 <span class="md-ellipsis">
-      Objectius
+      2.1 Git
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#resultats-daprenentatge">
+<a class="md-nav__link" href="#22-operacions-avancades">
 <span class="md-ellipsis">
-      Resultats d'aprenentatge
+      2.2. Operacions avançades
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-seguretat-dels-sistemes-de-control-de-versions">
+<span class="md-ellipsis">
+      2.3 Seguretat dels sistemes de control de versions
     </span>
 </a>
 </li>
@@ -148,86 +235,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="01_deploy/01-index/">
-<span class="md-ellipsis">
-    1. Implantació d'arquitectures web
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="02_web_server_admin/01-index/">
-<span class="md-ellipsis">
-    2. Administració de servidors web
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="03_app_server_admin/01-index/">
-<span class="md-ellipsis">
-    3. Administració de servidors d'aplicacions
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="04_ftp/01-index/">
-<span class="md-ellipsis">
-    4. Instal·lació i administració de servidors de transferència d'arxius
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="05_network/01-index/">
-<span class="md-ellipsis">
-    5. Serveis de xarxa implicats en el desplegament d'una aplicació web
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-<span class="md-ellipsis">
-    6. Documentació, sistemes de control de versions i d'integració contínua
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-            6. Documentació, sistemes de control de versions i d'integració contínua
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="06_docs_cvs/01-docs/">
-<span class="md-ellipsis">
-    1. Documentació
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="06_docs_cvs/0101-docascode/">
-<span class="md-ellipsis">
-    1.1. Exemple de doc as code
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="06_docs_cvs/02-cvs/">
-<span class="md-ellipsis">
-    2. Sistemes de control de versions
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="06_docs_cvs/03-cdci/">
+<a class="md-nav__link" href="../03-cdci/">
 <span class="md-ellipsis">
     3. Integració contínua
     
@@ -244,29 +252,74 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="desplegament-daplicacions-web">Desplegament d'Aplicacions Web</h1>
-<p>Ací trobaràs els apunts del mòdul de <em>Desplegament d'aplicacions web</em>, que s'imparteix en el segon curs del cicle formatiu de grau superior Desenvolupament d'Aplicacions Web.</p>
-<p>La duració del mòdul és de 100 hores lectives, distribuides en 3 hores setmanals.</p>
-<h2 id="objectius">Objectius</h2>
+<h1 id="2-installacio-configuracio-i-us-de-sistemes-de-control-de-versions">2. Instal·lació, configuració i ús de sistemes de control de versions</h1>
+<p>Els sistemes de control de versions (VCS) permeten registrar els canvis realitzats als fitxers d’un projecte i coordinar el treball entre diversos desenvolupadors.</p>
+<p><strong>Exemples populars:</strong> Git (el més utilitzat), Subversion (SVN), Mercurial.</p>
+<p><strong>Instal·lació:</strong></p>
 <ul>
-<li>Instal·lar mòduls analitzant-ne l'estructura i la funcionalitat per gestionar servidors en diferents àmbits d'implantació.</li>
-<li>Ajustar paràmetres analitzant la configuració per gestionar servidors en diferents àmbits d'implantació.</li>
-<li>Utilitzar eines específiques, complint els estàndards establerts, per elaborar i mantenir la documentació dels processos.</li>
-<li>Establir procediments, verificant-ne la funcionalitat, per desplegar i distribuir aplicacions.</li>
-<li>Analitzar i utilitzar els recursos i les oportunitats d'aprenentatge relacionades amb l'evolució científica, tecnològica i organitzativa del sector i les tecnologies de la informació i la comunicació, per mantenir l'esperit d'actualització i adaptar-se a noves situacions laborals i personals.</li>
+<li>Instal·lar el programari (<code>git</code>, <code>svn</code>, etc.) al sistema local.</li>
+<li>Configurar el nom i correu d’usuari.</li>
+<li>Crear un repositori local i/o clonar un repositori remot.</li>
 </ul>
-<h2 id="resultats-daprenentatge">Resultats d'aprenentatge</h2>
-<p>Segons el Reial decret de títol els resultats d'aprenentatge que
-l'alumne ha d'assolir són els següents:</p>
+<p><strong>Ús bàsic:</strong></p>
+<ul>
+<li><code>add</code> → afegir canvis a l’índex</li>
+<li><code>commit</code> → confirmar canvis al repositori</li>
+<li><code>push</code> → enviar canvis al servidor remot</li>
+<li><code>pull</code> → descarregar canvis del remot</li>
+<li><code>branch</code> → crear o canviar de branca</li>
+</ul>
+<p><strong>Integració amb plataformes remotes:</strong> GitHub, GitLab, Bitbucket, etc.</p>
+<h2 id="21-git">2.1 Git</h2>
+<p><strong>Git</strong> és un sistema de control de versions distribuït que guarda un historial complet de canvis en cada còpia del repositori.<br/>
+És extremadament ràpid, flexible i escalable.</p>
+<p><strong>Conceptes clau:</strong></p>
+<ul>
+<li><strong>Repositori local i remot:</strong> cada usuari té una còpia completa de l’historial.</li>
+<li><strong>Commits:</strong> punts de control que registren els canvis realitzats.</li>
+<li><strong>Branches (branques):</strong> línies paral·leles de desenvolupament.</li>
+<li><strong>Merge i rebase:</strong> combinació de canvis entre branques.</li>
+<li><strong>Staging area (índex):</strong> zona intermèdia on es preparen els canvis abans de confirmar-los.</li>
+</ul>
+<p><strong>Flux de treball bàsic:</strong></p>
 <ol>
-<li>Implanta arquitectures web analitzant i aplicant criteris de funcionalitat.</li>
-<li>Implanta aplicacions web en servidors web, avaluant i aplicant criteris de configuració per al seu funcionament segur.</li>
-<li>Implanta aplicacions web en servidors d'aplicacions, avaluant i aplicant criteris de configuració per al seu funcionament segur.</li>
-<li>Administra servidors de transferència d'arxius, avaluant i aplicant criteris de configuració que garantisquen la disponibilitat del servei.</li>
-<li>Verifica l'execució d'aplicacions web comprovant els paràmetres de configuració de serveis de xarxa.</li>
-<li>Elabora la documentació de l'aplicació web avaluant i seleccionant eines de generació de documentació, control de versions i d'integració contínua.</li>
+<li><code>git clone &lt;url&gt;</code> → clona un repositori remot.</li>
+<li><code>git status</code> → comprova l’estat del repositori local.</li>
+<li><code>git add &lt;fitxers&gt;</code> → afegeix canvis a l’índex.</li>
+<li><code>git commit -m "Missatge"</code> → crea un nou commit.</li>
+<li><code>git push</code> → envia els commits al repositori remot.</li>
+<li><code>git pull</code> → baixa els canvis nous del remot i els integra.</li>
 </ol>
-<p>Caldrà assolir tots els resultats d'aprenentatge per superar el mòdul.</p>
+<p><strong>Bones pràctiques amb Git:</strong>
+- Fer <em>commits</em> freqüents i amb missatges clars i descriptius.
+- Treballar en branques de funcionalitat i integrar-les a <code>main</code> o <code>develop</code> amb merge requests.
+- Resoldre conflictes immediatament i amb cura.
+- Utilitzar <code>.gitignore</code> per evitar pujar fitxers innecessaris.
+- Revisar el codi amb <em>pull/merge requests</em> abans d’integrar canvis.</p>
+<h2 id="22-operacions-avancades">2.2. Operacions avançades</h2>
+<p>A mesura que el projecte creix, cal dominar operacions més avançades per gestionar el codi de forma eficient:</p>
+<ul>
+<li>Gestió de <strong>branques</strong> i estratègies de flux de treball (Git Flow, Trunk Based Development).</li>
+<li><strong>Merge</strong> i <strong>rebase</strong> per combinar canvis entre branques.</li>
+<li>Resolució de <strong>conflictes</strong> en fitxers modificats per diverses persones.</li>
+<li><strong>Etiquetes (tags)</strong> per marcar versions estables.</li>
+<li><strong>Hooks</strong> per automatitzar accions (tests, format, desplegaments).</li>
+</ul>
+<h2 id="23-seguretat-dels-sistemes-de-control-de-versions">2.3 Seguretat dels sistemes de control de versions</h2>
+<p>La seguretat és clau per evitar pèrdua de dades i accessos no autoritzats.</p>
+<p><strong>Bones pràctiques:</strong></p>
+<ul>
+<li>Limitar els permisos d’accés als repositoris (lectura/escriptura).</li>
+<li>Utilitzar connexions segures (SSH, HTTPS).</li>
+<li>Fer còpies de seguretat periòdiques dels repositoris.</li>
+<li>Revisar el codi abans de fer merges a branques principals.</li>
+<li>Evitar pujar informació sensible (claus API, contrasenyes, certificats…).</li>
+</ul>
+<p><strong>Eines útils:</strong></p>
+<ul>
+<li><code>.gitignore</code> per evitar pujar fitxers confidencials.</li>
+<li>Escanejadors de secrets i vulnerabilitats (TruffleHog, GitGuardian…).</li>
+</ul>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -293,8 +346,8 @@ l'alumne ha d'assolir són els següents:</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["toc.integrate", "content.code.copy"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
-<script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </body>
 </html>
