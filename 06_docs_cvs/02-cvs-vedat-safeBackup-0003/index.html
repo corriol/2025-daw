@@ -5,11 +5,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../0101-docascode/" rel="prev"/>
-<link href="../03-cdci/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>2. Sistemes de control de versions - Desplegament d'Aplicacions Web</title>
+<title>2. Instal·lació, configuració i ús de sistemes de control de versions - Desplegament d'Aplicacions Web</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -47,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              2. Sistemes de control de versions
+              2. Instal·lació, configuració i ús de sistemes de control de versions
             
           </span>
 </div>
@@ -158,8 +156,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
 <span class="md-ellipsis">
     6. Documentació, sistemes de control de versions i d'integració contínua
@@ -167,7 +165,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
             6. Documentació, sistemes de control de versions i d'integració contínua
@@ -189,249 +187,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    2. Sistemes de control de versions
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-cvs/">
 <span class="md-ellipsis">
     2. Sistemes de control de versions
     
   </span>
 </a>
-<nav aria-label="Taula de continguts" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tipus-de-sistemes-de-control-de-versions">
-<span class="md-ellipsis">
-      Tipus de sistemes de control de versions
-    </span>
-</a>
-<nav aria-label="Tipus de sistemes de control de versions" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sistemes-centralitzats">
-<span class="md-ellipsis">
-      Sistemes centralitzats
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sistemes-distribuits">
-<span class="md-ellipsis">
-      Sistemes distribuïts
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installacio-dun-sistema-de-control-de-versions">
-<span class="md-ellipsis">
-      Instal·lació d’un sistema de control de versions
-    </span>
-</a>
-<nav aria-label="Instal·lació d’un sistema de control de versions" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installacio-de-git-en-linux">
-<span class="md-ellipsis">
-      Instal·lació de Git en Linux
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configuracio-inicial">
-<span class="md-ellipsis">
-      Configuració inicial
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#us-basic-dun-sistema-de-control-de-versions">
-<span class="md-ellipsis">
-      Ús bàsic d’un sistema de control de versions
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#flux-de-treball-general-en-git">
-<span class="md-ellipsis">
-      Flux de treball general en Git
-    </span>
-</a>
-<nav aria-label="Flux de treball general en Git" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fases-principals">
-<span class="md-ellipsis">
-      Fases principals
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#21-git">
-<span class="md-ellipsis">
-      2.1 Git
-    </span>
-</a>
-<nav aria-label="2.1 Git" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#definicio">
-<span class="md-ellipsis">
-      Definició
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#conceptes-clau">
-<span class="md-ellipsis">
-      Conceptes clau
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#estats-dels-fitxers-en-git">
-<span class="md-ellipsis">
-      Estats dels fitxers en Git
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#consulta-de-lestat-del-repositori">
-<span class="md-ellipsis">
-      Consulta de l’estat del repositori
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cicle-complet-dun-fitxer-en-git">
-<span class="md-ellipsis">
-      Cicle complet d’un fitxer en Git
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#diagrama-simplificat-dels-estats">
-<span class="md-ellipsis">
-      Diagrama simplificat dels estats
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#repositoris-remots">
-<span class="md-ellipsis">
-      Repositoris remots
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bones-practiques-amb-git">
-<span class="md-ellipsis">
-      Bones pràctiques amb Git
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#22-operacions-avancades">
-<span class="md-ellipsis">
-      2.2 Operacions avançades
-    </span>
-</a>
-<nav aria-label="2.2 Operacions avançades" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gestio-avancada-de-branques">
-<span class="md-ellipsis">
-      Gestió avançada de branques
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resolucio-de-conflictes">
-<span class="md-ellipsis">
-      Resolució de conflictes
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#etiquetes-tags">
-<span class="md-ellipsis">
-      Etiquetes (tags)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hooks">
-<span class="md-ellipsis">
-      Hooks
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#23-seguretat-dels-sistemes-de-control-de-versions">
-<span class="md-ellipsis">
-      2.3 Seguretat dels sistemes de control de versions
-    </span>
-</a>
-<nav aria-label="2.3 Seguretat dels sistemes de control de versions" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bones-practiques-de-seguretat">
-<span class="md-ellipsis">
-      Bones pràctiques de seguretat
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fitxers-sensibles">
-<span class="md-ellipsis">
-      Fitxers sensibles
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#eines-de-seguretat">
-<span class="md-ellipsis">
-      Eines de seguretat
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#documentacio-del-flux-de-treball">
-<span class="md-ellipsis">
-      Documentació del flux de treball
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../03-cdci/">
@@ -685,7 +447,7 @@ Comprendre estos estats és fonamental per entendre el funcionament real del sis
 <li>o ja existia en un commit anterior.</li>
 </ul>
 <h4 id="fitxers-modified">Fitxers <em>modified</em></h4>
-<p>Un fitxer <strong>modified_ és un fitxer </strong>tracked** que ha sigut modificat però encara no està preparat per al commit.</p>
+<p>Un fitxer <em>modified</em> és un fitxer <strong>tracked</strong> que ha sigut modificat però encara no està preparat per al commit.</p>
 <p>Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>nano<span class="w"> </span>app.js
 <span class="linenos" data-linenos="2 "></span>git<span class="w"> </span>status
@@ -709,16 +471,16 @@ Comprendre estos estats és fonamental per entendre el funcionament real del sis
 <p>Ara Git considera que eixos canvis estan preparats per confirmar-se:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"refactor: Actualitza la lògica de login"</span>
 </code></pre></div>
-<h4 id="fitxers-committed">Fitxers <em>committed</em></h4>
+<h4 id="fitxers-committed">Fitxers committed</h4>
 <p>Quan es realitza un commit, Git registra definitivament els canvis al repositori local.</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"fix: Correcció d'errors en autenticació"</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Correcció d'errors en autenticació"</span>
 </code></pre></div>
 <p>En este moment:</p>
 <ul>
 <li>Git crea una nova instantània del projecte.</li>
 <li>Els fitxers tornen a estat “clean” si no hi ha noves modificacions.</li>
 </ul>
-<h4 id="fitxers-ignored">Fitxers <em>ignored</em></h4>
+<h4 id="fitxers-ignored">Fitxers ignored</h4>
 <p>Alguns fitxers no han de formar part del repositori:</p>
 <ul>
 <li>dependències,</li>
@@ -779,26 +541,25 @@ Comprendre estos estats és fonamental per entendre el funcionament real del sis
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>staged
 </code></pre></div>
 <h3 id="diagrama-simplificat-dels-estats">Diagrama simplificat dels estats</h3>
-<div class="mermaid">stateDiagram
-    [*] --&gt; Untracked
-    Untracked --&gt; Staged: git add
-    Staged --&gt; Committed: git commit
-    Committed --&gt; Modified: modificar fitxer
-    Modified --&gt; Staged: git add
-    Committed --&gt; Remote: git push
+<p><div class="mermaid">```text
+Directori de treball → Staging Area → Repositori local → Repositori remot
 </div>
-<h3 id="repositoris-remots">Repositoris remots</h3>
-<p>Els repositoris remots permeten compartir el projecte amb altres usuaris.</p>
-<p>Plataformes habituals:</p>
-<ul>
-<li>GitHub</li>
-<li>GitLab</li>
-<li>Bitbucket</li>
-<li>Azure DevOps</li>
-</ul>
-<h4 id="afegir-un-repositori-remot">Afegir un repositori remot</h4>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/usuari/projecte.git
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>### Repositoris remots
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>Els repositoris remots permeten compartir el projecte amb altres usuaris.
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>Plataformes habituals:
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>* GitHub
+<span class="linenos" data-linenos=" 8 "></span>* GitLab
+<span class="linenos" data-linenos=" 9 "></span>* Bitbucket
+<span class="linenos" data-linenos="10 "></span>* Azure DevOps
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>#### Afegir un repositori remot
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>```bash
+<span class="linenos" data-linenos="15 "></span>git remote add origin https://github.com/usuari/projecte.git
+</code></pre></div></p>
 <h4 id="consultar-repositoris-remots">Consultar repositoris remots</h4>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>remote<span class="w"> </span>-v
 </code></pre></div>
@@ -833,32 +594,6 @@ Comprendre estos estats és fonamental per entendre el funcionament real del sis
 <li>Utilitzar etiquetes (<code>tags</code>) per marcar versions.</li>
 <li>Documentar el flux de treball del projecte.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Conventional Commits</p>
-<p>Un dels estàndards més utilitzats per escriure commits és <strong>Conventional Commits</strong>.<br/>
-Aquest model permet descriure els canvis de forma clara i homogènia mitjançant un prefix que identifica el tipus de modificació realitzada.</p>
-<p>Estructura bàsica:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>tipus: descripció breu
-</code></pre></div>
-<p>Exemples:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>feat: afegeix autenticació amb JWT
-<span class="linenos" data-linenos="2 "></span>fix: corregeix error en la validació del formulari
-<span class="linenos" data-linenos="3 "></span>docs: actualitza la documentació del desplegament
-<span class="linenos" data-linenos="4 "></span>refactor: reorganitza l'estructura del controlador
-<span class="linenos" data-linenos="5 "></span>ci: configura GitHub Actions
-</code></pre></div>
-<p>Prefixos habituals:</p>
-<ul>
-<li><code>feat</code> → nova funcionalitat</li>
-<li><code>fix</code> → correcció d'errors</li>
-<li><code>docs</code> → documentació</li>
-<li><code>refactor</code> → reorganització del codi sense canviar funcionalitat</li>
-<li><code>test</code> → proves</li>
-<li><code>ci</code> → integració contínua</li>
-<li><code>chore</code> → tasques de manteniment</li>
-</ul>
-<p>Més informació: <a href="https://www.conventionalcommits.org/">https://www.conventionalcommits.org/</a></p>
-</div>
 <h2 id="22-operacions-avancades">2.2 Operacions avançades</h2>
 <p>A mesura que els projectes augmenten de grandària i complexitat, és necessari utilitzar funcionalitats més avançades de Git.</p>
 <h3 id="gestio-avancada-de-branques">Gestió avançada de branques</h3>
@@ -982,6 +717,22 @@ Aquest model permet descriure els canvis de forma clara i homogènia mitjançant
 </tr>
 </tbody>
 </table>
+<h3 id="integracio-continua-i-control-de-versions">Integració contínua i control de versions</h3>
+<p>Els sistemes CI/CD treballen estretament amb Git.</p>
+<p>Cada vegada que es realitza un <code>push</code> es poden executar automàticament:</p>
+<ul>
+<li>tests,</li>
+<li>anàlisi estàtica,</li>
+<li>compilacions,</li>
+<li>desplegaments.</li>
+</ul>
+<p>Exemples de plataformes:</p>
+<ul>
+<li>GitHub Actions</li>
+<li>GitLab CI/CD</li>
+<li>Jenkins</li>
+<li>Drone CI</li>
+</ul>
 <h3 id="documentacio-del-flux-de-treball">Documentació del flux de treball</h3>
 <p>És recomanable documentar:</p>
 <ul>
